@@ -18,12 +18,12 @@
 <meta property="og:site_name" content="CRC-BK">
 <meta property="og:description" content="搭建博客的方法众多，我选择的搭建的平台是放在了 github pages 上边(这个功能是为大家免费提供的，不过只能放静态页面，不过作为个人博客使用已经足够了) 接下来就开始真正的搭建之旅吧。">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://yoursite.com/images/og_image.png">
-<meta property="og:updated_time" content="2019-09-22T08:53:11.972Z">
+<meta property="og:image" content="http://yoursite.com/images/natue/nature1.jpg">
+<meta property="og:updated_time" content="2019-09-23T05:55:00.573Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搭建一个自己的博客">
 <meta name="twitter:description" content="搭建博客的方法众多，我选择的搭建的平台是放在了 github pages 上边(这个功能是为大家免费提供的，不过只能放静态页面，不过作为个人博客使用已经足够了) 接下来就开始真正的搭建之旅吧。">
-<meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
+<meta name="twitter:image" content="http://yoursite.com/images/natue/nature1.jpg">
 
 
 
@@ -89,9 +89,6 @@
     
 
 
-<!--阅读量统计方法-->
-
-
 <link rel="stylesheet" href="/css/style.css">
 </head>
 <body class="is-3-column">
@@ -124,6 +121,9 @@
                 href="/about">关于</a>
                 
                 <a class="navbar-item"
+                href="/java">java</a>
+                
+                <a class="navbar-item"
                 href="/photo">相册</a>
                 
             </div>
@@ -140,6 +140,10 @@
                     
                 
                 
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
                 
                 <a class="navbar-item search" title="Search" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -155,6 +159,12 @@
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
     
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="/images/natue/nature1.jpg" alt="搭建一个自己的博客">
+        </span>
+    </div>
+    
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
@@ -165,12 +175,6 @@
                 <a class="has-link-grey -link" href="/categories/博客系列/">博客系列</a>
                 </div>
                 
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    6 minutes read (About 831 words)
-                </span>
                 
                 
                 <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
@@ -322,15 +326,7 @@
 
     </div>
 </div>
-
-
-<!--<div class="level is-size-7 has-text-grey">-->
-    <!--<div class="level-left">-->
-        <!--<i class="far fa-eye"></i>-->
-        <!--<span>&nbsp;</span>-->
-        <!--<span id="busuanzi_container_site_pv"><span id="busuanzi_value_site_pv"></span></span>-->
-    <!--</div>-->
-<!--</div>--></div>
+</div>
                 
 
 
@@ -374,7 +370,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        3
+                        4
                     </p>
                 </div>
             </div>
@@ -391,10 +387,10 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Tag
+                        Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        1
+                        2
                     </p>
                 </div>
             </div>
@@ -448,6 +444,65 @@
 </div>
     
         
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Catalogue
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#一、安装所需插件">
+        <span class="has-mr-6">1</span>
+        <span>一、安装所需插件</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#1-git">
+        <span class="has-mr-6">1.1</span>
+        <span>1. git</span>
+        </a></li><li>
+        <a class="is-flex" href="#2-Node-js-（自带npm）">
+        <span class="has-mr-6">1.2</span>
+        <span>2. Node.js （自带npm）</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#二、创建路径">
+        <span class="has-mr-6">2</span>
+        <span>二、创建路径</span>
+        </a></li><li>
+        <a class="is-flex" href="#三、进入git编辑模式">
+        <span class="has-mr-6">3</span>
+        <span>三、进入git编辑模式</span>
+        </a></li><li>
+        <a class="is-flex" href="#四、安装HEXO">
+        <span class="has-mr-6">4</span>
+        <span>四、安装HEXO</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#1-下载hexo">
+        <span class="has-mr-6">4.1</span>
+        <span>1. 下载hexo</span>
+        </a></li><li>
+        <a class="is-flex" href="#2-初始化hexo">
+        <span class="has-mr-6">4.2</span>
+        <span>2. 初始化hexo</span>
+        </a></li><li>
+        <a class="is-flex" href="#3-本地启动">
+        <span class="has-mr-6">4.3</span>
+        <span>3. 本地启动</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#五、修改配置">
+        <span class="has-mr-6">5</span>
+        <span>五、修改配置</span>
+        </a></li><li>
+        <a class="is-flex" href="#六、上传到git">
+        <span class="has-mr-6">6</span>
+        <span>六、上传到git</span>
+        </a></li><li>
+        <a class="is-flex" href="#七、更新自己的博客">
+        <span class="has-mr-6">7</span>
+        <span>七、更新自己的博客</span>
+        </a></li></ul>
+        </div>
+    </div>
+</div>
+
     
         
 
@@ -532,7 +587,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/分享/" style="font-size: 10px;">分享</a>
+        <a href="/tags/分享/" style="font-size: 20px;">分享</a> <a href="/tags/美图分享/" style="font-size: 10px;">美图分享</a>
     </div>
 </div>
 
@@ -549,16 +604,35 @@
         
         <article class="media">
             
-            <a href="/2019/09/21/微服务的学习——注册中心/" class="media-left">
+            <a href="/2019/09/21/图片/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="http://ww1.sinaimg.cn/large/007cMR7dly1g78b1zq2q5j31z418gnpd.jpg" alt="Spring-Cloud 了解">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="海贼王">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-20T16:00:00.000Z">2019-09-21</time></div>
-                    <a href="/2019/09/21/微服务的学习——注册中心/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Spring-Cloud 了解</a>
+                    <a href="/2019/09/21/图片/" class="title has-link-black-ter is-size-6 has-text-weight-normal">海贼王</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/09/21/Spring-Cloud 初识/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="http://ww1.sinaimg.cn/large/007cMR7dly1g78b1zq2q5j31z418gnpd.jpg" alt="Spring-Cloud 初识">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-20T16:00:00.000Z">2019-09-21</time></div>
+                    <a href="/2019/09/21/Spring-Cloud 初识/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Spring-Cloud 初识</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/java/">java</a> / <a class="has-link-grey -link" href="/categories/java/springCloud/">springCloud</a>
                     </p>
@@ -570,7 +644,7 @@
             
             <a href="/2019/09/15/更换博客主题/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="给自己的博客更换主题">
+                    <img class="thumbnail" src="/images/natue/nature3.jpg" alt="给自己的博客更换主题">
                 </p>
             </a>
             
@@ -589,7 +663,7 @@
             
             <a href="/2019/09/15/搭建自己的博客/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="搭建一个自己的博客">
+                    <img class="thumbnail" src="/images/natue/nature1.jpg" alt="搭建一个自己的博客">
                 </p>
             </a>
             
@@ -622,7 +696,7 @@
                     <span class="level-item">September 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">3</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -644,6 +718,13 @@
                     <a class="tags has-addons" href="/tags/分享/">
                         <span class="tag">分享</span>
                         <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/美图分享/">
+                        <span class="tag">美图分享</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -672,16 +753,35 @@
         
         <article class="media">
             
-            <a href="/2019/09/21/微服务的学习——注册中心/" class="media-left">
+            <a href="/2019/09/21/图片/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="http://ww1.sinaimg.cn/large/007cMR7dly1g78b1zq2q5j31z418gnpd.jpg" alt="Spring-Cloud 了解">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="海贼王">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-20T16:00:00.000Z">2019-09-21</time></div>
-                    <a href="/2019/09/21/微服务的学习——注册中心/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Spring-Cloud 了解</a>
+                    <a href="/2019/09/21/图片/" class="title has-link-black-ter is-size-6 has-text-weight-normal">海贼王</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/09/21/Spring-Cloud 初识/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="http://ww1.sinaimg.cn/large/007cMR7dly1g78b1zq2q5j31z418gnpd.jpg" alt="Spring-Cloud 初识">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-20T16:00:00.000Z">2019-09-21</time></div>
+                    <a href="/2019/09/21/Spring-Cloud 初识/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Spring-Cloud 初识</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/java/">java</a> / <a class="has-link-grey -link" href="/categories/java/springCloud/">springCloud</a>
                     </p>
@@ -693,7 +793,7 @@
             
             <a href="/2019/09/15/更换博客主题/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="给自己的博客更换主题">
+                    <img class="thumbnail" src="/images/natue/nature3.jpg" alt="给自己的博客更换主题">
                 </p>
             </a>
             
@@ -712,7 +812,7 @@
             
             <a href="/2019/09/15/搭建自己的博客/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="搭建一个自己的博客">
+                    <img class="thumbnail" src="/images/natue/nature1.jpg" alt="搭建一个自己的博客">
                 </p>
             </a>
             
@@ -745,7 +845,7 @@
                     <span class="level-item">September 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">3</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -767,6 +867,13 @@
                     <a class="tags has-addons" href="/tags/分享/">
                         <span class="tag">分享</span>
                         <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/美图分享/">
+                        <span class="tag">美图分享</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -802,17 +909,9 @@
                 
                 </p>
             </div>
+            <!-- 不蒜子统计  start-->
             
-                <!-- 不蒜子统计 -->
-                <span id="busuanzi_container_site_pv">
-                本站总访问量<span id="busuanzi_value_site_pv"></span>次
-                </span>
-                <span class="post-meta-divider">|</span>
-                <span id="busuanzi_container_site_uv" style='display:none'>
-                本站访客数<span id="busuanzi_value_site_uv"></span>人
-                </span>
-                <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-            
+            <!-- 不蒜子统计  end-->
             <div class="level-end">
             
                 <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
