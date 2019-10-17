@@ -7,17 +7,22 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>分类: Centos7 - CRC-BK</title>
+<title>Docker入门2 —— 搭建自己的Dockerfile - CRC-BK</title>
 
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="CRC-BK">
-<meta property="og:url" content="http://yoursite.com/categories/Linux/Docker/Centos7/index.html">
+    <meta name="description" content="下面我以 koa-demos 项目为例，介绍怎么写 Dockerfile 文件，实现让用户在 Docker 容器里面运行 Koa 框架。">
+<meta name="keywords" content="Docker">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker入门2 —— 搭建自己的Dockerfile">
+<meta property="og:url" content="http://yoursite.com/2019/10/11/Docker入门2/index.html">
 <meta property="og:site_name" content="CRC-BK">
+<meta property="og:description" content="下面我以 koa-demos 项目为例，介绍怎么写 Dockerfile 文件，实现让用户在 Docker 容器里面运行 Koa 框架。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta property="og:updated_time" content="2019-10-17T09:10:35.602Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CRC-BK">
+<meta name="twitter:title" content="Docker入门2 —— 搭建自己的Dockerfile">
+<meta name="twitter:description" content="下面我以 koa-demos 项目为例，介绍怎么写 Dockerfile 文件，实现让用户在 Docker 容器里面运行 Koa 框架。">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
 
@@ -92,7 +97,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="CRC-BK" height="28">
+                <img src="/images/logo.svg" alt="Docker入门2 —— 搭建自己的Dockerfile" height="28">
             
             </a>
         </div>
@@ -146,62 +151,66 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
-    <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/categories">分类</a></li>
-            
-            <li><a href="/categories/Linux/Docker/">Docker</a></li>
-            
-            <li><a href="/categories/Linux/">Linux</a></li>
-            
-            <li class="is-active"><a href="#" aria-current="page">Centos7</a></li>
-        </ul>
-        </nav>
-    </div>
-</div>
-
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/10/14/搭建Docker/" class="image is-7by1">
-            <img class="thumbnail" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2628505,2075344024&amp;fm=26&amp;gp=0.jpg" alt="搭建Docker">
-        </a>
-    </div>
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time>
+                <time class="level-item has-text-grey" datetime="2019-10-10T16:00:00.000Z">2019-10-11</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Linux/">Linux</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Linux/Docker/">Docker</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Linux/Docker/Centos7/">Centos7</a>
+                <a class="has-link-grey -link" href="/categories/Docker/">Docker</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Docker/Linux/">Linux</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Docker/Linux/Centos7/">Centos7</a>
                 </div>
                 
                 
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
                 
             </div>
         </div>
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/10/14/搭建Docker/">搭建Docker</a>
+                Docker入门2 —— 搭建自己的Dockerfile
             
         </h1>
         <div class="content">
-            <p>在程序员的世界中，用到虚拟机的地方还是很多的，因为内存小，效率高，用于服务器的搭建、维护有着必不可少的地位；如大家用的Docker，Nginx，zookeeper都是放在虚拟机中使用的。</p>
-<p>所以我们来开始搭建自己的虚拟机来做练习吧。</p>
+            <p>下面我以 koa-demos 项目为例，介绍怎么写 Dockerfile 文件，实现让用户在 Docker 容器里面运行 Koa 框架。</p>
+<a id="more"></a>
+
+<h3 id="一、注册docker账号"><a href="#一、注册docker账号" class="headerlink" title="一、注册docker账号"></a>一、注册docker账号</h3><p>进入官网 cloud.docker.com 去注册一个docker账号</p>
+<h3 id="二、构建镜像"><a href="#二、构建镜像" class="headerlink" title="二、构建镜像"></a>二、构建镜像</h3><p>这个额镜像是本地放置缓存的，上传用的</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#默认位置</span><br><span class="line">docker build . </span><br><span class="line">#指定位置 -f指定该文件的位置</span><br><span class="line">docker build -f /user/local/docker/koa-demos .</span><br></pre></td></tr></table></figure>
+
+<p>最后提示，表示构建成功</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#Successfully built aa495654514e   构建成功</span><br></pre></td></tr></table></figure>
+
+<h3 id="三、以NGINX为例，如何构建镜像、启动"><a href="#三、以NGINX为例，如何构建镜像、启动" class="headerlink" title="三、以NGINX为例，如何构建镜像、启动"></a>三、以NGINX为例，如何构建镜像、启动</h3><ul>
+<li>找到一个空白目录，创建一个文本目录  Dockerfile </li>
+</ul>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#执行方法如下</span><br><span class="line">mkdir mynginx</span><br><span class="line">cd mynginx</span><br><span class="line">vi Dockerfile</span><br><span class="line"></span><br><span class="line">#Dockerfile内容 ：</span><br><span class="line">FROM nginx</span><br><span class="line">RUN echo &apos;&lt;h1&gt;Hello, Docker!&lt;/h1&gt;&apos; &gt; /usr/share/nginx/html/index.html</span><br><span class="line">vi Dockerfile</span><br><span class="line"></span><br><span class="line">#保存 退出</span><br></pre></td></tr></table></figure>
+
+<p> 这个 Dockerfile 很简单，一共就两行涉及到了两条指令：FROM 和 RUN，FROM 表示获取指定基础镜像，RUN 执行命令，在执行的过程中重写了 nginx 的默认页面信息，将信息替换为：Hello, Docker!。 </p>
+<ul>
+<li>在 Dockerfile 文件所在目录执行： </li>
+</ul>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t nginx:v1 .</span><br></pre></td></tr></table></figure>
+
+
         </div>
         
-        
-        <div class="level is-mobile">
+        <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/10/14/搭建Docker/#more">阅读更多</a>
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Docker/">Docker</a>
                 </div>
             </div>
         </div>
+        
         
         
     </div>
@@ -209,11 +218,80 @@
 
 
 
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>支付宝</span>
+    <div class="qrcode"><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g776vxxcy1j30u01aojy1.jpg" alt="支付宝"></div>
+</a>
+
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g776w5r14uj30v216mad5.jpg" alt="微信"></div>
+</a>
+
+                
+        </div>
+    </div>
+</div>
 
 
 
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/10/12/Docker实战1/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">Docker实战1 —— IDEA插件连接Docker部署（Dockerfile）</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/10/10/Docker入门1--搭建Docker/">
+                <span class="level-item">Docker入门1 —— 搭建Docker</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
 
 
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: false,
+        verify: false,
+        app_id: '4CJzr4Sm5tW19HHaPO55efhe-gzGzoHsz',
+        app_key: '3lqO2xInLOmklRgPF1dwt4g3',
+        placeholder: '有什么建议和想法想对博主讲的，就在此留言吧  (*╹▽╹*) ！'
+    });
+</script>
+
+    </div>
+</div>
 </div>
                 
 
@@ -258,7 +336,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        3
+                        8
                     </p>
                 </div>
             </div>
@@ -268,7 +346,7 @@
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        6
+                        8
                     </p>
                 </div>
             </div>
@@ -278,7 +356,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        2
+                        4
                     </p>
                 </div>
             </div>
@@ -381,36 +459,28 @@
             </h3>
             <ul class="menu-list">
             <li>
-        <a class="level is-marginless" href="/categories/Linux/">
-            <span class="level-start">
-                <span class="level-item">Linux</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a><ul><li>
-        <a class="level is-marginless" href="/categories/Linux/Docker/">
+        <a class="level is-marginless" href="/categories/Docker/">
             <span class="level-start">
                 <span class="level-item">Docker</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li></ul></li><li>
-        <a class="level is-marginless" href="/categories/java/">
-            <span class="level-start">
-                <span class="level-item">java</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">5</span>
             </span>
         </a><ul><li>
-        <a class="level is-marginless" href="/categories/java/springCloud/">
+        <a class="level is-marginless" href="/categories/Docker/IDEA/">
             <span class="level-start">
-                <span class="level-item">springCloud</span>
+                <span class="level-item">IDEA</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Docker/Linux/">
+            <span class="level-start">
+                <span class="level-item">Linux</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/博客系列/">
@@ -420,7 +490,31 @@
             <span class="level-end">
                 <span class="level-item tag">1</span>
             </span>
-        </a></li>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/框架/">
+            <span class="level-start">
+                <span class="level-item">框架</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/框架/Activiti工作流/">
+            <span class="level-start">
+                <span class="level-item">Activiti工作流</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/框架/SrpingCloud/">
+            <span class="level-start">
+                <span class="level-item">SrpingCloud</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li>
             </ul>
         </div>
     </div>
@@ -432,7 +526,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/分享/" style="font-size: 10px;">分享</a> <a href="/tags/技术/" style="font-size: 10px;">技术</a>
+        <a href="/tags/Activiti工作流/" style="font-size: 10px;">Activiti工作流</a> <a href="/tags/Docker/" style="font-size: 20px;">Docker</a> <a href="/tags/SpringCloud/" style="font-size: 10px;">SpringCloud</a> <a href="/tags/分享/" style="font-size: 10px;">分享</a>
     </div>
 </div>
 
@@ -449,18 +543,18 @@
         
         <article class="media">
             
-            <a href="/2019/10/14/搭建Docker/" class="media-left">
+            <a href="/2019/10/14/Activiti工作流框架/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2628505,2075344024&amp;fm=26&amp;gp=0.jpg" alt="搭建Docker">
+                    <img class="thumbnail" src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3597273931,3299733538&amp;fm=15&amp;gp=0.jpg" alt="Activiti框架学习">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
-                    <a href="/2019/10/14/搭建Docker/" class="title has-link-black-ter is-size-6 has-text-weight-normal">搭建Docker</a>
+                    <a href="/2019/10/14/Activiti工作流框架/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架学习</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Linux/">Linux</a> / <a class="has-link-grey -link" href="/categories/Linux/Docker/">Docker</a>
+                        <a class="has-link-grey -link" href="/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
                     </p>
                 </div>
             </div>
@@ -468,18 +562,18 @@
         
         <article class="media">
             
-            <a href="/2019/09/21/Spring-Cloud 初识/" class="media-left">
+            <a href="/2019/10/14/Docker实战3/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3448727764,759797671&amp;fm=26&amp;gp=0.jpg" alt="Spring-Cloud 初识">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Docker实战3 —— IDEA插件连接Docker（compose）">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-20T16:00:00.000Z">2019-09-21</time></div>
-                    <a href="/2019/09/21/Spring-Cloud 初识/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Spring-Cloud 初识</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
+                    <a href="/2019/10/14/Docker实战3/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Docker实战3 —— IDEA插件连接Docker（compose）</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a> / <a class="has-link-grey -link" href="/categories/java/springCloud/">springCloud</a>
+                        <a class="has-link-grey -link" href="/categories/Docker/">Docker</a> / <a class="has-link-grey -link" href="/categories/Docker/IDEA/">IDEA</a>
                     </p>
                 </div>
             </div>
@@ -487,18 +581,56 @@
         
         <article class="media">
             
-            <a href="/2019/09/15/搭建自己的博客/" class="media-left">
+            <a href="/2019/10/13/Docker实战2/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1571046661789&amp;di=6488da4214dd264e0804631e0c3f5b1d&amp;imgtype=0&amp;src=http%3A%2F%2Fimages.iaear.com%2Fhexo-next.png" alt="搭建一个自己的博客">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Docker实战2 —— IDEA插件连接Docker（image）">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-14T16:00:00.000Z">2019-09-15</time></div>
-                    <a href="/2019/09/15/搭建自己的博客/" class="title has-link-black-ter is-size-6 has-text-weight-normal">搭建一个自己的博客</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-12T16:00:00.000Z">2019-10-13</time></div>
+                    <a href="/2019/10/13/Docker实战2/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Docker实战2 —— IDEA插件连接Docker（image）</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/博客系列/">博客系列</a>
+                        <a class="has-link-grey -link" href="/categories/Docker/">Docker</a> / <a class="has-link-grey -link" href="/categories/Docker/IDEA/">IDEA</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/12/Docker实战1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Docker实战1 —— IDEA插件连接Docker部署（Dockerfile）">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-11T16:00:00.000Z">2019-10-12</time></div>
+                    <a href="/2019/10/12/Docker实战1/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Docker实战1 —— IDEA插件连接Docker部署（Dockerfile）</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Docker/">Docker</a> / <a class="has-link-grey -link" href="/categories/Docker/IDEA/">IDEA</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/11/Docker入门2/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Docker入门2 —— 搭建自己的Dockerfile">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-10T16:00:00.000Z">2019-10-11</time></div>
+                    <a href="/2019/10/11/Docker入门2/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Docker入门2 —— 搭建自己的Dockerfile</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Docker/">Docker</a> / <a class="has-link-grey -link" href="/categories/Docker/Linux/">Linux</a>
                     </p>
                 </div>
             </div>
@@ -522,7 +654,7 @@
                     <span class="level-item">十月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">6</span>
                 </span>
             </a>
         </li>
@@ -552,15 +684,29 @@
             <div class="field is-grouped is-grouped-multiline">
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/分享/">
-                        <span class="tag">分享</span>
+                    <a class="tags has-addons" href="/tags/Activiti工作流/">
+                        <span class="tag">Activiti工作流</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/技术/">
-                        <span class="tag">技术</span>
+                    <a class="tags has-addons" href="/tags/Docker/">
+                        <span class="tag">Docker</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/SpringCloud/">
+                        <span class="tag">SpringCloud</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/分享/">
+                        <span class="tag">分享</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -590,18 +736,18 @@
         
         <article class="media">
             
-            <a href="/2019/10/14/搭建Docker/" class="media-left">
+            <a href="/2019/10/14/Activiti工作流框架/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2628505,2075344024&amp;fm=26&amp;gp=0.jpg" alt="搭建Docker">
+                    <img class="thumbnail" src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3597273931,3299733538&amp;fm=15&amp;gp=0.jpg" alt="Activiti框架学习">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
-                    <a href="/2019/10/14/搭建Docker/" class="title has-link-black-ter is-size-6 has-text-weight-normal">搭建Docker</a>
+                    <a href="/2019/10/14/Activiti工作流框架/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架学习</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Linux/">Linux</a> / <a class="has-link-grey -link" href="/categories/Linux/Docker/">Docker</a>
+                        <a class="has-link-grey -link" href="/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
                     </p>
                 </div>
             </div>
@@ -609,18 +755,18 @@
         
         <article class="media">
             
-            <a href="/2019/09/21/Spring-Cloud 初识/" class="media-left">
+            <a href="/2019/10/14/Docker实战3/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3448727764,759797671&amp;fm=26&amp;gp=0.jpg" alt="Spring-Cloud 初识">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Docker实战3 —— IDEA插件连接Docker（compose）">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-20T16:00:00.000Z">2019-09-21</time></div>
-                    <a href="/2019/09/21/Spring-Cloud 初识/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Spring-Cloud 初识</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
+                    <a href="/2019/10/14/Docker实战3/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Docker实战3 —— IDEA插件连接Docker（compose）</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">java</a> / <a class="has-link-grey -link" href="/categories/java/springCloud/">springCloud</a>
+                        <a class="has-link-grey -link" href="/categories/Docker/">Docker</a> / <a class="has-link-grey -link" href="/categories/Docker/IDEA/">IDEA</a>
                     </p>
                 </div>
             </div>
@@ -628,18 +774,56 @@
         
         <article class="media">
             
-            <a href="/2019/09/15/搭建自己的博客/" class="media-left">
+            <a href="/2019/10/13/Docker实战2/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1571046661789&amp;di=6488da4214dd264e0804631e0c3f5b1d&amp;imgtype=0&amp;src=http%3A%2F%2Fimages.iaear.com%2Fhexo-next.png" alt="搭建一个自己的博客">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Docker实战2 —— IDEA插件连接Docker（image）">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-14T16:00:00.000Z">2019-09-15</time></div>
-                    <a href="/2019/09/15/搭建自己的博客/" class="title has-link-black-ter is-size-6 has-text-weight-normal">搭建一个自己的博客</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-12T16:00:00.000Z">2019-10-13</time></div>
+                    <a href="/2019/10/13/Docker实战2/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Docker实战2 —— IDEA插件连接Docker（image）</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/博客系列/">博客系列</a>
+                        <a class="has-link-grey -link" href="/categories/Docker/">Docker</a> / <a class="has-link-grey -link" href="/categories/Docker/IDEA/">IDEA</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/12/Docker实战1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Docker实战1 —— IDEA插件连接Docker部署（Dockerfile）">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-11T16:00:00.000Z">2019-10-12</time></div>
+                    <a href="/2019/10/12/Docker实战1/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Docker实战1 —— IDEA插件连接Docker部署（Dockerfile）</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Docker/">Docker</a> / <a class="has-link-grey -link" href="/categories/Docker/IDEA/">IDEA</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/11/Docker入门2/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Docker入门2 —— 搭建自己的Dockerfile">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-10T16:00:00.000Z">2019-10-11</time></div>
+                    <a href="/2019/10/11/Docker入门2/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Docker入门2 —— 搭建自己的Dockerfile</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Docker/">Docker</a> / <a class="has-link-grey -link" href="/categories/Docker/Linux/">Linux</a>
                     </p>
                 </div>
             </div>
@@ -663,7 +847,7 @@
                     <span class="level-item">十月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">6</span>
                 </span>
             </a>
         </li>
@@ -693,15 +877,29 @@
             <div class="field is-grouped is-grouped-multiline">
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/分享/">
-                        <span class="tag">分享</span>
+                    <a class="tags has-addons" href="/tags/Activiti工作流/">
+                        <span class="tag">Activiti工作流</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/技术/">
-                        <span class="tag">技术</span>
+                    <a class="tags has-addons" href="/tags/Docker/">
+                        <span class="tag">Docker</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/SpringCloud/">
+                        <span class="tag">SpringCloud</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/分享/">
+                        <span class="tag">分享</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -723,7 +921,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="CRC-BK" height="28">
+                    <img src="/images/logo.svg" alt="Docker入门2 —— 搭建自己的Dockerfile" height="28">
                 
                 </a>
                 <p class="is-size-7">

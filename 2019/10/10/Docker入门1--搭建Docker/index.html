@@ -7,18 +7,23 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>分类: 博客系列 - CRC-BK</title>
+<title>Docker入门1 —— 搭建Docker - CRC-BK</title>
 
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="CRC-BK">
-<meta property="og:url" content="http://yoursite.com/categories/博客系列/index.html">
+    <meta name="description" content="在服务器方面，为了更加高效的利用空间，提供效率，Docker容易已经成为了大型项目容器的不二之选，接下来就一起学习吧">
+<meta name="keywords" content="Docker">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker入门1 —— 搭建Docker">
+<meta property="og:url" content="http://yoursite.com/2019/10/10/Docker入门1--搭建Docker/index.html">
 <meta property="og:site_name" content="CRC-BK">
+<meta property="og:description" content="在服务器方面，为了更加高效的利用空间，提供效率，Docker容易已经成为了大型项目容器的不二之选，接下来就一起学习吧">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta property="og:image" content="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2628505,2075344024&fm=26&gp=0.jpg">
+<meta property="og:updated_time" content="2019-10-17T09:09:02.334Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CRC-BK">
-<meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
+<meta name="twitter:title" content="Docker入门1 —— 搭建Docker">
+<meta name="twitter:description" content="在服务器方面，为了更加高效的利用空间，提供效率，Docker容易已经成为了大型项目容器的不二之选，接下来就一起学习吧">
+<meta name="twitter:image" content="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2628505,2075344024&fm=26&gp=0.jpg">
 
 
 
@@ -92,7 +97,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="CRC-BK" height="28">
+                <img src="/images/logo.svg" alt="Docker入门1 —— 搭建Docker" height="28">
             
             </a>
         </div>
@@ -132,6 +137,10 @@
                     
                 
                 
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
                 
                 <a class="navbar-item search" title="搜索" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -146,58 +155,90 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
-    <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/categories">分类</a></li>
-            
-            <li class="is-active"><a href="#" aria-current="page">博客系列</a></li>
-        </ul>
-        </nav>
-    </div>
-</div>
-
-    <div class="card">
     
     <div class="card-image">
-        <a href="/2019/09/15/搭建自己的博客/" class="image is-7by1">
-            <img class="thumbnail" src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1571046661789&amp;di=6488da4214dd264e0804631e0c3f5b1d&amp;imgtype=0&amp;src=http%3A%2F%2Fimages.iaear.com%2Fhexo-next.png" alt="搭建一个自己的博客">
-        </a>
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2628505,2075344024&amp;fm=26&amp;gp=0.jpg" alt="Docker入门1 —— 搭建Docker">
+        </span>
     </div>
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-09-14T16:00:00.000Z">2019-09-15</time>
+                <time class="level-item has-text-grey" datetime="2019-10-09T16:00:00.000Z">2019-10-10</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/博客系列/">博客系列</a>
+                <a class="has-link-grey -link" href="/categories/Docker/">Docker</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Docker/Linux/">Linux</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Docker/Linux/Centos7/">Centos7</a>
                 </div>
                 
                 
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
                 
             </div>
         </div>
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/09/15/搭建自己的博客/">搭建一个自己的博客</a>
+                Docker入门1 —— 搭建Docker
             
         </h1>
         <div class="content">
-            <p>搭建博客的方法众多，我选择的搭建的平台是放在了 github pages 上边(这个功能是为大家免费提供的，不过只能放静态页面，不过作为个人博客使用已经足够了)</p>
-<p>接下来就开始真正的搭建之旅吧。</p>
+            <p>在服务器方面，为了更加高效的利用空间，提供效率，Docker容易已经成为了大型项目容器的不二之选，接下来就一起学习吧</p>
+<a id="more"></a>
+
+<h3 id="一、安装VMware-Workstation-Pro"><a href="#一、安装VMware-Workstation-Pro" class="headerlink" title="一、安装VMware Workstation Pro"></a>一、安装VMware Workstation Pro</h3><p>使用这个软件，可以直接在电脑中运行虚拟机</p>
+<p>里边还有Xshell、Xftp工具，可以方便的操作虚拟机</p>
+<p>链接：<a href="https://pan.baidu.com/s/1x5bhEh5pUajfA7fA6iMvNg" target="_blank" rel="noopener">https://pan.baidu.com/s/1x5bhEh5pUajfA7fA6iMvNg</a><br>提取码：gxju </p>
+<p>直接安装即可</p>
+<h3 id="二、在VMware中安装centos7"><a href="#二、在VMware中安装centos7" class="headerlink" title="二、在VMware中安装centos7"></a>二、在VMware中安装centos7</h3><p>centos7镜像下载地址 <a href="http://isoredirect.centos.org/centos/7/isos/x86_64" target="_blank" rel="noopener">http://isoredirect.centos.org/centos/7/isos/x86_64</a></p>
+<p>不会的可以参考这个链接 <a href="https://blog.csdn.net/babyxue/article/details/80970526" target="_blank" rel="noopener">https://blog.csdn.net/babyxue/article/details/80970526</a></p>
+<h3 id="三、配置虚拟机IP地址"><a href="#三、配置虚拟机IP地址" class="headerlink" title="三、配置虚拟机IP地址"></a>三、配置虚拟机IP地址</h3><p>参考：<a href="https://blog.csdn.net/weixin_38214171/article/details/85330179" target="_blank" rel="noopener">https://blog.csdn.net/weixin_38214171/article/details/85330179</a></p>
+<p>最后如下图，显示连接数据配置成功</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping www.baidu.com</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g7xqym9x05j30hc02a0sk.jpg" alt="是否ping通"></p>
+<h3 id="四、安装Docker"><a href="#四、安装Docker" class="headerlink" title="四、安装Docker"></a>四、安装Docker</h3><p>在linux和windows中安装Docker很容易出错，所以我们直接使用centos7+yml的方式安装</p>
+<p>运行下面的 yum 命令：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install docker</span><br></pre></td></tr></table></figure>
+
+<p>安装完成后，使用下面的命令来启动 docker 服务，并将其设置为开机启动：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">service docker start</span><br><span class="line">chkconfig docker on</span><br></pre></td></tr></table></figure>
+
+<p>查看是否安装成功</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker version</span><br></pre></td></tr></table></figure>
+
+<p>如果显示版本信息等，说明安装成功</p>
+<p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g7xqymfitdj30ht0b6q3e.jpg" alt="docker-version"></p>
+<h3 id="五、修改国内镜像地址"><a href="#五、修改国内镜像地址" class="headerlink" title="五、修改国内镜像地址"></a>五、修改国内镜像地址</h3><p>因为官网镜像地址速度比较慢，所以我们配置国内的镜像地址提高效率。Docker 中国官方镜像加速可通过<code>registry.docker-cn.com</code>访问。该镜像库只包含流行的公有镜像，私有镜像仍需要从美国镜像库中拉取。</p>
+<p>把daemon.json修改为下边内容：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">vi  /etc/docker/daemon.json</span><br><span class="line">#添加后</span><br><span class="line">&#123; </span><br><span class="line">&quot;registry-mirrors&quot;: [&quot;https://alzgoonw.mirror.aliyuncs.com&quot;] </span><br><span class="line">&#125;</span><br><span class="line">#配置完成后  按ESC  wq:  保存退出</span><br><span class="line">#重启docker</span><br><span class="line">service docker restart</span><br></pre></td></tr></table></figure>
+
+<h3 id="六、验证是否能获取到镜像内的文件"><a href="#六、验证是否能获取到镜像内的文件" class="headerlink" title="六、验证是否能获取到镜像内的文件"></a>六、验证是否能获取到镜像内的文件</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#本地没有，会自动从环境下下载启动</span><br><span class="line">docker run hello-world</span><br></pre></td></tr></table></figure>
+
+<p>显示如下，说明配置成功</p>
+<p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g7xqymgozfj30kr0g3my4.jpg" alt="docker run"></p>
+<h3 id="七、Docker常用命令"><a href="#七、Docker常用命令" class="headerlink" title="七、Docker常用命令"></a>七、Docker常用命令</h3><p>可以直接输入docker，来查看所有命令</p>
+<p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g7yxm0qvdtj30si0lqjsm.jpg" alt="1571125550893"></p>
+<p>下面是一些常用的命令</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">#查看宿主机上的镜像，Docker镜像保存在/var/lib/docker目录下:</span><br><span class="line">docker images</span><br><span class="line"></span><br><span class="line">#拉取docker镜像</span><br><span class="line">docker pull image_name</span><br><span class="line"></span><br><span class="line">#删除镜像</span><br><span class="line">docker rmi  docker.io/tomcat:7.0.77-jre7   或者  docker rmi b39c68b7af30</span><br><span class="line"></span><br><span class="line">#查看当前有哪些容器正在运行</span><br><span class="line">docker ps</span><br><span class="line"></span><br><span class="line">#查看所有容器</span><br><span class="line">docker ps -a</span><br><span class="line"></span><br><span class="line">#启动、停止、重启容器命令：</span><br><span class="line">docker start container_name/container_id</span><br><span class="line">docker stop container_name/container_id</span><br><span class="line">docker restart container_name/container_id</span><br><span class="line"></span><br><span class="line">#后台启动一个容器后，如果想进入到这个容器，可以使用attach命令：</span><br><span class="line">docker attach container_name/container_id</span><br><span class="line"></span><br><span class="line">#删除容器的命令：</span><br><span class="line">docker rm container_name/container_id</span><br><span class="line">docker rm container_id</span><br><span class="line"></span><br><span class="line">#删除所有停止的容器：</span><br><span class="line">docker rm $(docker ps -a -q)</span><br><span class="line"></span><br><span class="line">#查看当前系统Docker信息</span><br><span class="line">docker info</span><br><span class="line"></span><br><span class="line">#从Docker hub上下载某个镜像:</span><br><span class="line">docker pull centos:latest</span><br><span class="line"></span><br><span class="line">#查找Docker Hub上的nginx镜像</span><br><span class="line">docker search nginx</span><br><span class="line"></span><br><span class="line">#将Centos这个仓库下面的所有镜像下载到本地repository。</span><br><span class="line">docker pull centos</span><br></pre></td></tr></table></figure>
+
+
         </div>
         
-        
-        <div class="level is-mobile">
+        <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/09/15/搭建自己的博客/#more">阅读更多</a>
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Docker/">Docker</a>
                 </div>
             </div>
         </div>
+        
         
         
     </div>
@@ -205,11 +246,80 @@
 
 
 
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>支付宝</span>
+    <div class="qrcode"><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g776vxxcy1j30u01aojy1.jpg" alt="支付宝"></div>
+</a>
+
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g776w5r14uj30v216mad5.jpg" alt="微信"></div>
+</a>
+
+                
+        </div>
+    </div>
+</div>
 
 
 
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/10/11/Docker入门2/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">Docker入门2 —— 搭建自己的Dockerfile</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/09/21/Spring-Cloud 初识/">
+                <span class="level-item">Spring-Cloud 初识</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
 
 
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: false,
+        verify: false,
+        app_id: '4CJzr4Sm5tW19HHaPO55efhe-gzGzoHsz',
+        app_key: '3lqO2xInLOmklRgPF1dwt4g3',
+        placeholder: '有什么建议和想法想对博主讲的，就在此留言吧  (*╹▽╹*) ！'
+    });
+</script>
+
+    </div>
+</div>
 </div>
                 
 
@@ -328,6 +438,45 @@
 </div>
     
         
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                目录
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#一、安装VMware-Workstation-Pro">
+        <span class="has-mr-6">1</span>
+        <span>一、安装VMware Workstation Pro</span>
+        </a></li><li>
+        <a class="is-flex" href="#二、在VMware中安装centos7">
+        <span class="has-mr-6">2</span>
+        <span>二、在VMware中安装centos7</span>
+        </a></li><li>
+        <a class="is-flex" href="#三、配置虚拟机IP地址">
+        <span class="has-mr-6">3</span>
+        <span>三、配置虚拟机IP地址</span>
+        </a></li><li>
+        <a class="is-flex" href="#四、安装Docker">
+        <span class="has-mr-6">4</span>
+        <span>四、安装Docker</span>
+        </a></li><li>
+        <a class="is-flex" href="#五、修改国内镜像地址">
+        <span class="has-mr-6">5</span>
+        <span>五、修改国内镜像地址</span>
+        </a></li><li>
+        <a class="is-flex" href="#六、验证是否能获取到镜像内的文件">
+        <span class="has-mr-6">6</span>
+        <span>六、验证是否能获取到镜像内的文件</span>
+        </a></li><li>
+        <a class="is-flex" href="#七、Docker常用命令">
+        <span class="has-mr-6">7</span>
+        <span>七、Docker常用命令</span>
+        </a></li></ul>
+        </div>
+    </div>
+</div>
+
     
         
 
@@ -839,7 +988,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="CRC-BK" height="28">
+                    <img src="/images/logo.svg" alt="Docker入门1 —— 搭建Docker" height="28">
                 
                 </a>
                 <p class="is-size-7">

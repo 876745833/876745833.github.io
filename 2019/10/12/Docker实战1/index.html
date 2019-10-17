@@ -7,17 +7,22 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>分类: 博客系列 - CRC-BK</title>
+<title>Docker实战1 —— IDEA插件连接Docker部署（Dockerfile） - CRC-BK</title>
 
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="CRC-BK">
-<meta property="og:url" content="http://yoursite.com/categories/博客系列/index.html">
+    <meta name="description" content="Idea作为大家常用的开发软件，他的强大的插件库让我们的开发变的更加方便，接下来我们就来用docker连接的插件，让我们的docker部署变得更加容易吧。">
+<meta name="keywords" content="Docker">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker实战1 —— IDEA插件连接Docker部署（Dockerfile）">
+<meta property="og:url" content="http://yoursite.com/2019/10/12/Docker实战1/index.html">
 <meta property="og:site_name" content="CRC-BK">
+<meta property="og:description" content="Idea作为大家常用的开发软件，他的强大的插件库让我们的开发变的更加方便，接下来我们就来用docker连接的插件，让我们的docker部署变得更加容易吧。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta property="og:updated_time" content="2019-10-17T09:05:07.600Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CRC-BK">
+<meta name="twitter:title" content="Docker实战1 —— IDEA插件连接Docker部署（Dockerfile）">
+<meta name="twitter:description" content="Idea作为大家常用的开发软件，他的强大的插件库让我们的开发变的更加方便，接下来我们就来用docker连接的插件，让我们的docker部署变得更加容易吧。">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
 
@@ -92,7 +97,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="CRC-BK" height="28">
+                <img src="/images/logo.svg" alt="Docker实战1 —— IDEA插件连接Docker部署（Dockerfile）" height="28">
             
             </a>
         </div>
@@ -146,58 +151,103 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
-    <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/categories">分类</a></li>
-            
-            <li class="is-active"><a href="#" aria-current="page">博客系列</a></li>
-        </ul>
-        </nav>
-    </div>
-</div>
-
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/09/15/搭建自己的博客/" class="image is-7by1">
-            <img class="thumbnail" src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1571046661789&amp;di=6488da4214dd264e0804631e0c3f5b1d&amp;imgtype=0&amp;src=http%3A%2F%2Fimages.iaear.com%2Fhexo-next.png" alt="搭建一个自己的博客">
-        </a>
-    </div>
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-09-14T16:00:00.000Z">2019-09-15</time>
+                <time class="level-item has-text-grey" datetime="2019-10-11T16:00:00.000Z">2019-10-12</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/博客系列/">博客系列</a>
+                <a class="has-link-grey -link" href="/categories/Docker/">Docker</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Docker/IDEA/">IDEA</a>
                 </div>
                 
                 
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
                 
             </div>
         </div>
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/09/15/搭建自己的博客/">搭建一个自己的博客</a>
+                Docker实战1 —— IDEA插件连接Docker部署（Dockerfile）
             
         </h1>
         <div class="content">
-            <p>搭建博客的方法众多，我选择的搭建的平台是放在了 github pages 上边(这个功能是为大家免费提供的，不过只能放静态页面，不过作为个人博客使用已经足够了)</p>
-<p>接下来就开始真正的搭建之旅吧。</p>
+            <p>Idea作为大家常用的开发软件，他的强大的插件库让我们的开发变的更加方便，接下来我们就来用docker连接的插件，让我们的docker部署变得更加容易吧。</p>
+<a id="more"></a>
+
+<h3 id="一、开放docker和防火墙的端口"><a href="#一、开放docker和防火墙的端口" class="headerlink" title="一、开放docker和防火墙的端口"></a>一、开放docker和防火墙的端口</h3><p>参考： <a href="https://www.cnblogs.com/hsz-csy/p/9488469.html" target="_blank" rel="noopener">https://www.cnblogs.com/hsz-csy/p/9488469.html</a> </p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /usr/lib/systemd/system/docker.service</span><br></pre></td></tr></table></figure>
+
+<p>在ExecStart=/usr/bin/dockerd-current 后面加上   (效果如图)</p>
+<p>-H tcp://0.0.0.0:2375 -H unix://var/run/docker.sock</p>
+<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1571293045626.png" alt="1571293045626"></p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#修改防火墙开方端口：</span><br><span class="line">vi /etc/sysconfig/iptables</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1571293160316.png" alt="1571293160316"></p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#之后重启防火墙即可</span><br><span class="line">service iptables restart</span><br></pre></td></tr></table></figure>
+
+<h3 id="二、下载插件"><a href="#二、下载插件" class="headerlink" title="二、下载插件"></a>二、下载插件</h3><p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1571292677688.png" alt="1571292677688"></p>
+<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1571292699750.png" alt="1571292699750"></p>
+<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1571292823549.png" alt="1571292823549"></p>
+<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1571292846593.png" alt="1571292846593"></p>
+<p>像这样，安装后重启软件</p>
+<p>重启之后 同样进入设置中，选择Docker配置  如图：</p>
+<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1571293332527.png" alt="1571293332527"></p>
+<h3 id="三、IDEA的Docker插件实战"><a href="#三、IDEA的Docker插件实战" class="headerlink" title="三、IDEA的Docker插件实战"></a>三、IDEA的Docker插件实战</h3><p>参考： <a href="https://xinchen.blog.csdn.net/article/details/100051325#commentsedit" target="_blank" rel="noopener">https://xinchen.blog.csdn.net/article/details/100051325#commentsedit</a> </p>
+<ul>
+<li>创建一个SpringBoot项目     pom.xml 的内容为：</li>
+</ul>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;</span><br><span class="line">    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line">    &lt;parent&gt;</span><br><span class="line">        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;</span><br><span class="line">        &lt;version&gt;2.1.7.RELEASE&lt;/version&gt;</span><br><span class="line">        &lt;relativePath/&gt; &lt;!-- lookup parent from repository --&gt;</span><br><span class="line">    &lt;/parent&gt;</span><br><span class="line">    &lt;groupId&gt;com.bolingcavalry&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;dockerplugindemo&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;</span><br><span class="line">    &lt;name&gt;dockerplugindemo&lt;/name&gt;</span><br><span class="line">    &lt;description&gt;Demo project for Spring Boot&lt;/description&gt;</span><br><span class="line"></span><br><span class="line">    &lt;properties&gt;</span><br><span class="line">        &lt;java.version&gt;1.8&lt;/java.version&gt;</span><br><span class="line">    &lt;/properties&gt;</span><br><span class="line"></span><br><span class="line">    &lt;dependencies&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;</span><br><span class="line">            &lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">    &lt;/dependencies&gt;</span><br><span class="line"></span><br><span class="line">    &lt;build&gt;</span><br><span class="line">        &lt;plugins&gt;</span><br><span class="line">            &lt;plugin&gt;</span><br><span class="line">                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">                &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">            &lt;/plugin&gt;</span><br><span class="line">        &lt;/plugins&gt;</span><br><span class="line">    &lt;/build&gt;</span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>把启动类 同时设置为Controller使用</li>
+</ul>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 用启动类同时作为Controller，增加一个web响应接口：</span><br><span class="line"> */</span><br><span class="line">@SpringBootApplication</span><br><span class="line">@RestController</span><br><span class="line">public class DockerApplication &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        SpringApplication.run(DockerApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    @RequestMapping(&quot;/test&quot;)</span><br><span class="line">    public String test()&#123;</span><br><span class="line">        return &quot;1. Hello world ! &quot; + new SimpleDateFormat(&quot; [yyyy-mm-dd  HH:mm:ss]&quot;).format(new Date());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在项目的根目录中(pom.xml文件所在目录下)，创建名字为  *<em>Dockerfile *</em> 的文件，内容如下</li>
+</ul>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"># Docker image for springboot application</span><br><span class="line"># VERSION 0.0.1</span><br><span class="line"># Author: bolingcavalry</span><br><span class="line"></span><br><span class="line">### 基础镜像，使用alpine操作系统，openjkd使用8u201</span><br><span class="line">FROM openjdk:8u201-jdk-alpine3.9</span><br><span class="line"></span><br><span class="line">#作者</span><br><span class="line">MAINTAINER BolingCavalry &lt;zq2599@gmail.com&gt;</span><br><span class="line"></span><br><span class="line">#系统编码</span><br><span class="line">ENV LANG=C.UTF-8 LC_ALL=C.UTF-8</span><br><span class="line"></span><br><span class="line">#声明一个挂载点，容器内此路径会对应宿主机的某个文件夹</span><br><span class="line">VOLUME /tmp</span><br><span class="line"></span><br><span class="line">#应用构建成功后的jar文件被复制到镜像内，名字也改成了app.jar</span><br><span class="line">ADD target/dockerplugindemo-0.0.1-SNAPSHOT.jar app.jar</span><br><span class="line"></span><br><span class="line">#启动容器时的进程</span><br><span class="line">ENTRYPOINT [&quot;java&quot;,&quot;-jar&quot;,&quot;/app.jar&quot;]</span><br><span class="line"></span><br><span class="line">#暴露8080端口</span><br><span class="line">EXPOSE 8080</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>创建Dockerfile配置</li>
+</ul>
+<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1571296886820.png" alt="1571296886820"></p>
+<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1571296935335.png" alt="1571296935335"></p>
+<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1571297078044.png" alt="1571297078044"></p>
+<p>最后在下边选择maven</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clean package -U -DskipTests</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1571297134997.png" alt="1571297134997"></p>
+<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1571300586836.png" alt="1571300586836"></p>
+<p>在这件Command line 输入</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#表示每次在构建镜像之前，都会将当前工程清理掉并且重新编译构建：</span><br><span class="line">clean package -U -DskipTests</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1571300611089.png" alt="1571300611089"></p>
+<p>完成后就可以启动了</p>
+<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1571300717750.png" alt="1571300717750"></p>
+<p>点击绿色三角，启动项目</p>
+<p>没有报错，可以直接访问地址  （ <a href="http://192.168.19.128:18080/test" target="_blank" rel="noopener">http://192.168.19.128:18080/test</a> ）换成自己的ip地址</p>
+<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1571300957042.png" alt="1571300957042"></p>
+<p>访问到说明成功了，如果有修改再去运行就好了</p>
+
         </div>
         
-        
-        <div class="level is-mobile">
+        <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/09/15/搭建自己的博客/#more">阅读更多</a>
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Docker/">Docker</a>
                 </div>
             </div>
         </div>
+        
         
         
     </div>
@@ -205,11 +255,80 @@
 
 
 
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>支付宝</span>
+    <div class="qrcode"><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g776vxxcy1j30u01aojy1.jpg" alt="支付宝"></div>
+</a>
+
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g776w5r14uj30v216mad5.jpg" alt="微信"></div>
+</a>
+
+                
+        </div>
+    </div>
+</div>
 
 
 
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/10/13/Docker实战2/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">Docker实战2 —— IDEA插件连接Docker（image）</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/10/11/Docker入门2/">
+                <span class="level-item">Docker入门2 —— 搭建自己的Dockerfile</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
 
 
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: false,
+        verify: false,
+        app_id: '4CJzr4Sm5tW19HHaPO55efhe-gzGzoHsz',
+        app_key: '3lqO2xInLOmklRgPF1dwt4g3',
+        placeholder: '有什么建议和想法想对博主讲的，就在此留言吧  (*╹▽╹*) ！'
+    });
+</script>
+
+    </div>
+</div>
 </div>
                 
 
@@ -839,7 +958,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="CRC-BK" height="28">
+                    <img src="/images/logo.svg" alt="Docker实战1 —— IDEA插件连接Docker部署（Dockerfile）" height="28">
                 
                 </a>
                 <p class="is-size-7">
