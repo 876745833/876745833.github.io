@@ -19,7 +19,7 @@
 <meta property="og:description" content="Idea作为大家常用的开发软件，他的强大的插件库让我们的开发变的更加方便，接下来我们就来用docker连接的插件，让我们的docker部署变得更加容易吧。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
-<meta property="og:updated_time" content="2019-10-17T09:05:07.600Z">
+<meta property="og:updated_time" content="2019-10-17T09:30:00.801Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker实战1 —— IDEA插件连接Docker部署（Dockerfile）">
 <meta name="twitter:description" content="Idea作为大家常用的开发软件，他的强大的插件库让我们的开发变的更加方便，接下来我们就来用docker连接的插件，让我们的docker部署变得更加容易吧。">
@@ -186,19 +186,19 @@
 
 <p>在ExecStart=/usr/bin/dockerd-current 后面加上   (效果如图)</p>
 <p>-H tcp://0.0.0.0:2375 -H unix://var/run/docker.sock</p>
-<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1571293045626.png" alt="1571293045626"></p>
+<p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g81boea1taj30ng0l8q49.jpg" alt="1571293045626.png"></p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#修改防火墙开方端口：</span><br><span class="line">vi /etc/sysconfig/iptables</span><br></pre></td></tr></table></figure>
 
-<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1571293160316.png" alt="1571293160316"></p>
+<p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g81bov1ht7j30mp0arq3o.jpg" alt="1571293160316.png"></p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#之后重启防火墙即可</span><br><span class="line">service iptables restart</span><br></pre></td></tr></table></figure>
 
-<h3 id="二、下载插件"><a href="#二、下载插件" class="headerlink" title="二、下载插件"></a>二、下载插件</h3><p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1571292677688.png" alt="1571292677688"></p>
-<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1571292699750.png" alt="1571292699750"></p>
-<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1571292823549.png" alt="1571292823549"></p>
-<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1571292846593.png" alt="1571292846593"></p>
+<h3 id="二、下载插件"><a href="#二、下载插件" class="headerlink" title="二、下载插件"></a>二、下载插件</h3><p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g81bp8mwr7j30cf0kl3zc.jpg" alt="1571292677688.png"></p>
+<p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g81bpnsz3hj30z70oi418.jpg" alt="1571292699750.png"></p>
+<p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g81br5kl5kj30r00krgo3.jpg" alt="1571292823549.png"></p>
+<p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g81brerxmbj30r00kr0v7.jpg" alt="1571292846593.png"></p>
 <p>像这样，安装后重启软件</p>
 <p>重启之后 同样进入设置中，选择Docker配置  如图：</p>
-<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1571293332527.png" alt="1571293332527"></p>
+<p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g81brmjs18j30z70oiwfq.jpg" alt="1571293332527.png"></p>
 <h3 id="三、IDEA的Docker插件实战"><a href="#三、IDEA的Docker插件实战" class="headerlink" title="三、IDEA的Docker插件实战"></a>三、IDEA的Docker插件实战</h3><p>参考： <a href="https://xinchen.blog.csdn.net/article/details/100051325#commentsedit" target="_blank" rel="noopener">https://xinchen.blog.csdn.net/article/details/100051325#commentsedit</a> </p>
 <ul>
 <li>创建一个SpringBoot项目     pom.xml 的内容为：</li>
@@ -218,23 +218,23 @@
 <ul>
 <li>创建Dockerfile配置</li>
 </ul>
-<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1571296886820.png" alt="1571296886820"></p>
-<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1571296935335.png" alt="1571296935335"></p>
-<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1571297078044.png" alt="1571297078044"></p>
+<p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g81bryb8dbj30h906wjre.jpg" alt="1571296886820.png"></p>
+<p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g81bs6bkp4j30g206p0t0.jpg" alt="1571296935335.png"></p>
+<p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g81bsgsgrvj311f0rutak.jpg" alt="1571297078044.png"></p>
 <p>最后在下边选择maven</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clean package -U -DskipTests</span><br></pre></td></tr></table></figure>
 
-<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1571297134997.png" alt="1571297134997"></p>
-<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1571300586836.png" alt="1571300586836"></p>
+<p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g81bsq1sxwj30px06e3ym.jpg" alt="1571297134997.png"></p>
+<p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g81bsxd9wgj308m0apt92.jpg" alt="1571300586836.png"></p>
 <p>在这件Command line 输入</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#表示每次在构建镜像之前，都会将当前工程清理掉并且重新编译构建：</span><br><span class="line">clean package -U -DskipTests</span><br></pre></td></tr></table></figure>
 
-<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1571300611089.png" alt="1571300611089"></p>
+<p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g81bt5m7iij30pr05imx8.jpg" alt="1571300611089.png"></p>
 <p>完成后就可以启动了</p>
-<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1571300717750.png" alt="1571300717750"></p>
+<p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g81btepi4ej30a8045jr8.jpg" alt="1571300717750.png"></p>
 <p>点击绿色三角，启动项目</p>
 <p>没有报错，可以直接访问地址  （ <a href="http://192.168.19.128:18080/test" target="_blank" rel="noopener">http://192.168.19.128:18080/test</a> ）换成自己的ip地址</p>
-<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1571300957042.png" alt="1571300957042"></p>
+<p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g81btoahasj31hc095q3a.jpg" alt="1571300957042.png"></p>
 <p>访问到说明成功了，如果有修改再去运行就好了</p>
 
         </div>
