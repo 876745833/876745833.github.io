@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html  lang="zh">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 3.9.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>Activiti框架搭建 - CRC-BK</title>
+
+
+    <meta name="description" content="在项目中，经常会用到流程的技术，可是自己写又非常麻烦，所以就有Activiti框架，为我们提供了一套比较完善的流程技术，在以后的项目中也会经常用到的。大家一起来学习一下吧">
+<meta name="keywords" content="Activiti工作流">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Activiti框架搭建">
+<meta property="og:url" content="http://yoursite.com/2019/10/13/Activiti框架——搭建/index.html">
+<meta property="og:site_name" content="CRC-BK">
+<meta property="og:description" content="在项目中，经常会用到流程的技术，可是自己写又非常麻烦，所以就有Activiti框架，为我们提供了一套比较完善的流程技术，在以后的项目中也会经常用到的。大家一起来学习一下吧">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3597273931,3299733538&fm=15&gp=0.jpg">
+<meta property="og:updated_time" content="2019-10-31T08:22:16.545Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Activiti框架搭建">
+<meta name="twitter:description" content="在项目中，经常会用到流程的技术，可是自己写又非常麻烦，所以就有Activiti框架，为我们提供了一套比较完善的流程技术，在以后的项目中也会经常用到的。大家一起来学习一下吧">
+<meta name="twitter:image" content="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3597273931,3299733538&fm=15&gp=0.jpg">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.svg" alt="Activiti框架搭建" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">主页</a>
+                
+                <a class="navbar-item"
+                href="/archives">归档</a>
+                
+                <a class="navbar-item"
+                href="/categories">分类</a>
+                
+                <a class="navbar-item"
+                href="/tags">标签</a>
+                
+                <a class="navbar-item"
+                href="/about">关于</a>
+                
+                <a class="navbar-item"
+                href="/photo">相册</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="https://876745833.github.io/">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3597273931,3299733538&amp;fm=15&amp;gp=0.jpg" alt="Activiti框架搭建">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-10-12T16:00:00.000Z">2019-10-13</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/框架/">框架</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
+                </div>
+                
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                Activiti框架搭建
+            
+        </h1>
+        <div class="content">
+            <p>在项目中，经常会用到流程的技术，可是自己写又非常麻烦，所以就有Activiti框架，为我们提供了一套比较完善的流程技术，在以后的项目中也会经常用到的。大家一起来学习一下吧</p>
+<a id="more"></a>
+
+<h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><p> Activiti是一个轻量级的工作流和业务流程管理（BPM）平台，面向业务人员，开发人员和系统管理员。它的核心是用于Java的超快速，坚固的BPMN 2流程引擎。它是开源的，并根据Apache许可进行分发。Activiti可以在任何Java应用程序，服务器，集群或云中运行。它与Spring完美集成，非常轻巧，基于简单的概念。<a href="https://github.com/Activiti/Activiti" target="_blank" rel="noopener">官方git地址 </a></p>
+<p>简单的说，就是一套工作申请用到框架。比如请假申请，是要经过层层的审核过程，这个时候就可以选择使用这个框架了，他本身帮我们创建的26张数据表(新版本或许更多)，提供的一些方法让我们这些程序员的开发变的更加方便、快捷。</p>
+<p>话不多说，下边就可以正式进入框架的学习吧。</p>
+<p>下边是搭建框架，先做好准备工作</p>
+<h3 id="导入jar包"><a href="#导入jar包" class="headerlink" title="导入jar包"></a>导入jar包</h3><p>在maven项目中导入，在这里我们用的是 <strong>5.x版本 的 Mysql 数据库</strong> 和 <strong>5.x版本的Activiti</strong></p>
+<figure class="highlight xml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">&lt;!--mysql--&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>mysql<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>mysql-connector-java<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>5.1.30<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line"><span class="hljs-comment">&lt;!--activiti--&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.activiti<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>activiti-engine<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>5.22.0<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.activiti<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>activiti-spring<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>5.22.0<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.activiti<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>activiti-bpmn-model<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>5.22.0<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line"><span class="hljs-comment">&lt;!--用到Activiti的ID策略的时候需要加--&gt;</span></span><br><span class="line"><span class="hljs-comment">&lt;!--&lt;dependency&gt;--&gt;</span></span><br><span class="line">    <span class="hljs-comment">&lt;!--&lt;groupId&gt;com.fasterxml.uuid&lt;/groupId&gt;--&gt;</span></span><br><span class="line">    <span class="hljs-comment">&lt;!--&lt;artifactId&gt;java-uuid-generator&lt;/artifactId&gt;--&gt;</span></span><br><span class="line">    <span class="hljs-comment">&lt;!--&lt;version&gt;3.1.3&lt;/version&gt;--&gt;</span></span><br><span class="line"><span class="hljs-comment">&lt;!--&lt;/dependency&gt;--&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="添加XML配置文件"><a href="#添加XML配置文件" class="headerlink" title="添加XML配置文件"></a>添加XML配置文件</h3><figure class="highlight xml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">beans</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://www.springframework.org/schema/beans"</span></span></span><br><span class="line"><span class="hljs-tag">       <span class="hljs-attr">xmlns:context</span>=<span class="hljs-string">"http://www.springframework.org/schema/context"</span> <span class="hljs-attr">xmlns:tx</span>=<span class="hljs-string">"http://www.springframework.org/schema/tx"</span></span></span><br><span class="line"><span class="hljs-tag">       <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="hljs-tag">       <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">"http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd</span></span></span><br><span class="line"><span class="hljs-tag"><span class="hljs-string">http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd</span></span></span><br><span class="line"><span class="hljs-tag"><span class="hljs-string">http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">&lt;!-- 配置对应数据库 --&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"processEngineConfiguration"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"org.activiti.engine.impl.cfg.StandaloneProcessEngineConfiguration"</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"jdbcDriver"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"com.mysql.jdbc.Driver"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"jdbcUrl"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"jdbc:mysql://localhost:3306/activiti?characterEncoding=utf8"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"jdbcUsername"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"root"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"jdbcPassword"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"root"</span>/&gt;</span></span><br><span class="line">         <span class="hljs-comment">&lt;!--</span></span><br><span class="line"><span class="hljs-comment">         设置 表创建规则</span></span><br><span class="line"><span class="hljs-comment">         databaseSchemaUpdate: 设置流程引擎启动和关闭时如何处理数据库表。</span></span><br><span class="line"><span class="hljs-comment">         false（默认）：检查数据库表的版本和依赖库的版本， 如果版本不匹配就抛出异常。</span></span><br><span class="line"><span class="hljs-comment">         true: 构建流程引擎时，执行检查，如果需要就执行更新。 如果表不存在，就创建。</span></span><br><span class="line"><span class="hljs-comment">         create-drop: 构建流程引擎时创建数据库表， 关闭流程引擎时删除这些表。</span></span><br><span class="line"><span class="hljs-comment">         --&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"databaseSchemaUpdate"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"true"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-comment">&lt;!-- 是否使用activiti自带用户：用视图替换activiti用户 --&gt;</span></span><br><span class="line">        <span class="hljs-comment">&lt;!--&lt;property name="dbIdentityUsed" value="false"&gt;&lt;/property&gt;--&gt;</span></span><br><span class="line">        <span class="hljs-comment">&lt;!-- 主键生成策略 UUID --&gt;</span></span><br><span class="line">        <span class="hljs-comment">&lt;!--&lt;property name="idGenerator"&gt;--&gt;</span></span><br><span class="line">            <span class="hljs-comment">&lt;!--&lt;bean class="org.activiti.engine.impl.persistence.StrongUuidGenerator" /&gt;--&gt;</span></span><br><span class="line">        <span class="hljs-comment">&lt;!--&lt;/property&gt;--&gt;</span></span><br><span class="line">        <span class="hljs-comment">&lt;!-- 自定义主键生成策略 --&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"idGenerator"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"TaskIdGenerator"</span>/&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">&lt;!-- 使用工厂创建流程引擎对象 --&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"processEngine"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"org.activiti.spring.ProcessEngineFactoryBean"</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"processEngineConfiguration"</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">"processEngineConfiguration"</span>/&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="hljs-comment">&lt;!-- 注入bean 方便直接调用 (可选) --&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"repositoryService"</span> <span class="hljs-attr">factory-bean</span>=<span class="hljs-string">"processEngine"</span> <span class="hljs-attr">factory-method</span>=<span class="hljs-string">"getRepositoryService"</span> /&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"runtimeService"</span> <span class="hljs-attr">factory-bean</span>=<span class="hljs-string">"processEngine"</span> <span class="hljs-attr">factory-method</span>=<span class="hljs-string">"getRuntimeService"</span> /&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"formService"</span> <span class="hljs-attr">factory-bean</span>=<span class="hljs-string">"processEngine"</span> <span class="hljs-attr">factory-method</span>=<span class="hljs-string">"getFormService"</span> /&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"identityService"</span> <span class="hljs-attr">factory-bean</span>=<span class="hljs-string">"processEngine"</span> <span class="hljs-attr">factory-method</span>=<span class="hljs-string">"getIdentityService"</span> /&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"taskService"</span> <span class="hljs-attr">factory-bean</span>=<span class="hljs-string">"processEngine"</span> <span class="hljs-attr">factory-method</span>=<span class="hljs-string">"getTaskService"</span> /&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"historyService"</span> <span class="hljs-attr">factory-bean</span>=<span class="hljs-string">"processEngine"</span> <span class="hljs-attr">factory-method</span>=<span class="hljs-string">"getHistoryService"</span> /&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"managementService"</span> <span class="hljs-attr">factory-bean</span>=<span class="hljs-string">"processEngine"</span> <span class="hljs-attr">factory-method</span>=<span class="hljs-string">"getManagementService"</span> /&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="在配置中创建流程图"><a href="#在配置中创建流程图" class="headerlink" title="在配置中创建流程图"></a>在配置中创建流程图</h4><p>如下是写的一个Demo流程图，直接在resources中创建一个leave.xml配置文件写入。</p>
+<p>之后更改配置文件的后缀名，</p>
+<figure class="highlight xml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">definitions</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://www.omg.org/spec/BPMN/20100524/MODEL"</span> <span class="hljs-attr">xmlns:activiti</span>=<span class="hljs-string">"http://activiti.org/bpmn"</span> <span class="hljs-attr">xmlns:bpmndi</span>=<span class="hljs-string">"http://www.omg.org/spec/BPMN/20100524/DI"</span> <span class="hljs-attr">xmlns:omgdc</span>=<span class="hljs-string">"http://www.omg.org/spec/DD/20100524/DC"</span> <span class="hljs-attr">xmlns:omgdi</span>=<span class="hljs-string">"http://www.omg.org/spec/DD/20100524/DI"</span> <span class="hljs-attr">xmlns:tns</span>=<span class="hljs-string">"http://www.activiti.org/test"</span> <span class="hljs-attr">xmlns:xsd</span>=<span class="hljs-string">"http://www.w3.org/2001/XMLSchema"</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="hljs-attr">expressionLanguage</span>=<span class="hljs-string">"http://www.w3.org/1999/XPath"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"m1570697036721"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">""</span> <span class="hljs-attr">targetNamespace</span>=<span class="hljs-string">"http://www.activiti.org/test"</span> <span class="hljs-attr">typeLanguage</span>=<span class="hljs-string">"http://www.w3.org/2001/XMLSchema"</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">process</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"groupTaskDelegate"</span> <span class="hljs-attr">isClosed</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">isExecutable</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"groupTaskDelegateProcess"</span> <span class="hljs-attr">processType</span>=<span class="hljs-string">"None"</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">startEvent</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"startevent1"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"Start"</span>/&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">userTask</span>  <span class="hljs-attr">activiti:candidateGroups</span>=<span class="hljs-string">"部门主管"</span> <span class="hljs-attr">activiti:exclusive</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"usertask1"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"部门主管审批"</span>/&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">sequenceFlow</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"flow1"</span> <span class="hljs-attr">sourceRef</span>=<span class="hljs-string">"startevent1"</span> <span class="hljs-attr">targetRef</span>=<span class="hljs-string">"usertask1"</span>/&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">userTask</span>  <span class="hljs-attr">activiti:candidateGroups</span>=<span class="hljs-string">"部门经理"</span> <span class="hljs-attr">activiti:exclusive</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"usertask2"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"部门经理审批"</span>/&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">sequenceFlow</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"flow2"</span> <span class="hljs-attr">sourceRef</span>=<span class="hljs-string">"usertask1"</span> <span class="hljs-attr">targetRef</span>=<span class="hljs-string">"usertask2"</span>/&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">userTask</span>  <span class="hljs-attr">activiti:candidateGroups</span>=<span class="hljs-string">"CTO"</span> <span class="hljs-attr">activiti:exclusive</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"usertask3"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"技术总监审批"</span>/&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">sequenceFlow</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"flow3"</span> <span class="hljs-attr">sourceRef</span>=<span class="hljs-string">"usertask2"</span> <span class="hljs-attr">targetRef</span>=<span class="hljs-string">"usertask3"</span>/&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">endEvent</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"endevent1"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"End"</span>/&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">sequenceFlow</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"flow4"</span> <span class="hljs-attr">sourceRef</span>=<span class="hljs-string">"usertask3"</span> <span class="hljs-attr">targetRef</span>=<span class="hljs-string">"endevent1"</span>/&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;/<span class="hljs-name">process</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNDiagram</span> <span class="hljs-attr">documentation</span>=<span class="hljs-string">"background=#3C3F41;count=1;horizontalcount=1;orientation=0;width=842.4;height=1195.2;imageableWidth=832.4;imageableHeight=1185.2;imageableX=5.0;imageableY=5.0"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Diagram-_1"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"New Diagram"</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNPlane</span> <span class="hljs-attr">bpmnElement</span>=<span class="hljs-string">"groupTaskDelegate"</span>&gt;</span></span><br><span class="line">      <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNShape</span> <span class="hljs-attr">bpmnElement</span>=<span class="hljs-string">"startevent1"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Shape-startevent1"</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">omgdc:Bounds</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"32.0"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"32.0"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"290.0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"100.0"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNLabel</span>&gt;</span></span><br><span class="line">          <span class="hljs-tag">&lt;<span class="hljs-name">omgdc:Bounds</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"32.0"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"32.0"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"0.0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"0.0"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNLabel</span>&gt;</span></span><br><span class="line">      <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNShape</span>&gt;</span></span><br><span class="line">      <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNShape</span> <span class="hljs-attr">bpmnElement</span>=<span class="hljs-string">"usertask1"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Shape-usertask1"</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">omgdc:Bounds</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"55.0"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"105.0"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"255.0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"200.0"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNLabel</span>&gt;</span></span><br><span class="line">          <span class="hljs-tag">&lt;<span class="hljs-name">omgdc:Bounds</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"55.0"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"105.0"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"0.0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"0.0"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNLabel</span>&gt;</span></span><br><span class="line">      <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNShape</span>&gt;</span></span><br><span class="line">      <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNShape</span> <span class="hljs-attr">bpmnElement</span>=<span class="hljs-string">"usertask2"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Shape-usertask2"</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">omgdc:Bounds</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"55.0"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"105.0"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"255.0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"310.0"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNLabel</span>&gt;</span></span><br><span class="line">          <span class="hljs-tag">&lt;<span class="hljs-name">omgdc:Bounds</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"55.0"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"105.0"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"0.0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"0.0"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNLabel</span>&gt;</span></span><br><span class="line">      <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNShape</span>&gt;</span></span><br><span class="line">      <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNShape</span> <span class="hljs-attr">bpmnElement</span>=<span class="hljs-string">"usertask3"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Shape-usertask3"</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">omgdc:Bounds</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"55.0"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"105.0"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"257.0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"420.0"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNLabel</span>&gt;</span></span><br><span class="line">          <span class="hljs-tag">&lt;<span class="hljs-name">omgdc:Bounds</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"55.0"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"105.0"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"0.0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"0.0"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNLabel</span>&gt;</span></span><br><span class="line">      <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNShape</span>&gt;</span></span><br><span class="line">      <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNShape</span> <span class="hljs-attr">bpmnElement</span>=<span class="hljs-string">"endevent1"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Shape-endevent1"</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">omgdc:Bounds</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"32.0"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"32.0"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"292.0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"510.0"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNLabel</span>&gt;</span></span><br><span class="line">          <span class="hljs-tag">&lt;<span class="hljs-name">omgdc:Bounds</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"32.0"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"32.0"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"0.0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"0.0"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNLabel</span>&gt;</span></span><br><span class="line">      <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNShape</span>&gt;</span></span><br><span class="line">      <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNEdge</span> <span class="hljs-attr">bpmnElement</span>=<span class="hljs-string">"flow1"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"BPMNEdge_flow1"</span> <span class="hljs-attr">sourceElement</span>=<span class="hljs-string">"startevent1"</span> <span class="hljs-attr">targetElement</span>=<span class="hljs-string">"usertask1"</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">omgdi:waypoint</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"306.0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"132.0"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">omgdi:waypoint</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"306.0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"200.0"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNLabel</span>&gt;</span></span><br><span class="line">          <span class="hljs-tag">&lt;<span class="hljs-name">omgdc:Bounds</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"-1.0"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"-1.0"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"-1.0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"-1.0"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNLabel</span>&gt;</span></span><br><span class="line">      <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNEdge</span>&gt;</span></span><br><span class="line">      <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNEdge</span> <span class="hljs-attr">bpmnElement</span>=<span class="hljs-string">"flow2"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"BPMNEdge_flow2"</span> <span class="hljs-attr">sourceElement</span>=<span class="hljs-string">"usertask1"</span> <span class="hljs-attr">targetElement</span>=<span class="hljs-string">"usertask2"</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">omgdi:waypoint</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"307.5"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"255.0"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">omgdi:waypoint</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"307.5"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"310.0"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNLabel</span>&gt;</span></span><br><span class="line">          <span class="hljs-tag">&lt;<span class="hljs-name">omgdc:Bounds</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"-1.0"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"-1.0"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"-1.0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"-1.0"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNLabel</span>&gt;</span></span><br><span class="line">      <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNEdge</span>&gt;</span></span><br><span class="line">      <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNEdge</span> <span class="hljs-attr">bpmnElement</span>=<span class="hljs-string">"flow3"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"BPMNEdge_flow3"</span> <span class="hljs-attr">sourceElement</span>=<span class="hljs-string">"usertask2"</span> <span class="hljs-attr">targetElement</span>=<span class="hljs-string">"usertask3"</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">omgdi:waypoint</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"308.5"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"365.0"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">omgdi:waypoint</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"308.5"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"420.0"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNLabel</span>&gt;</span></span><br><span class="line">          <span class="hljs-tag">&lt;<span class="hljs-name">omgdc:Bounds</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"-1.0"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"-1.0"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"-1.0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"-1.0"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNLabel</span>&gt;</span></span><br><span class="line">      <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNEdge</span>&gt;</span></span><br><span class="line">      <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNEdge</span> <span class="hljs-attr">bpmnElement</span>=<span class="hljs-string">"flow4"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"BPMNEdge_flow4"</span> <span class="hljs-attr">sourceElement</span>=<span class="hljs-string">"usertask3"</span> <span class="hljs-attr">targetElement</span>=<span class="hljs-string">"endevent1"</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">omgdi:waypoint</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"308.0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"475.0"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">omgdi:waypoint</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"308.0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"510.0"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNLabel</span>&gt;</span></span><br><span class="line">          <span class="hljs-tag">&lt;<span class="hljs-name">omgdc:Bounds</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"-1.0"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"-1.0"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"-1.0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"-1.0"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNLabel</span>&gt;</span></span><br><span class="line">      <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNEdge</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNPlane</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNDiagram</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">definitions</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="安装插件（Idea版本）"><a href="#安装插件（Idea版本）" class="headerlink" title="安装插件（Idea版本）"></a>安装插件（Idea版本）</h4><p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1571992056043.png" alt="1571992056043"></p>
+<p>安装之后，再打开bpmn文件  流程图 如下：</p>
+<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1571991986776.png" alt="1571991986776"></p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Activiti工作流/">Activiti工作流</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>支付宝</span>
+    <div class="qrcode"><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g776vxxcy1j30u01aojy1.jpg" alt="支付宝"></div>
+</a>
+
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g776w5r14uj30v216mad5.jpg" alt="微信"></div>
+</a>
+
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/10/13/Docker实战2/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">Docker实战2 —— IDEA插件连接Docker（image）</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/10/12/Docker实战1/">
+                <span class="level-item">Docker实战1 —— IDEA插件连接Docker部署（Dockerfile）</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: false,
+        verify: false,
+        app_id: '4CJzr4Sm5tW19HHaPO55efhe-gzGzoHsz',
+        app_key: '3lqO2xInLOmklRgPF1dwt4g3',
+        placeholder: '有什么建议和想法想对博主讲的，就在此留言吧  (*╹▽╹*) ！'
+    });
+</script>
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="" src="/images/avatar.png" alt="常若川">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        常若川
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        CRC - BK
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>中国 · 江西 · 南昌</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        13
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        8
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        4
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/ppoffice" target="_blank">
+                关注我</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Github" href="https://github.com/876745833">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Facebook" href="https://facebook.com">
+                
+                <i class="fab fa-facebook"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Twitter" href="https://twitter.com">
+                
+                <i class="fab fa-twitter"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Dribbble" href="https://dribbble.com">
+                
+                <i class="fab fa-dribbble"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="RSS" href="/">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                目录
+            </h3>
+            <ul class="menu-list"><ul class="menu-list"><li>
+        <a class="is-flex" href="#介绍">
+        <span class="has-mr-6">1.1</span>
+        <span>介绍</span>
+        </a></li></ul><li>
+        <a class="is-flex" href="#导入jar包">
+        <span class="has-mr-6">2</span>
+        <span>导入jar包</span>
+        </a></li><li>
+        <a class="is-flex" href="#添加XML配置文件">
+        <span class="has-mr-6">3</span>
+        <span>添加XML配置文件</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#在配置中创建流程图">
+        <span class="has-mr-6">3.1</span>
+        <span>在配置中创建流程图</span>
+        </a></li><li>
+        <a class="is-flex" href="#安装插件（Idea版本）">
+        <span class="has-mr-6">3.2</span>
+        <span>安装插件（Idea版本）</span>
+        </a></li></ul></li></ul>
+        </div>
+    </div>
+</div>
+
+    
+        
+
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            链接
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://hexo.io" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">Hexo</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">hexo.io</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://github.com/ppoffice" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">PPOffice</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">github.com</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                分类
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/Docker/">
+            <span class="level-start">
+                <span class="level-item">Docker</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">5</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/Docker/IDEA/">
+            <span class="level-start">
+                <span class="level-item">IDEA</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Docker/Linux/">
+            <span class="level-start">
+                <span class="level-item">Linux</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/博客系列/">
+            <span class="level-start">
+                <span class="level-item">博客系列</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/框架/">
+            <span class="level-start">
+                <span class="level-item">框架</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">7</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/框架/Activiti工作流/">
+            <span class="level-start">
+                <span class="level-item">Activiti工作流</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">6</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/框架/SrpingCloud/">
+            <span class="level-start">
+                <span class="level-item">SrpingCloud</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            标签云
+        </h3>
+        <a href="/tags/Activiti工作流/" style="font-size: 20px;">Activiti工作流</a> <a href="/tags/Docker/" style="font-size: 15px;">Docker</a> <a href="/tags/SpringCloud/" style="font-size: 10px;">SpringCloud</a> <a href="/tags/分享/" style="font-size: 10px;">分享</a>
+    </div>
+</div>
+
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/10/14/Docker实战3/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Docker实战3 —— IDEA插件连接Docker（compose）">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
+                    <a href="/2019/10/14/Docker实战3/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Docker实战3 —— IDEA插件连接Docker（compose）</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Docker/">Docker</a> / <a class="has-link-grey -link" href="/categories/Docker/IDEA/">IDEA</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/14/Activiti框架——查询历史任务/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Activiti框架——查询历史任务">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
+                    <a href="/2019/10/14/Activiti框架——查询历史任务/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架——查询历史任务</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/14/Activiti框架——自定义角色配置/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Activiti框架常用-角色分配的流程">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
+                    <a href="/2019/10/14/Activiti框架——自定义角色配置/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架常用-角色分配的流程</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/14/Activiti框架——按角色分配走流程/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Activiti框架常用-角色分配的流程">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
+                    <a href="/2019/10/14/Activiti框架——按角色分配走流程/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架常用-角色分配的流程</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/14/Activiti框架——自定义id生成策略/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Activiti框架——自定义id生成策略">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
+                    <a href="/2019/10/14/Activiti框架——自定义id生成策略/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架——自定义id生成策略</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">11</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/09/">
+                <span class="level-start">
+                    <span class="level-item">九月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Activiti工作流/">
+                        <span class="tag">Activiti工作流</span>
+                        <span class="tag is-grey">6</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Docker/">
+                        <span class="tag">Docker</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/SpringCloud/">
+                        <span class="tag">SpringCloud</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/分享/">
+                        <span class="tag">分享</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/10/14/Docker实战3/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Docker实战3 —— IDEA插件连接Docker（compose）">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
+                    <a href="/2019/10/14/Docker实战3/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Docker实战3 —— IDEA插件连接Docker（compose）</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Docker/">Docker</a> / <a class="has-link-grey -link" href="/categories/Docker/IDEA/">IDEA</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/14/Activiti框架——查询历史任务/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Activiti框架——查询历史任务">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
+                    <a href="/2019/10/14/Activiti框架——查询历史任务/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架——查询历史任务</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/14/Activiti框架——自定义角色配置/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Activiti框架常用-角色分配的流程">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
+                    <a href="/2019/10/14/Activiti框架——自定义角色配置/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架常用-角色分配的流程</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/14/Activiti框架——按角色分配走流程/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Activiti框架常用-角色分配的流程">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
+                    <a href="/2019/10/14/Activiti框架——按角色分配走流程/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架常用-角色分配的流程</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/14/Activiti框架——自定义id生成策略/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Activiti框架——自定义id生成策略">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
+                    <a href="/2019/10/14/Activiti框架——自定义id生成策略/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架——自定义id生成策略</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">11</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/09/">
+                <span class="level-start">
+                    <span class="level-item">九月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Activiti工作流/">
+                        <span class="tag">Activiti工作流</span>
+                        <span class="tag is-grey">6</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Docker/">
+                        <span class="tag">Docker</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/SpringCloud/">
+                        <span class="tag">SpringCloud</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/分享/">
+                        <span class="tag">分享</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/logo.svg" alt="Activiti框架搭建" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019 John Doe&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                
+                <br>
+                <span id="busuanzi_container_site_uv">
+                共<span id="busuanzi_value_site_uv">0</span>个访客
+                </span>
+                
+                </p>
+            </div>
+            <!-- 不蒜子统计  start-->
+            
+            <!-- 不蒜子统计  end-->
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="https://876745833.github.io/">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+<script>
+var IcarusThemeSettings = {
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

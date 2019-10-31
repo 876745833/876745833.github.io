@@ -7,17 +7,22 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>分类: 博客系列 - CRC-BK</title>
+<title>Activiti框架——自定义id生成策略 - CRC-BK</title>
 
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="CRC-BK">
-<meta property="og:url" content="http://yoursite.com/categories/博客系列/index.html">
+    <meta name="description" content="在项目中，经常会用到流程的技术，可是自己写又非常麻烦，所以就有Activiti框架，为我们提供了一套比较完善的流程技术，在以后的项目中也会经常用到的。大家一起来学习一下吧">
+<meta name="keywords" content="Activiti工作流">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Activiti框架——自定义id生成策略">
+<meta property="og:url" content="http://yoursite.com/2019/10/14/Activiti框架——自定义id生成策略/index.html">
 <meta property="og:site_name" content="CRC-BK">
+<meta property="og:description" content="在项目中，经常会用到流程的技术，可是自己写又非常麻烦，所以就有Activiti框架，为我们提供了一套比较完善的流程技术，在以后的项目中也会经常用到的。大家一起来学习一下吧">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta property="og:updated_time" content="2019-10-31T08:20:53.458Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CRC-BK">
+<meta name="twitter:title" content="Activiti框架——自定义id生成策略">
+<meta name="twitter:description" content="在项目中，经常会用到流程的技术，可是自己写又非常麻烦，所以就有Activiti框架，为我们提供了一套比较完善的流程技术，在以后的项目中也会经常用到的。大家一起来学习一下吧">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
 
@@ -92,7 +97,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="CRC-BK" height="28">
+                <img src="/images/logo.svg" alt="Activiti框架——自定义id生成策略" height="28">
             
             </a>
         </div>
@@ -146,58 +151,57 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
-    <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/categories">分类</a></li>
-            
-            <li class="is-active"><a href="#" aria-current="page">博客系列</a></li>
-        </ul>
-        </nav>
-    </div>
-</div>
-
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/09/15/搭建自己的博客/" class="image is-7by1">
-            <img class="thumbnail" src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1571046661789&amp;di=6488da4214dd264e0804631e0c3f5b1d&amp;imgtype=0&amp;src=http%3A%2F%2Fimages.iaear.com%2Fhexo-next.png" alt="搭建一个自己的博客">
-        </a>
-    </div>
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-09-14T16:00:00.000Z">2019-09-15</time>
+                <time class="level-item has-text-grey" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/博客系列/">博客系列</a>
+                <a class="has-link-grey -link" href="/categories/框架/">框架</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
                 </div>
                 
                 
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
                 
             </div>
         </div>
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/09/15/搭建自己的博客/">搭建一个自己的博客</a>
+                Activiti框架——自定义id生成策略
             
         </h1>
         <div class="content">
-            <p>搭建博客的方法众多，我选择的搭建的平台是放在了 github pages 上边(这个功能是为大家免费提供的，不过只能放静态页面，不过作为个人博客使用已经足够了)</p>
-<p>接下来就开始真正的搭建之旅吧。</p>
+            <p>在项目中，经常会用到流程的技术，可是自己写又非常麻烦，所以就有Activiti框架，为我们提供了一套比较完善的流程技术，在以后的项目中也会经常用到的。大家一起来学习一下吧</p>
+<a id="more"></a>
+
+<p>在工作中会用到Activiti框架来走流程，有时候我们需要使用到一定格式的Id，因此自定义让我们在使用中更加方便。在自定义ID的方法中，有两种——UUID的方法生成和自定义方法。</p>
+<h4 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h4><p>在配置文件中加入，使得框架使用我们自定义的规则生成ID</p>
+<p>如果需要使用UUID的，加入UUID的配置即可</p>
+<p>如果用自定义策略，加上配置后，还需要重写IdGenerator接口</p>
+<figure class="highlight xml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">     <span class="hljs-comment">&lt;!-- 自定义主键生成策略 --&gt;</span></span><br><span class="line">     <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"idGenerator"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"TaskIdGenerator"</span>/&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">&lt;!-- 主键生成策略 UUID --&gt;</span></span><br><span class="line">     <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"idGenerator"</span>&gt;</span></span><br><span class="line">         <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"org.activiti.engine.impl.persistence.StrongUuidGenerator"</span>/&gt;</span>-</span><br><span class="line">     <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="写一个类来实现-IdGenerator-接口"><a href="#写一个类来实现-IdGenerator-接口" class="headerlink" title="写一个类来实现  IdGenerator 接口"></a>写一个类来实现  IdGenerator 接口</h4><p> 通过重写IdGenerator接口来实现自定义ID的功能</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> java.net.InetAddress;</span><br><span class="line"><span class="hljs-keyword">import</span> java.net.UnknownHostException;</span><br><span class="line"><span class="hljs-keyword">import</span> java.text.SimpleDateFormat;</span><br><span class="line"><span class="hljs-keyword">import</span> java.util.Date;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">import</span> org.activiti.engine.impl.cfg.IdGenerator;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TaskIdGenerator</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">IdGenerator</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> TaskIdGenerator tp=<span class="hljs-keyword">new</span> TaskIdGenerator();</span><br><span class="line">	<span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> number=<span class="hljs-number">0</span>;</span><br><span class="line">	<span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> String ip=<span class="hljs-string">""</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-title">TaskIdGenerator</span><span class="hljs-params">()</span></span>&#123;&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> TaskIdGenerator <span class="hljs-title">getInstance</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">		 <span class="hljs-keyword">if</span>(tp==<span class="hljs-keyword">null</span>)&#123;</span><br><span class="line">			tp=<span class="hljs-keyword">new</span> TaskIdGenerator();</span><br><span class="line">		 &#125;</span><br><span class="line">		 <span class="hljs-keyword">return</span> tp;</span><br><span class="line">	 &#125;</span><br><span class="line">	</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getNextId</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">       <span class="hljs-keyword">return</span> getTrace();</span><br><span class="line">    &#125;</span><br><span class="line">	  </span><br><span class="line">    <span class="hljs-comment">/**</span></span><br><span class="line"><span class="hljs-comment">	 * 交易流水的生成</span></span><br><span class="line"><span class="hljs-comment">	 * data（交易流水）=1（服务器IP）+YYMMDD（日期）+111111(6为时间戳)+11111(生成数字)</span></span><br><span class="line"><span class="hljs-comment">	 */</span></span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">synchronized</span> String <span class="hljs-title">getTrace</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">		String data=<span class="hljs-keyword">null</span>;</span><br><span class="line">		String IP = <span class="hljs-keyword">null</span>;</span><br><span class="line">		String str= <span class="hljs-keyword">null</span>;</span><br><span class="line">		number++;</span><br><span class="line">		<span class="hljs-keyword">try</span> &#123;</span><br><span class="line">			<span class="hljs-keyword">if</span>(ip.equals(<span class="hljs-string">""</span>)) &#123;</span><br><span class="line">				ip=InetAddress.getLocalHost().getHostAddress().split(<span class="hljs-string">"[.]"</span>)[<span class="hljs-number">3</span>];</span><br><span class="line">			&#125;</span><br><span class="line">			IP=ip;</span><br><span class="line">		&#125; <span class="hljs-keyword">catch</span> (UnknownHostException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		SimpleDateFormat sdf=<span class="hljs-keyword">new</span> SimpleDateFormat(<span class="hljs-string">"yyyyMMddHHmmss"</span>);</span><br><span class="line">		String dateStr=sdf.format(<span class="hljs-keyword">new</span> Date());</span><br><span class="line">		dateStr = dateStr.substring(<span class="hljs-number">2</span>, dateStr.length());</span><br><span class="line">		str=<span class="hljs-string">"00000"</span>+number;</span><br><span class="line">		str = str.substring(str.length()-<span class="hljs-number">5</span>);</span><br><span class="line">		data=IP+dateStr+str;</span><br><span class="line">		<span class="hljs-keyword">if</span>(number&gt;<span class="hljs-number">99999</span>)&#123;</span><br><span class="line">			number=<span class="hljs-number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="hljs-keyword">return</span> data;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> UnknownHostException </span>&#123;</span><br><span class="line">		System.out.println();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
         </div>
         
-        
-        <div class="level is-mobile">
+        <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/09/15/搭建自己的博客/#more">阅读更多</a>
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Activiti工作流/">Activiti工作流</a>
                 </div>
             </div>
         </div>
+        
         
         
     </div>
@@ -205,11 +209,80 @@
 
 
 
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>支付宝</span>
+    <div class="qrcode"><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g776vxxcy1j30u01aojy1.jpg" alt="支付宝"></div>
+</a>
+
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g776w5r14uj30v216mad5.jpg" alt="微信"></div>
+</a>
+
+                
+        </div>
+    </div>
+</div>
 
 
 
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/10/14/Activiti框架——按角色分配走流程/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">Activiti框架常用-角色分配的流程</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/10/14/Activiti框架——流程撤回/">
+                <span class="level-item">Activiti框架常用-角色分配的流程</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
 
 
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: false,
+        verify: false,
+        app_id: '4CJzr4Sm5tW19HHaPO55efhe-gzGzoHsz',
+        app_key: '3lqO2xInLOmklRgPF1dwt4g3',
+        placeholder: '有什么建议和想法想对博主讲的，就在此留言吧  (*╹▽╹*) ！'
+    });
+</script>
+
+    </div>
+</div>
 </div>
                 
 
@@ -839,7 +912,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="CRC-BK" height="28">
+                    <img src="/images/logo.svg" alt="Activiti框架——自定义id生成策略" height="28">
                 
                 </a>
                 <p class="is-size-7">
