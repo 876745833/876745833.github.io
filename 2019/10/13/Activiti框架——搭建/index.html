@@ -19,7 +19,7 @@
 <meta property="og:description" content="在项目中，经常会用到流程的技术，可是自己写又非常麻烦，所以就有Activiti框架，为我们提供了一套比较完善的流程技术，在以后的项目中也会经常用到的。大家一起来学习一下吧">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3597273931,3299733538&fm=15&gp=0.jpg">
-<meta property="og:updated_time" content="2019-11-01T01:27:06.770Z">
+<meta property="og:updated_time" content="2019-11-01T01:55:44.863Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Activiti————框架搭建">
 <meta name="twitter:description" content="在项目中，经常会用到流程的技术，可是自己写又非常麻烦，所以就有Activiti框架，为我们提供了一套比较完善的流程技术，在以后的项目中也会经常用到的。大家一起来学习一下吧">
@@ -204,9 +204,9 @@
 <p>之后更改配置文件的后缀名，</p>
 <figure class="highlight xml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">definitions</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://www.omg.org/spec/BPMN/20100524/MODEL"</span> <span class="hljs-attr">xmlns:activiti</span>=<span class="hljs-string">"http://activiti.org/bpmn"</span> <span class="hljs-attr">xmlns:bpmndi</span>=<span class="hljs-string">"http://www.omg.org/spec/BPMN/20100524/DI"</span> <span class="hljs-attr">xmlns:omgdc</span>=<span class="hljs-string">"http://www.omg.org/spec/DD/20100524/DC"</span> <span class="hljs-attr">xmlns:omgdi</span>=<span class="hljs-string">"http://www.omg.org/spec/DD/20100524/DI"</span> <span class="hljs-attr">xmlns:tns</span>=<span class="hljs-string">"http://www.activiti.org/test"</span> <span class="hljs-attr">xmlns:xsd</span>=<span class="hljs-string">"http://www.w3.org/2001/XMLSchema"</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="hljs-attr">expressionLanguage</span>=<span class="hljs-string">"http://www.w3.org/1999/XPath"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"m1570697036721"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">""</span> <span class="hljs-attr">targetNamespace</span>=<span class="hljs-string">"http://www.activiti.org/test"</span> <span class="hljs-attr">typeLanguage</span>=<span class="hljs-string">"http://www.w3.org/2001/XMLSchema"</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">process</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"groupTaskDelegate"</span> <span class="hljs-attr">isClosed</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">isExecutable</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"groupTaskDelegateProcess"</span> <span class="hljs-attr">processType</span>=<span class="hljs-string">"None"</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">startEvent</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"startevent1"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"Start"</span>/&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">userTask</span>  <span class="hljs-attr">activiti:candidateGroups</span>=<span class="hljs-string">"部门主管"</span> <span class="hljs-attr">activiti:exclusive</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"usertask1"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"部门主管审批"</span>/&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">sequenceFlow</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"flow1"</span> <span class="hljs-attr">sourceRef</span>=<span class="hljs-string">"startevent1"</span> <span class="hljs-attr">targetRef</span>=<span class="hljs-string">"usertask1"</span>/&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">userTask</span>  <span class="hljs-attr">activiti:candidateGroups</span>=<span class="hljs-string">"部门经理"</span> <span class="hljs-attr">activiti:exclusive</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"usertask2"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"部门经理审批"</span>/&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">sequenceFlow</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"flow2"</span> <span class="hljs-attr">sourceRef</span>=<span class="hljs-string">"usertask1"</span> <span class="hljs-attr">targetRef</span>=<span class="hljs-string">"usertask2"</span>/&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">userTask</span>  <span class="hljs-attr">activiti:candidateGroups</span>=<span class="hljs-string">"CTO"</span> <span class="hljs-attr">activiti:exclusive</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"usertask3"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"技术总监审批"</span>/&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">sequenceFlow</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"flow3"</span> <span class="hljs-attr">sourceRef</span>=<span class="hljs-string">"usertask2"</span> <span class="hljs-attr">targetRef</span>=<span class="hljs-string">"usertask3"</span>/&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">endEvent</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"endevent1"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"End"</span>/&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">sequenceFlow</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"flow4"</span> <span class="hljs-attr">sourceRef</span>=<span class="hljs-string">"usertask3"</span> <span class="hljs-attr">targetRef</span>=<span class="hljs-string">"endevent1"</span>/&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;/<span class="hljs-name">process</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNDiagram</span> <span class="hljs-attr">documentation</span>=<span class="hljs-string">"background=#3C3F41;count=1;horizontalcount=1;orientation=0;width=842.4;height=1195.2;imageableWidth=832.4;imageableHeight=1185.2;imageableX=5.0;imageableY=5.0"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Diagram-_1"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"New Diagram"</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNPlane</span> <span class="hljs-attr">bpmnElement</span>=<span class="hljs-string">"groupTaskDelegate"</span>&gt;</span></span><br><span class="line">      <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNShape</span> <span class="hljs-attr">bpmnElement</span>=<span class="hljs-string">"startevent1"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Shape-startevent1"</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">omgdc:Bounds</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"32.0"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"32.0"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"290.0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"100.0"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNLabel</span>&gt;</span></span><br><span class="line">          <span class="hljs-tag">&lt;<span class="hljs-name">omgdc:Bounds</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"32.0"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"32.0"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"0.0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"0.0"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNLabel</span>&gt;</span></span><br><span class="line">      <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNShape</span>&gt;</span></span><br><span class="line">      <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNShape</span> <span class="hljs-attr">bpmnElement</span>=<span class="hljs-string">"usertask1"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Shape-usertask1"</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">omgdc:Bounds</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"55.0"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"105.0"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"255.0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"200.0"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNLabel</span>&gt;</span></span><br><span class="line">          <span class="hljs-tag">&lt;<span class="hljs-name">omgdc:Bounds</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"55.0"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"105.0"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"0.0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"0.0"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNLabel</span>&gt;</span></span><br><span class="line">      <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNShape</span>&gt;</span></span><br><span class="line">      <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNShape</span> <span class="hljs-attr">bpmnElement</span>=<span class="hljs-string">"usertask2"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Shape-usertask2"</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">omgdc:Bounds</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"55.0"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"105.0"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"255.0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"310.0"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNLabel</span>&gt;</span></span><br><span class="line">          <span class="hljs-tag">&lt;<span class="hljs-name">omgdc:Bounds</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"55.0"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"105.0"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"0.0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"0.0"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNLabel</span>&gt;</span></span><br><span class="line">      <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNShape</span>&gt;</span></span><br><span class="line">      <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNShape</span> <span class="hljs-attr">bpmnElement</span>=<span class="hljs-string">"usertask3"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Shape-usertask3"</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">omgdc:Bounds</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"55.0"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"105.0"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"257.0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"420.0"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNLabel</span>&gt;</span></span><br><span class="line">          <span class="hljs-tag">&lt;<span class="hljs-name">omgdc:Bounds</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"55.0"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"105.0"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"0.0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"0.0"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNLabel</span>&gt;</span></span><br><span class="line">      <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNShape</span>&gt;</span></span><br><span class="line">      <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNShape</span> <span class="hljs-attr">bpmnElement</span>=<span class="hljs-string">"endevent1"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Shape-endevent1"</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">omgdc:Bounds</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"32.0"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"32.0"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"292.0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"510.0"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNLabel</span>&gt;</span></span><br><span class="line">          <span class="hljs-tag">&lt;<span class="hljs-name">omgdc:Bounds</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"32.0"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"32.0"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"0.0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"0.0"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNLabel</span>&gt;</span></span><br><span class="line">      <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNShape</span>&gt;</span></span><br><span class="line">      <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNEdge</span> <span class="hljs-attr">bpmnElement</span>=<span class="hljs-string">"flow1"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"BPMNEdge_flow1"</span> <span class="hljs-attr">sourceElement</span>=<span class="hljs-string">"startevent1"</span> <span class="hljs-attr">targetElement</span>=<span class="hljs-string">"usertask1"</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">omgdi:waypoint</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"306.0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"132.0"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">omgdi:waypoint</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"306.0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"200.0"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNLabel</span>&gt;</span></span><br><span class="line">          <span class="hljs-tag">&lt;<span class="hljs-name">omgdc:Bounds</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"-1.0"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"-1.0"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"-1.0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"-1.0"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNLabel</span>&gt;</span></span><br><span class="line">      <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNEdge</span>&gt;</span></span><br><span class="line">      <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNEdge</span> <span class="hljs-attr">bpmnElement</span>=<span class="hljs-string">"flow2"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"BPMNEdge_flow2"</span> <span class="hljs-attr">sourceElement</span>=<span class="hljs-string">"usertask1"</span> <span class="hljs-attr">targetElement</span>=<span class="hljs-string">"usertask2"</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">omgdi:waypoint</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"307.5"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"255.0"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">omgdi:waypoint</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"307.5"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"310.0"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNLabel</span>&gt;</span></span><br><span class="line">          <span class="hljs-tag">&lt;<span class="hljs-name">omgdc:Bounds</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"-1.0"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"-1.0"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"-1.0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"-1.0"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNLabel</span>&gt;</span></span><br><span class="line">      <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNEdge</span>&gt;</span></span><br><span class="line">      <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNEdge</span> <span class="hljs-attr">bpmnElement</span>=<span class="hljs-string">"flow3"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"BPMNEdge_flow3"</span> <span class="hljs-attr">sourceElement</span>=<span class="hljs-string">"usertask2"</span> <span class="hljs-attr">targetElement</span>=<span class="hljs-string">"usertask3"</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">omgdi:waypoint</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"308.5"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"365.0"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">omgdi:waypoint</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"308.5"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"420.0"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNLabel</span>&gt;</span></span><br><span class="line">          <span class="hljs-tag">&lt;<span class="hljs-name">omgdc:Bounds</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"-1.0"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"-1.0"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"-1.0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"-1.0"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNLabel</span>&gt;</span></span><br><span class="line">      <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNEdge</span>&gt;</span></span><br><span class="line">      <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNEdge</span> <span class="hljs-attr">bpmnElement</span>=<span class="hljs-string">"flow4"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"BPMNEdge_flow4"</span> <span class="hljs-attr">sourceElement</span>=<span class="hljs-string">"usertask3"</span> <span class="hljs-attr">targetElement</span>=<span class="hljs-string">"endevent1"</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">omgdi:waypoint</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"308.0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"475.0"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">omgdi:waypoint</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"308.0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"510.0"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">bpmndi:BPMNLabel</span>&gt;</span></span><br><span class="line">          <span class="hljs-tag">&lt;<span class="hljs-name">omgdc:Bounds</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"-1.0"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"-1.0"</span> <span class="hljs-attr">x</span>=<span class="hljs-string">"-1.0"</span> <span class="hljs-attr">y</span>=<span class="hljs-string">"-1.0"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNLabel</span>&gt;</span></span><br><span class="line">      <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNEdge</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNPlane</span>&gt;</span></span><br><span class="line">  <span class="hljs-tag">&lt;/<span class="hljs-name">bpmndi:BPMNDiagram</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">definitions</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="安装插件（Idea版本）"><a href="#安装插件（Idea版本）" class="headerlink" title="安装插件（Idea版本）"></a>安装插件（Idea版本）</h4><p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1571992056043.png" alt="1571992056043"></p>
+<h4 id="安装插件（Idea版本）"><a href="#安装插件（Idea版本）" class="headerlink" title="安装插件（Idea版本）"></a>安装插件（Idea版本）</h4><p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g8iazid0xpj30z70oignd.jpg" alt="1571992056043.png"></p>
 <p>安装之后，再打开bpmn文件  流程图 如下：</p>
-<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1571991986776.png" alt="1571991986776"></p>
+<p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g8iaxzh3awj31hc0sm0wq.jpg" alt="1571991986776.png"></p>
 
         </div>
         
@@ -261,9 +261,9 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/10/14/Activiti框架——id生成策略/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/10/14/Docker实战3/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">Activiti框架——id生成策略</span>
+                <span class="level-item">Docker实战3 —— IDEA插件连接Docker（compose）</span>
             </a>
         </div>
         
@@ -344,7 +344,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        13
+                        14
                     </p>
                 </div>
             </div>
@@ -535,7 +535,7 @@
                 <span class="level-item">框架</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">7</span>
+                <span class="level-item tag">8</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/框架/Activiti工作流/">
@@ -543,7 +543,7 @@
                 <span class="level-item">Activiti工作流</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">6</span>
+                <span class="level-item tag">7</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/框架/SrpingCloud/">
@@ -582,18 +582,18 @@
         
         <article class="media">
             
-            <a href="/2019/10/14/Docker实战3/" class="media-left">
+            <a href="/2019/10/14/Activiti框架——查询历史任务/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Docker实战3 —— IDEA插件连接Docker（compose）">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Activiti框架——查询历史任务">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
-                    <a href="/2019/10/14/Docker实战3/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Docker实战3 —— IDEA插件连接Docker（compose）</a>
+                    <a href="/2019/10/14/Activiti框架——查询历史任务/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架——查询历史任务</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Docker/">Docker</a> / <a class="has-link-grey -link" href="/categories/Docker/IDEA/">IDEA</a>
+                        <a class="has-link-grey -link" href="/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
                     </p>
                 </div>
             </div>
@@ -620,16 +620,35 @@
         
         <article class="media">
             
-            <a href="/2019/10/14/Activiti框架——自定义角色配置/" class="media-left">
+            <a href="/2019/10/14/Activiti框架——id生成策略/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Activiti框架常用-角色分配的流程">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Activiti框架——id生成策略">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
-                    <a href="/2019/10/14/Activiti框架——自定义角色配置/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架常用-角色分配的流程</a>
+                    <a href="/2019/10/14/Activiti框架——id生成策略/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架——id生成策略</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/14/Activiti框架——自定义角色配置/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Activiti框架常用-自定义角色方案">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
+                    <a href="/2019/10/14/Activiti框架——自定义角色配置/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架常用-自定义角色方案</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
                     </p>
@@ -656,25 +675,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/10/14/Activiti框架——查询历史任务/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Activiti框架——查询历史任务">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
-                    <a href="/2019/10/14/Activiti框架——查询历史任务/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架——查询历史任务</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -693,7 +693,7 @@
                     <span class="level-item">十月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">11</span>
+                    <span class="level-item tag">12</span>
                 </span>
             </a>
         </li>
@@ -725,7 +725,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Activiti工作流/">
                         <span class="tag">Activiti工作流</span>
-                        <span class="tag is-grey">6</span>
+                        <span class="tag is-grey">7</span>
                     </a>
                 </div>
                 
@@ -775,18 +775,18 @@
         
         <article class="media">
             
-            <a href="/2019/10/14/Docker实战3/" class="media-left">
+            <a href="/2019/10/14/Activiti框架——查询历史任务/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Docker实战3 —— IDEA插件连接Docker（compose）">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Activiti框架——查询历史任务">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
-                    <a href="/2019/10/14/Docker实战3/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Docker实战3 —— IDEA插件连接Docker（compose）</a>
+                    <a href="/2019/10/14/Activiti框架——查询历史任务/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架——查询历史任务</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Docker/">Docker</a> / <a class="has-link-grey -link" href="/categories/Docker/IDEA/">IDEA</a>
+                        <a class="has-link-grey -link" href="/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
                     </p>
                 </div>
             </div>
@@ -813,16 +813,35 @@
         
         <article class="media">
             
-            <a href="/2019/10/14/Activiti框架——自定义角色配置/" class="media-left">
+            <a href="/2019/10/14/Activiti框架——id生成策略/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Activiti框架常用-角色分配的流程">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Activiti框架——id生成策略">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
-                    <a href="/2019/10/14/Activiti框架——自定义角色配置/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架常用-角色分配的流程</a>
+                    <a href="/2019/10/14/Activiti框架——id生成策略/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架——id生成策略</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/14/Activiti框架——自定义角色配置/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Activiti框架常用-自定义角色方案">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
+                    <a href="/2019/10/14/Activiti框架——自定义角色配置/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架常用-自定义角色方案</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
                     </p>
@@ -849,25 +868,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/10/14/Activiti框架——查询历史任务/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Activiti框架——查询历史任务">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
-                    <a href="/2019/10/14/Activiti框架——查询历史任务/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架——查询历史任务</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -886,7 +886,7 @@
                     <span class="level-item">十月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">11</span>
+                    <span class="level-item tag">12</span>
                 </span>
             </a>
         </li>
@@ -918,7 +918,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Activiti工作流/">
                         <span class="tag">Activiti工作流</span>
-                        <span class="tag is-grey">6</span>
+                        <span class="tag is-grey">7</span>
                     </a>
                 </div>
                 
