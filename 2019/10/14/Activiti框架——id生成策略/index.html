@@ -10,19 +10,19 @@
 <title>Activiti框架——id生成策略 - CRC-BK</title>
 
 
-    <meta name="description" content="在使用Activiti框架的时候，我们的项目中经常会根据自己的情况，生成指定规则的id主键，那么如何来自定义主键生成策略呢？下边为大家提供了一个方法，仅供参考。">
+    <meta name="description" content="在使用Activiti框架的时候，我们的项目中经常会根据自己的情况，生成指定规则的id主键，那么如何来自定义主键生成策略呢？下边为大家提供了一个方法，仅供参考。 在自定义ID的方法中，有两种——UUID的方法生成和自定义方法。">
 <meta name="keywords" content="Activiti工作流">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Activiti框架——id生成策略">
 <meta property="og:url" content="http://yoursite.com/2019/10/14/Activiti框架——id生成策略/index.html">
 <meta property="og:site_name" content="CRC-BK">
-<meta property="og:description" content="在使用Activiti框架的时候，我们的项目中经常会根据自己的情况，生成指定规则的id主键，那么如何来自定义主键生成策略呢？下边为大家提供了一个方法，仅供参考。">
+<meta property="og:description" content="在使用Activiti框架的时候，我们的项目中经常会根据自己的情况，生成指定规则的id主键，那么如何来自定义主键生成策略呢？下边为大家提供了一个方法，仅供参考。 在自定义ID的方法中，有两种——UUID的方法生成和自定义方法。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
-<meta property="og:updated_time" content="2019-11-04T09:02:08.363Z">
+<meta property="og:updated_time" content="2019-11-04T09:15:59.119Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Activiti框架——id生成策略">
-<meta name="twitter:description" content="在使用Activiti框架的时候，我们的项目中经常会根据自己的情况，生成指定规则的id主键，那么如何来自定义主键生成策略呢？下边为大家提供了一个方法，仅供参考。">
+<meta name="twitter:description" content="在使用Activiti框架的时候，我们的项目中经常会根据自己的情况，生成指定规则的id主键，那么如何来自定义主键生成策略呢？下边为大家提供了一个方法，仅供参考。 在自定义ID的方法中，有两种——UUID的方法生成和自定义方法。">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
 
@@ -179,12 +179,16 @@
         </h1>
         <div class="content">
             <p>在使用Activiti框架的时候，我们的项目中经常会根据自己的情况，生成指定规则的id主键，那么如何来自定义主键生成策略呢？下边为大家提供了一个方法，仅供参考。</p>
+<p>在自定义ID的方法中，有两种——UUID的方法生成和自定义方法。</p>
 <a id="more"></a>
 
-<p>在工作中会用到Activiti框架来走流程，有时候我们需要使用到一定格式的Id，因此自定义让我们在使用中更加方便。在自定义ID的方法中，有两种——UUID的方法生成和自定义方法。</p>
 <h4 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h4><p>在配置文件中加入，使得框架使用我们自定义的规则生成ID</p>
-<p>如果需要使用UUID的，加入UUID的配置即可</p>
-<p>如果用自定义策略，加上配置后，还需要重写IdGenerator接口</p>
+<ul>
+<li>如果需要使用UUID的，加入UUID的配置即可</li>
+</ul>
+<ul>
+<li>如果用自定义策略，加上配置后，还需要重写IdGenerator接口</li>
+</ul>
 <figure class="highlight xml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">     <span class="hljs-comment">&lt;!-- 自定义主键生成策略 --&gt;</span></span><br><span class="line">     <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"idGenerator"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"TaskIdGenerator"</span>/&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">&lt;!-- 主键生成策略 UUID --&gt;</span></span><br><span class="line">     <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"idGenerator"</span>&gt;</span></span><br><span class="line">         <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"org.activiti.engine.impl.persistence.StrongUuidGenerator"</span>/&gt;</span>-</span><br><span class="line">     <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h4 id="写一个类来实现-IdGenerator-接口"><a href="#写一个类来实现-IdGenerator-接口" class="headerlink" title="写一个类来实现  IdGenerator 接口"></a>写一个类来实现  IdGenerator 接口</h4><p> 通过重写IdGenerator接口来实现自定义ID的功能</p>
