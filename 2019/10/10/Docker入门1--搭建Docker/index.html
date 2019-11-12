@@ -19,7 +19,7 @@
 <meta property="og:description" content="在服务器方面，为了更加高效的利用空间，提供效率，Docker容易已经成为了大型项目容器的不二之选，接下来就一起学习吧">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2628505,2075344024&fm=26&gp=0.jpg">
-<meta property="og:updated_time" content="2019-10-17T09:09:02.334Z">
+<meta property="og:updated_time" content="2019-11-05T06:38:51.074Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker入门1 —— 搭建Docker">
 <meta name="twitter:description" content="在服务器方面，为了更加高效的利用空间，提供效率，Docker容易已经成为了大型项目容器的不二之选，接下来就一起学习吧">
@@ -225,7 +225,7 @@
 <h3 id="七、Docker常用命令"><a href="#七、Docker常用命令" class="headerlink" title="七、Docker常用命令"></a>七、Docker常用命令</h3><p>可以直接输入docker，来查看所有命令</p>
 <p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g7yxm0qvdtj30si0lqjsm.jpg" alt="1571125550893"></p>
 <p>下面是一些常用的命令</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">#查看宿主机上的镜像，Docker镜像保存在/var/lib/docker目录下:</span><br><span class="line">docker images</span><br><span class="line"></span><br><span class="line">#拉取docker镜像</span><br><span class="line">docker pull image_name</span><br><span class="line"></span><br><span class="line">#删除镜像</span><br><span class="line">docker rmi  docker.io/tomcat:7.0.77-jre7   或者  docker rmi b39c68b7af30</span><br><span class="line"></span><br><span class="line">#查看当前有哪些容器正在运行</span><br><span class="line">docker ps</span><br><span class="line"></span><br><span class="line">#查看所有容器</span><br><span class="line">docker ps -a</span><br><span class="line"></span><br><span class="line">#启动、停止、重启容器命令：</span><br><span class="line">docker start container_name/container_id</span><br><span class="line">docker stop container_name/container_id</span><br><span class="line">docker restart container_name/container_id</span><br><span class="line"></span><br><span class="line">#后台启动一个容器后，如果想进入到这个容器，可以使用attach命令：</span><br><span class="line">docker attach container_name/container_id</span><br><span class="line"></span><br><span class="line">#删除容器的命令：</span><br><span class="line">docker rm container_name/container_id</span><br><span class="line">docker rm container_id</span><br><span class="line"></span><br><span class="line">#删除所有停止的容器：</span><br><span class="line">docker rm $(docker ps -a -q)</span><br><span class="line"></span><br><span class="line">#查看当前系统Docker信息</span><br><span class="line">docker info</span><br><span class="line"></span><br><span class="line">#从Docker hub上下载某个镜像:</span><br><span class="line">docker pull centos:latest</span><br><span class="line"></span><br><span class="line">#查找Docker Hub上的nginx镜像</span><br><span class="line">docker search nginx</span><br><span class="line"></span><br><span class="line">#将Centos这个仓库下面的所有镜像下载到本地repository。</span><br><span class="line">docker pull centos</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">#查看宿主机上的镜像，Docker镜像保存在/var/lib/docker目录下:</span><br><span class="line">docker images</span><br><span class="line"></span><br><span class="line">#拉取docker镜像</span><br><span class="line">docker pull image_name</span><br><span class="line"></span><br><span class="line">#删除镜像</span><br><span class="line">docker rmi  docker.io/tomcat:7.0.77-jre7   或者  docker rmi b39c68b7af30</span><br><span class="line"></span><br><span class="line">#查看当前有哪些容器正在运行</span><br><span class="line">docker ps</span><br><span class="line"></span><br><span class="line">#查看所有容器</span><br><span class="line">docker ps -a</span><br><span class="line"></span><br><span class="line">#启动、停止、重启容器命令：</span><br><span class="line">docker start container_name/container_id</span><br><span class="line">docker stop container_name/container_id</span><br><span class="line">docker restart container_name/container_id</span><br><span class="line"></span><br><span class="line">#后台启动一个容器后，如果想进入到这个容器，可以使用attach命令：</span><br><span class="line">docker attach container_name/container_id</span><br><span class="line"></span><br><span class="line">#删除容器的命令：</span><br><span class="line">docker rm container_name/container_id</span><br><span class="line">docker rm container_id</span><br><span class="line"></span><br><span class="line">#删除所有停止的容器：</span><br><span class="line">docker rm $(docker ps -a -q)</span><br><span class="line"></span><br><span class="line">#查看当前系统Docker信息</span><br><span class="line">docker info</span><br><span class="line"></span><br><span class="line">#从Docker hub上下载某个镜像:</span><br><span class="line">docker pull centos:latest</span><br><span class="line"></span><br><span class="line">#查找Docker Hub上的nginx镜像</span><br><span class="line">docker search nginx</span><br><span class="line"></span><br><span class="line">#将Centos这个仓库下面的所有镜像下载到本地repository。</span><br><span class="line">docker pull centos</span><br><span class="line"></span><br><span class="line">#项目导出成war包</span><br><span class="line">docker export 7691a814370e &gt; docker-demo.war</span><br><span class="line"></span><br><span class="line">#项目导入war包</span><br><span class="line">cat  docker-demo.tar | docker import - test/docker-demo:v1.0</span><br><span class="line">#项目路径导入</span><br><span class="line">docker import http://example.com/exampleimage.tgz example/imagerepo</span><br></pre></td></tr></table></figure>
 
 
         </div>
@@ -364,7 +364,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        14
+                        15
                     </p>
                 </div>
             </div>
@@ -374,7 +374,7 @@
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        8
+                        9
                     </p>
                 </div>
             </div>
@@ -384,7 +384,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        4
+                        5
                     </p>
                 </div>
             </div>
@@ -558,6 +558,14 @@
                 <span class="level-item tag">1</span>
             </span>
         </a></li><li>
+        <a class="level is-marginless" href="/categories/数据库/">
+            <span class="level-start">
+                <span class="level-item">数据库</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/框架/">
             <span class="level-start">
                 <span class="level-item">框架</span>
@@ -593,7 +601,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/Activiti工作流/" style="font-size: 20px;">Activiti工作流</a> <a href="/tags/Docker/" style="font-size: 15px;">Docker</a> <a href="/tags/SpringCloud/" style="font-size: 10px;">SpringCloud</a> <a href="/tags/分享/" style="font-size: 10px;">分享</a>
+        <a href="/tags/Activiti工作流/" style="font-size: 20px;">Activiti工作流</a> <a href="/tags/Docker/" style="font-size: 15px;">Docker</a> <a href="/tags/SpringCloud/" style="font-size: 10px;">SpringCloud</a> <a href="/tags/分享/" style="font-size: 10px;">分享</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a>
     </div>
 </div>
 
@@ -610,18 +618,18 @@
         
         <article class="media">
             
-            <a href="/2019/10/14/Activiti框架——查询历史任务/" class="media-left">
+            <a href="/2019/11/12/sql学习入门/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Activiti框架——查询历史任务">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="sql基础知识">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
-                    <a href="/2019/10/14/Activiti框架——查询历史任务/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架——查询历史任务</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-11T16:00:00.000Z">2019-11-12</time></div>
+                    <a href="/2019/11/12/sql学习入门/" class="title has-link-black-ter is-size-6 has-text-weight-normal">sql基础知识</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
+                        <a class="has-link-grey -link" href="/categories/数据库/">数据库</a>
                     </p>
                 </div>
             </div>
@@ -639,6 +647,25 @@
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
                     <a href="/2019/10/14/Activiti框架——流程撤回/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架常用-流程节点撤回</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/14/Activiti框架——搭建页面管理war包/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Activiti框架——搭建页面管理war包">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
+                    <a href="/2019/10/14/Activiti框架——搭建页面管理war包/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架——搭建页面管理war包</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
                     </p>
@@ -684,25 +711,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/10/14/Activiti框架——按角色分配走流程/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Activiti框架——按角色分配走流程">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
-                    <a href="/2019/10/14/Activiti框架——按角色分配走流程/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架——按角色分配走流程</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -714,6 +722,17 @@
             归档
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/11/">
+                <span class="level-start">
+                    <span class="level-item">十一月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/10/">
@@ -774,6 +793,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/分享/">
                         <span class="tag">分享</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/数据库/">
+                        <span class="tag">数据库</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -803,18 +829,18 @@
         
         <article class="media">
             
-            <a href="/2019/10/14/Activiti框架——查询历史任务/" class="media-left">
+            <a href="/2019/11/12/sql学习入门/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Activiti框架——查询历史任务">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="sql基础知识">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
-                    <a href="/2019/10/14/Activiti框架——查询历史任务/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架——查询历史任务</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-11T16:00:00.000Z">2019-11-12</time></div>
+                    <a href="/2019/11/12/sql学习入门/" class="title has-link-black-ter is-size-6 has-text-weight-normal">sql基础知识</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
+                        <a class="has-link-grey -link" href="/categories/数据库/">数据库</a>
                     </p>
                 </div>
             </div>
@@ -832,6 +858,25 @@
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
                     <a href="/2019/10/14/Activiti框架——流程撤回/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架常用-流程节点撤回</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/14/Activiti框架——搭建页面管理war包/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Activiti框架——搭建页面管理war包">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
+                    <a href="/2019/10/14/Activiti框架——搭建页面管理war包/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架——搭建页面管理war包</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
                     </p>
@@ -877,25 +922,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/10/14/Activiti框架——按角色分配走流程/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Activiti框架——按角色分配走流程">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
-                    <a href="/2019/10/14/Activiti框架——按角色分配走流程/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架——按角色分配走流程</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -907,6 +933,17 @@
             归档
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/11/">
+                <span class="level-start">
+                    <span class="level-item">十一月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/10/">
@@ -967,6 +1004,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/分享/">
                         <span class="tag">分享</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/数据库/">
+                        <span class="tag">数据库</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>

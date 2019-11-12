@@ -7,22 +7,17 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>Activiti框架常用-自定义角色方案 - CRC-BK</title>
+<title>分类: 数据库 - CRC-BK</title>
 
 
-    <meta name="description" content="在工作中会用到Activiti框架的时候，很多时候我们会根据自己已经有的用户角色表，来关联整个框架，这里也有一套比较完美的方案，用视图的方法，具体操作如下。">
-<meta name="keywords" content="Activiti工作流">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Activiti框架常用-自定义角色方案">
-<meta property="og:url" content="http://yoursite.com/2019/10/14/Activiti框架——自定义角色配置/index.html">
+    <meta property="og:type" content="website">
+<meta property="og:title" content="CRC-BK">
+<meta property="og:url" content="http://yoursite.com/categories/数据库/index.html">
 <meta property="og:site_name" content="CRC-BK">
-<meta property="og:description" content="在工作中会用到Activiti框架的时候，很多时候我们会根据自己已经有的用户角色表，来关联整个框架，这里也有一套比较完美的方案，用视图的方法，具体操作如下。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
-<meta property="og:updated_time" content="2019-11-04T08:59:56.531Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Activiti框架常用-自定义角色方案">
-<meta name="twitter:description" content="在工作中会用到Activiti框架的时候，很多时候我们会根据自己已经有的用户角色表，来关联整个框架，这里也有一套比较完美的方案，用视图的方法，具体操作如下。">
+<meta name="twitter:title" content="CRC-BK">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
 
@@ -97,7 +92,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="Activiti框架常用-自定义角色方案" height="28">
+                <img src="/images/logo.svg" alt="CRC-BK" height="28">
             
             </a>
         </div>
@@ -151,135 +146,63 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    <div class="card-content">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="/categories">分类</a></li>
+            
+            <li class="is-active"><a href="#" aria-current="page">数据库</a></li>
+        </ul>
+        </nav>
+    </div>
+</div>
+
+    <div class="card">
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time>
+                <time class="level-item has-text-grey" datetime="2019-11-11T16:00:00.000Z">2019-11-12</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/框架/">框架</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
+                <a class="has-link-grey -link" href="/categories/数据库/">数据库</a>
                 </div>
                 
                 
-                
-                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
-                    <i class="far fa-eye"></i>
-                    <span id="busuanzi_value_page_pv">0</span>次访问
-                </span>
                 
             </div>
         </div>
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Activiti框架常用-自定义角色方案
+                <a class="has-link-black-ter" href="/2019/11/12/sql学习入门/">sql基础知识</a>
             
         </h1>
         <div class="content">
-            <p>在工作中会用到Activiti框架的时候，很多时候我们会根据自己已经有的用户角色表，来关联整个框架，这里也有一套比较完美的方案，用视图的方法，具体操作如下。</p>
-<a id="more"></a>
-
-<h4 id="一、修改XML配置文件"><a href="#一、修改XML配置文件" class="headerlink" title="一、修改XML配置文件"></a>一、修改XML配置文件</h4><p> 我们需要修改配置文件，使框架不生成原本的用户角色表 </p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 是否使用activiti自带用户：用视图替换activiti用户 --&gt;</span><br><span class="line">&lt;&lt;property name=&quot;dbIdentityUsed&quot; value=&quot;false&quot;&gt;&lt;/property&gt;</span><br></pre></td></tr></table></figure>
-
-<h4 id="二、执行sql语句"><a href="#二、执行sql语句" class="headerlink" title="二、执行sql语句"></a>二、执行sql语句</h4><p>我们先创建自定义的用户、角色表，然后根据用户角色表的字段，生成与框架表对应的视图，这样就可以实现自定义的关系实现了。</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">-- 创建表sql</span></span><br><span class="line"><span class="hljs-keyword">drop</span> <span class="hljs-keyword">table</span> <span class="hljs-keyword">users</span>;</span><br><span class="line"><span class="hljs-keyword">drop</span> <span class="hljs-keyword">table</span> <span class="hljs-keyword">roles</span>;</span><br><span class="line"><span class="hljs-keyword">drop</span> <span class="hljs-keyword">table</span> userrole;</span><br><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> act.users(<span class="hljs-keyword">id</span> <span class="hljs-built_in">int</span>(<span class="hljs-number">11</span>) PRIMARY <span class="hljs-keyword">KEY</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> AUTO_INCREMENT,<span class="hljs-keyword">name</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">30</span>),age <span class="hljs-built_in">varchar</span>(<span class="hljs-number">20</span>),<span class="hljs-keyword">password</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">30</span>));</span><br><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> act.roles(<span class="hljs-keyword">id</span> <span class="hljs-built_in">int</span>(<span class="hljs-number">11</span>) PRIMARY <span class="hljs-keyword">KEY</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> AUTO_INCREMENT,roleName <span class="hljs-built_in">varchar</span>(<span class="hljs-number">30</span>));</span><br><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> act.userrole(userId <span class="hljs-built_in">int</span>(<span class="hljs-number">11</span>),roleId <span class="hljs-built_in">int</span>(<span class="hljs-number">11</span>));</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">-- 插入数据</span></span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.users (<span class="hljs-keyword">id</span>, <span class="hljs-keyword">name</span>, age, <span class="hljs-keyword">password</span>) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">1</span>, <span class="hljs-string">'张三'</span>, <span class="hljs-string">'25'</span>, <span class="hljs-string">'admin'</span>);</span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.users (<span class="hljs-keyword">id</span>, <span class="hljs-keyword">name</span>, age, <span class="hljs-keyword">password</span>) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">2</span>, <span class="hljs-string">'李四'</span>, <span class="hljs-string">'25'</span>, <span class="hljs-string">'admin'</span>);</span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.users (<span class="hljs-keyword">id</span>, <span class="hljs-keyword">name</span>, age, <span class="hljs-keyword">password</span>) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">3</span>, <span class="hljs-string">'王五'</span>, <span class="hljs-string">'25'</span>, <span class="hljs-string">'admin'</span>);</span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.users (<span class="hljs-keyword">id</span>, <span class="hljs-keyword">name</span>, age, <span class="hljs-keyword">password</span>) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">4</span>, <span class="hljs-string">'赵六'</span>, <span class="hljs-string">'25'</span>, <span class="hljs-string">'admin'</span>);</span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.users (<span class="hljs-keyword">id</span>, <span class="hljs-keyword">name</span>, age, <span class="hljs-keyword">password</span>) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">5</span>, <span class="hljs-string">'田七'</span>, <span class="hljs-string">'25'</span>, <span class="hljs-string">'admin'</span>);</span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.users (<span class="hljs-keyword">id</span>, <span class="hljs-keyword">name</span>, age, <span class="hljs-keyword">password</span>) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">6</span>, <span class="hljs-string">'胡八'</span>, <span class="hljs-string">'25'</span>, <span class="hljs-string">'admin'</span>);</span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.users (<span class="hljs-keyword">id</span>, <span class="hljs-keyword">name</span>, age, <span class="hljs-keyword">password</span>) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">7</span>, <span class="hljs-string">'管理员'</span>, <span class="hljs-string">'25'</span>, <span class="hljs-string">'admin'</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.roles (<span class="hljs-keyword">id</span>, roleName) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">1</span>, <span class="hljs-string">'部门主管'</span>);</span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.roles (<span class="hljs-keyword">id</span>, roleName) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">2</span>, <span class="hljs-string">'部门经理'</span>);</span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.roles (<span class="hljs-keyword">id</span>, roleName) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">3</span>, <span class="hljs-string">'CTO'</span>);</span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.roles (<span class="hljs-keyword">id</span>, roleName) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">4</span>, <span class="hljs-string">'管理员'</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.userrole (userId, roleId) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">1</span>, <span class="hljs-number">1</span>);</span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.userrole (userId, roleId) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">2</span>, <span class="hljs-number">1</span>);</span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.userrole (userId, roleId) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">3</span>, <span class="hljs-number">2</span>);</span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.userrole (userId, roleId) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">4</span>, <span class="hljs-number">2</span>);</span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.userrole (userId, roleId) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">5</span>, <span class="hljs-number">3</span>);</span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.userrole (userId, roleId) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">6</span>, <span class="hljs-number">3</span>);</span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.userrole (userId, roleId) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">7</span>, <span class="hljs-number">4</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">-- 创建的视图要保证数据类型一致，例如用户的ACT_ID_MEMBERSHIP表的两个字段都是字符型，一般系统中都是用NUMBER作为用</span></span><br><span class="line"><span class="hljs-comment">-- 户、角色的主键类型，所以创建视图的时候要把数字类型转换为字符型。</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">-- ACT_ID_USER</span></span><br><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">OR</span> <span class="hljs-keyword">REPLACE</span> <span class="hljs-keyword">VIEW</span> ACT_ID_USER_hhh</span><br><span class="line">(id_, rev_, first_, last_, email_, pwd_, picture_id_) <span class="hljs-keyword">as</span></span><br><span class="line">  <span class="hljs-keyword">SELECT</span> u.id,<span class="hljs-number">1</span>,u.name,<span class="hljs-literal">null</span>,<span class="hljs-literal">null</span>,u.password,<span class="hljs-literal">null</span> <span class="hljs-keyword">FROM</span> <span class="hljs-keyword">users</span> u;</span><br><span class="line"><span class="hljs-comment">-- ACT_ID_GROUP</span></span><br><span class="line"><span class="hljs-keyword">create</span> <span class="hljs-keyword">or</span> <span class="hljs-keyword">replace</span> <span class="hljs-keyword">view</span> act_id_group</span><br><span class="line">(id_, rev_, name_, type_) <span class="hljs-keyword">as</span> <span class="hljs-keyword">select</span> t.roleName , <span class="hljs-number">1</span> <span class="hljs-keyword">as</span> rev_,t.roleName ,<span class="hljs-string">''</span> <span class="hljs-keyword">as</span> type_ <span class="hljs-keyword">from</span> <span class="hljs-keyword">roles</span> t;</span><br><span class="line"><span class="hljs-comment">-- ACT_ID_MEMBERSHIP</span></span><br><span class="line"><span class="hljs-keyword">create</span> <span class="hljs-keyword">or</span> <span class="hljs-keyword">replace</span> <span class="hljs-keyword">view</span> act_id_membership</span><br><span class="line">(user_id_, group_id_) <span class="hljs-keyword">as</span> <span class="hljs-keyword">select</span> u.name,r.roleName <span class="hljs-keyword">from</span></span><br><span class="line"><span class="hljs-keyword">users</span> u <span class="hljs-keyword">inner</span> <span class="hljs-keyword">join</span> userrole ur</span><br><span class="line"><span class="hljs-keyword">on</span> u.id=ur.userId <span class="hljs-keyword">inner</span> <span class="hljs-keyword">join</span> <span class="hljs-keyword">roles</span> r <span class="hljs-keyword">on</span> ur.roleId=r.id;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">-- select * from users u,roles r inner join userrole ur where u.id = ur.userId and r.id=ur.roleId;</span></span><br></pre></td></tr></table></figure>
-
-
+            <p>以mysql为例子的sql语句学习</p>
         </div>
         
-        <div class="level is-size-7 is-uppercase">
+        
+        <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Activiti工作流/">Activiti工作流</a>
+                <a class="button is-size-7 is-light" href="/2019/11/12/sql学习入门/#more">阅读更多</a>
                 </div>
             </div>
         </div>
         
         
-        
     </div>
 </div>
 
 
 
-<div class="card">
-    <div class="card-content">
-        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
-        <div class="buttons is-centered">
-            
-                
-<a class="button is-info donate">
-    <span class="icon is-small">
-        <i class="fab fa-alipay"></i>
-    </span>
-    <span>支付宝</span>
-    <div class="qrcode"><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g776vxxcy1j30u01aojy1.jpg" alt="支付宝"></div>
-</a>
-
-                
-                
-<a class="button is-success donate">
-    <span class="icon is-small">
-        <i class="fab fa-weixin"></i>
-    </span>
-    <span>微信</span>
-    <div class="qrcode"><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g776w5r14uj30v216mad5.jpg" alt="微信"></div>
-</a>
-
-                
-        </div>
-    </div>
-</div>
 
 
 
-<div class="card card-transparent">
-    <div class="level post-navigation is-flex-wrap is-mobile">
-        
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/10/14/Activiti框架——id生成策略/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">Activiti框架——id生成策略</span>
-            </a>
-        </div>
-        
-        
-        <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/10/14/Activiti框架——按角色分配走流程/">
-                <span class="level-item">Activiti框架——按角色分配走流程</span>
-                <i class="level-item fas fa-chevron-right"></i>
-            </a>
-        </div>
-        
-    </div>
-</div>
 
 
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="valine-thread" class="content"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-<script>
-    new Valine({
-        el: '#valine-thread' ,
-        notify: false,
-        verify: false,
-        app_id: '4CJzr4Sm5tW19HHaPO55efhe-gzGzoHsz',
-        app_key: '3lqO2xInLOmklRgPF1dwt4g3',
-        placeholder: '有什么建议和想法想对博主讲的，就在此留言吧  (*╹▽╹*) ！'
-    });
-</script>
-
-    </div>
-</div>
 </div>
                 
 
@@ -953,7 +876,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="Activiti框架常用-自定义角色方案" height="28">
+                    <img src="/images/logo.svg" alt="CRC-BK" height="28">
                 
                 </a>
                 <p class="is-size-7">

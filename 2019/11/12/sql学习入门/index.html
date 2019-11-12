@@ -7,22 +7,22 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>Activiti框架常用-自定义角色方案 - CRC-BK</title>
+<title>sql基础知识 - CRC-BK</title>
 
 
-    <meta name="description" content="在工作中会用到Activiti框架的时候，很多时候我们会根据自己已经有的用户角色表，来关联整个框架，这里也有一套比较完美的方案，用视图的方法，具体操作如下。">
-<meta name="keywords" content="Activiti工作流">
+    <meta name="description" content="以mysql为例子的sql语句学习">
+<meta name="keywords" content="数据库">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Activiti框架常用-自定义角色方案">
-<meta property="og:url" content="http://yoursite.com/2019/10/14/Activiti框架——自定义角色配置/index.html">
+<meta property="og:title" content="sql基础知识">
+<meta property="og:url" content="http://yoursite.com/2019/11/12/sql学习入门/index.html">
 <meta property="og:site_name" content="CRC-BK">
-<meta property="og:description" content="在工作中会用到Activiti框架的时候，很多时候我们会根据自己已经有的用户角色表，来关联整个框架，这里也有一套比较完美的方案，用视图的方法，具体操作如下。">
+<meta property="og:description" content="以mysql为例子的sql语句学习">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
-<meta property="og:updated_time" content="2019-11-04T08:59:56.531Z">
+<meta property="og:updated_time" content="2019-11-12T07:13:25.093Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Activiti框架常用-自定义角色方案">
-<meta name="twitter:description" content="在工作中会用到Activiti框架的时候，很多时候我们会根据自己已经有的用户角色表，来关联整个框架，这里也有一套比较完美的方案，用视图的方法，具体操作如下。">
+<meta name="twitter:title" content="sql基础知识">
+<meta name="twitter:description" content="以mysql为例子的sql语句学习">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
 
@@ -97,7 +97,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="Activiti框架常用-自定义角色方案" height="28">
+                <img src="/images/logo.svg" alt="sql基础知识" height="28">
             
             </a>
         </div>
@@ -137,6 +137,10 @@
                     
                 
                 
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
                 
                 <a class="navbar-item search" title="搜索" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -156,10 +160,10 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time>
+                <time class="level-item has-text-grey" datetime="2019-11-11T16:00:00.000Z">2019-11-12</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/框架/">框架</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
+                <a class="has-link-grey -link" href="/categories/数据库/">数据库</a>
                 </div>
                 
                 
@@ -174,18 +178,56 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Activiti框架常用-自定义角色方案
+                sql基础知识
             
         </h1>
         <div class="content">
-            <p>在工作中会用到Activiti框架的时候，很多时候我们会根据自己已经有的用户角色表，来关联整个框架，这里也有一套比较完美的方案，用视图的方法，具体操作如下。</p>
+            <p>以mysql为例子的sql语句学习</p>
 <a id="more"></a>
 
-<h4 id="一、修改XML配置文件"><a href="#一、修改XML配置文件" class="headerlink" title="一、修改XML配置文件"></a>一、修改XML配置文件</h4><p> 我们需要修改配置文件，使框架不生成原本的用户角色表 </p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 是否使用activiti自带用户：用视图替换activiti用户 --&gt;</span><br><span class="line">&lt;&lt;property name=&quot;dbIdentityUsed&quot; value=&quot;false&quot;&gt;&lt;/property&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="SQL的组成类型"><a href="#SQL的组成类型" class="headerlink" title="SQL的组成类型"></a>SQL的组成类型</h2><p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g8v9yhgwhbj30sg0kh406.jpg" alt="image-20191112151008212.png"></p>
+<h4 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h4><figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#创表sql</span></span><br><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> act.table_name</span><br><span class="line">(</span><br><span class="line">    <span class="hljs-keyword">id</span> <span class="hljs-built_in">int</span>(<span class="hljs-number">11</span>) PRIMARY <span class="hljs-keyword">KEY</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> AUTO_INCREMENT,</span><br><span class="line">    <span class="hljs-built_in">date</span> <span class="hljs-built_in">timestamp</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">CURRENT_TIMESTAMP</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,</span><br><span class="line">    date2 datetime <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">CURRENT_TIMESTAMP</span>,</span><br><span class="line">    var_str <span class="hljs-built_in">varchar</span>(<span class="hljs-number">30</span>),</span><br><span class="line">    var_default <span class="hljs-built_in">varchar</span>(<span class="hljs-number">30</span>) <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">'FPX牛逼'</span>,</span><br><span class="line">    <span class="hljs-string">`dec`</span> <span class="hljs-built_in">decimal</span>(<span class="hljs-number">8</span>,<span class="hljs-number">2</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 
-<h4 id="二、执行sql语句"><a href="#二、执行sql语句" class="headerlink" title="二、执行sql语句"></a>二、执行sql语句</h4><p>我们先创建自定义的用户、角色表，然后根据用户角色表的字段，生成与框架表对应的视图，这样就可以实现自定义的关系实现了。</p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">-- 创建表sql</span></span><br><span class="line"><span class="hljs-keyword">drop</span> <span class="hljs-keyword">table</span> <span class="hljs-keyword">users</span>;</span><br><span class="line"><span class="hljs-keyword">drop</span> <span class="hljs-keyword">table</span> <span class="hljs-keyword">roles</span>;</span><br><span class="line"><span class="hljs-keyword">drop</span> <span class="hljs-keyword">table</span> userrole;</span><br><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> act.users(<span class="hljs-keyword">id</span> <span class="hljs-built_in">int</span>(<span class="hljs-number">11</span>) PRIMARY <span class="hljs-keyword">KEY</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> AUTO_INCREMENT,<span class="hljs-keyword">name</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">30</span>),age <span class="hljs-built_in">varchar</span>(<span class="hljs-number">20</span>),<span class="hljs-keyword">password</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">30</span>));</span><br><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> act.roles(<span class="hljs-keyword">id</span> <span class="hljs-built_in">int</span>(<span class="hljs-number">11</span>) PRIMARY <span class="hljs-keyword">KEY</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> AUTO_INCREMENT,roleName <span class="hljs-built_in">varchar</span>(<span class="hljs-number">30</span>));</span><br><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> act.userrole(userId <span class="hljs-built_in">int</span>(<span class="hljs-number">11</span>),roleId <span class="hljs-built_in">int</span>(<span class="hljs-number">11</span>));</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">-- 插入数据</span></span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.users (<span class="hljs-keyword">id</span>, <span class="hljs-keyword">name</span>, age, <span class="hljs-keyword">password</span>) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">1</span>, <span class="hljs-string">'张三'</span>, <span class="hljs-string">'25'</span>, <span class="hljs-string">'admin'</span>);</span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.users (<span class="hljs-keyword">id</span>, <span class="hljs-keyword">name</span>, age, <span class="hljs-keyword">password</span>) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">2</span>, <span class="hljs-string">'李四'</span>, <span class="hljs-string">'25'</span>, <span class="hljs-string">'admin'</span>);</span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.users (<span class="hljs-keyword">id</span>, <span class="hljs-keyword">name</span>, age, <span class="hljs-keyword">password</span>) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">3</span>, <span class="hljs-string">'王五'</span>, <span class="hljs-string">'25'</span>, <span class="hljs-string">'admin'</span>);</span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.users (<span class="hljs-keyword">id</span>, <span class="hljs-keyword">name</span>, age, <span class="hljs-keyword">password</span>) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">4</span>, <span class="hljs-string">'赵六'</span>, <span class="hljs-string">'25'</span>, <span class="hljs-string">'admin'</span>);</span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.users (<span class="hljs-keyword">id</span>, <span class="hljs-keyword">name</span>, age, <span class="hljs-keyword">password</span>) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">5</span>, <span class="hljs-string">'田七'</span>, <span class="hljs-string">'25'</span>, <span class="hljs-string">'admin'</span>);</span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.users (<span class="hljs-keyword">id</span>, <span class="hljs-keyword">name</span>, age, <span class="hljs-keyword">password</span>) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">6</span>, <span class="hljs-string">'胡八'</span>, <span class="hljs-string">'25'</span>, <span class="hljs-string">'admin'</span>);</span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.users (<span class="hljs-keyword">id</span>, <span class="hljs-keyword">name</span>, age, <span class="hljs-keyword">password</span>) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">7</span>, <span class="hljs-string">'管理员'</span>, <span class="hljs-string">'25'</span>, <span class="hljs-string">'admin'</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.roles (<span class="hljs-keyword">id</span>, roleName) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">1</span>, <span class="hljs-string">'部门主管'</span>);</span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.roles (<span class="hljs-keyword">id</span>, roleName) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">2</span>, <span class="hljs-string">'部门经理'</span>);</span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.roles (<span class="hljs-keyword">id</span>, roleName) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">3</span>, <span class="hljs-string">'CTO'</span>);</span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.roles (<span class="hljs-keyword">id</span>, roleName) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">4</span>, <span class="hljs-string">'管理员'</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.userrole (userId, roleId) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">1</span>, <span class="hljs-number">1</span>);</span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.userrole (userId, roleId) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">2</span>, <span class="hljs-number">1</span>);</span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.userrole (userId, roleId) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">3</span>, <span class="hljs-number">2</span>);</span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.userrole (userId, roleId) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">4</span>, <span class="hljs-number">2</span>);</span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.userrole (userId, roleId) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">5</span>, <span class="hljs-number">3</span>);</span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.userrole (userId, roleId) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">6</span>, <span class="hljs-number">3</span>);</span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.userrole (userId, roleId) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">7</span>, <span class="hljs-number">4</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">-- 创建的视图要保证数据类型一致，例如用户的ACT_ID_MEMBERSHIP表的两个字段都是字符型，一般系统中都是用NUMBER作为用</span></span><br><span class="line"><span class="hljs-comment">-- 户、角色的主键类型，所以创建视图的时候要把数字类型转换为字符型。</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">-- ACT_ID_USER</span></span><br><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">OR</span> <span class="hljs-keyword">REPLACE</span> <span class="hljs-keyword">VIEW</span> ACT_ID_USER_hhh</span><br><span class="line">(id_, rev_, first_, last_, email_, pwd_, picture_id_) <span class="hljs-keyword">as</span></span><br><span class="line">  <span class="hljs-keyword">SELECT</span> u.id,<span class="hljs-number">1</span>,u.name,<span class="hljs-literal">null</span>,<span class="hljs-literal">null</span>,u.password,<span class="hljs-literal">null</span> <span class="hljs-keyword">FROM</span> <span class="hljs-keyword">users</span> u;</span><br><span class="line"><span class="hljs-comment">-- ACT_ID_GROUP</span></span><br><span class="line"><span class="hljs-keyword">create</span> <span class="hljs-keyword">or</span> <span class="hljs-keyword">replace</span> <span class="hljs-keyword">view</span> act_id_group</span><br><span class="line">(id_, rev_, name_, type_) <span class="hljs-keyword">as</span> <span class="hljs-keyword">select</span> t.roleName , <span class="hljs-number">1</span> <span class="hljs-keyword">as</span> rev_,t.roleName ,<span class="hljs-string">''</span> <span class="hljs-keyword">as</span> type_ <span class="hljs-keyword">from</span> <span class="hljs-keyword">roles</span> t;</span><br><span class="line"><span class="hljs-comment">-- ACT_ID_MEMBERSHIP</span></span><br><span class="line"><span class="hljs-keyword">create</span> <span class="hljs-keyword">or</span> <span class="hljs-keyword">replace</span> <span class="hljs-keyword">view</span> act_id_membership</span><br><span class="line">(user_id_, group_id_) <span class="hljs-keyword">as</span> <span class="hljs-keyword">select</span> u.name,r.roleName <span class="hljs-keyword">from</span></span><br><span class="line"><span class="hljs-keyword">users</span> u <span class="hljs-keyword">inner</span> <span class="hljs-keyword">join</span> userrole ur</span><br><span class="line"><span class="hljs-keyword">on</span> u.id=ur.userId <span class="hljs-keyword">inner</span> <span class="hljs-keyword">join</span> <span class="hljs-keyword">roles</span> r <span class="hljs-keyword">on</span> ur.roleId=r.id;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">-- select * from users u,roles r inner join userrole ur where u.id = ur.userId and r.id=ur.roleId;</span></span><br></pre></td></tr></table></figure>
+<p>创建格式：<strong>create + tableName + (创建的表字段)；</strong></p>
+<ul>
+<li>int 数字类型</li>
+<li>decimal 数字类型(可以设置精确度)</li>
+<li>timestamp 日期类型(不可为空)</li>
+<li>datatime 日期类型(可以为空)</li>
+<li>varchar 字符串类型</li>
+</ul>
+<h4 id="增加数据"><a href="#增加数据" class="headerlink" title="增加数据"></a>增加数据</h4><figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#增加数据</span></span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> table_name (<span class="hljs-keyword">id</span>, <span class="hljs-built_in">date</span>, date2, <span class="hljs-string">`var_str`</span>, <span class="hljs-string">`var-str`</span>, <span class="hljs-string">`decimal`</span>) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">12</span>, <span class="hljs-string">'2019-11-12 14:04:05'</span>, <span class="hljs-string">'2019-11-12 14:04:05'</span>, <span class="hljs-string">'新增 '</span>, <span class="hljs-string">'FPX牛逼'</span>, <span class="hljs-literal">null</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> table_name (<span class="hljs-string">`varchar`</span>, <span class="hljs-string">`varchar-default`</span>, <span class="hljs-string">`decimal`</span>) <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">'新增 '</span>, <span class="hljs-string">'default'</span>, <span class="hljs-literal">null</span>);</span><br></pre></td></tr></table></figure>
+
+<p>格式：<strong>insert  into  table_name(字段，字段，字段—) values(参数，参数，参数—)</strong></p>
+<h4 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h4><p>首先，我们来插入一些数据（输入下列sql执行）</p>
+<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.table_name (<span class="hljs-keyword">id</span>, <span class="hljs-built_in">date</span>, date2, var_str, var_default, <span class="hljs-string">`dec`</span>) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">1</span>, <span class="hljs-string">'2019-11-12 14:12:57'</span>, <span class="hljs-string">'2019-11-12 14:12:57'</span>, <span class="hljs-string">'2'</span>, <span class="hljs-string">'FPX牛逼'</span>, <span class="hljs-literal">null</span>);</span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.table_name (<span class="hljs-keyword">id</span>, <span class="hljs-built_in">date</span>, date2, var_str, var_default, <span class="hljs-string">`dec`</span>) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">2</span>, <span class="hljs-string">'2019-11-12 14:12:57'</span>, <span class="hljs-string">'2019-11-12 14:12:57'</span>, <span class="hljs-string">'3'</span>, <span class="hljs-string">'FPX牛逼'</span>, <span class="hljs-literal">null</span>);</span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.table_name (<span class="hljs-keyword">id</span>, <span class="hljs-built_in">date</span>, date2, var_str, var_default, <span class="hljs-string">`dec`</span>) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">3</span>, <span class="hljs-string">'2019-11-12 14:12:57'</span>, <span class="hljs-string">'2019-11-12 14:12:57'</span>, <span class="hljs-string">'4'</span>, <span class="hljs-string">'FPX牛逼'</span>, <span class="hljs-literal">null</span>);</span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.table_name (<span class="hljs-keyword">id</span>, <span class="hljs-built_in">date</span>, date2, var_str, var_default, <span class="hljs-string">`dec`</span>) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">4</span>, <span class="hljs-string">'2019-11-12 14:12:57'</span>, <span class="hljs-string">'2019-11-12 14:12:57'</span>, <span class="hljs-string">'5'</span>, <span class="hljs-string">'FPX牛逼'</span>, <span class="hljs-literal">null</span>);</span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.table_name (<span class="hljs-keyword">id</span>, <span class="hljs-built_in">date</span>, date2, var_str, var_default, <span class="hljs-string">`dec`</span>) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">5</span>, <span class="hljs-string">'2019-11-12 14:12:57'</span>, <span class="hljs-string">'2019-11-12 14:12:57'</span>, <span class="hljs-string">'6'</span>, <span class="hljs-string">'FPX牛逼'</span>, <span class="hljs-literal">null</span>);</span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.table_name (<span class="hljs-keyword">id</span>, <span class="hljs-built_in">date</span>, date2, var_str, var_default, <span class="hljs-string">`dec`</span>) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">6</span>, <span class="hljs-string">'2019-11-12 14:12:57'</span>, <span class="hljs-string">'2019-11-12 14:12:57'</span>, <span class="hljs-string">'6'</span>, <span class="hljs-string">'FPX牛逼'</span>, <span class="hljs-literal">null</span>);</span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.table_name (<span class="hljs-keyword">id</span>, <span class="hljs-built_in">date</span>, date2, var_str, var_default, <span class="hljs-string">`dec`</span>) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">7</span>, <span class="hljs-string">'2019-11-12 14:12:57'</span>, <span class="hljs-string">'2019-11-12 14:12:57'</span>, <span class="hljs-string">'6'</span>, <span class="hljs-string">'FPX牛逼'</span>, <span class="hljs-literal">null</span>);</span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.table_name (<span class="hljs-keyword">id</span>, <span class="hljs-built_in">date</span>, date2, var_str, var_default, <span class="hljs-string">`dec`</span>) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">8</span>, <span class="hljs-string">'2019-11-12 14:52:31'</span>, <span class="hljs-string">'2019-11-12 14:52:31'</span>, <span class="hljs-string">'张三'</span>, <span class="hljs-string">'FPX牛逼'</span>, <span class="hljs-literal">null</span>);</span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.table_name (<span class="hljs-keyword">id</span>, <span class="hljs-built_in">date</span>, date2, var_str, var_default, <span class="hljs-string">`dec`</span>) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">9</span>, <span class="hljs-string">'2019-11-12 14:52:31'</span>, <span class="hljs-string">'2019-11-12 14:52:31'</span>, <span class="hljs-string">'张四'</span>, <span class="hljs-string">'FPX牛逼'</span>, <span class="hljs-literal">null</span>);</span><br><span class="line"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> act.table_name (<span class="hljs-keyword">id</span>, <span class="hljs-built_in">date</span>, date2, var_str, var_default, <span class="hljs-string">`dec`</span>) <span class="hljs-keyword">VALUES</span> (<span class="hljs-number">10</span>, <span class="hljs-string">'2019-11-12 14:52:31'</span>, <span class="hljs-string">'2019-11-12 14:52:31'</span>, <span class="hljs-string">'李四'</span>, <span class="hljs-string">'FPX牛逼'</span>, <span class="hljs-literal">null</span>);</span><br></pre></td></tr></table></figure>
+
+<p>查表是我们使用中，使用最多的一种。</p>
+<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#查询全部表数据</span></span><br><span class="line"><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> table_name;</span><br><span class="line"><span class="hljs-comment">#查询个别字段，并且定义临时表名</span></span><br><span class="line"><span class="hljs-keyword">select</span> var_str,var_default <span class="hljs-keyword">from</span> table_name;</span><br><span class="line"><span class="hljs-keyword">select</span> var_str <span class="hljs-string">'名字'</span>,var_default <span class="hljs-string">'值'</span> <span class="hljs-keyword">from</span> table_name; </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#条件查询	查询id是1的数据</span></span><br><span class="line"><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> table_name <span class="hljs-keyword">where</span> <span class="hljs-keyword">id</span> = <span class="hljs-number">1</span>;</span><br><span class="line"><span class="hljs-comment">#多条件查询 </span></span><br><span class="line"><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> table_name <span class="hljs-keyword">where</span> <span class="hljs-keyword">id</span> <span class="hljs-keyword">in</span>(<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>) <span class="hljs-keyword">and</span> var_str = <span class="hljs-string">'6'</span>;</span><br><span class="line"><span class="hljs-comment">#范围查询</span></span><br><span class="line"><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> table_name <span class="hljs-keyword">where</span> <span class="hljs-keyword">id</span> <span class="hljs-keyword">in</span> (<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>);</span><br><span class="line"><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> table_name <span class="hljs-keyword">where</span> <span class="hljs-keyword">id</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> (<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#模糊查询	查询var_str中以 张 开头的所有数据</span></span><br><span class="line"><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> table_name <span class="hljs-keyword">where</span> var_str <span class="hljs-keyword">like</span> <span class="hljs-string">'张%'</span>;</span><br><span class="line"><span class="hljs-comment">#模糊查询	查询var_str中以 四 结尾的所有数据</span></span><br><span class="line"><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> table_name <span class="hljs-keyword">where</span> var_str <span class="hljs-keyword">like</span> <span class="hljs-string">'%四'</span>;</span><br><span class="line"><span class="hljs-comment">#模糊查询	查询var_str中包含 三 的所有数据</span></span><br><span class="line"><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> table_name <span class="hljs-keyword">where</span> var_str <span class="hljs-keyword">like</span> <span class="hljs-string">'%三%'</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#分组查询	以var_str分组查询</span></span><br><span class="line"><span class="hljs-keyword">select</span> var_str <span class="hljs-keyword">from</span> table_name <span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> var_str;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#查询排序	desc倒叙(从大到小)  asc顺序(从小到大)  不写默认asc</span></span><br><span class="line"><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> table_name <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> <span class="hljs-keyword">id</span> <span class="hljs-keyword">desc</span>;</span><br><span class="line"><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> table_name <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> <span class="hljs-keyword">id</span> <span class="hljs-keyword">asc</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">#使用函数查询	</span></span><br><span class="line"><span class="hljs-comment">#查询条件下个数</span></span><br><span class="line"><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(<span class="hljs-number">1</span>) <span class="hljs-keyword">from</span> table_name;</span><br><span class="line"><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(<span class="hljs-number">1</span>) <span class="hljs-keyword">from</span> table_name <span class="hljs-keyword">where</span> <span class="hljs-keyword">id</span> &gt; <span class="hljs-number">5</span>;</span><br></pre></td></tr></table></figure>
+
+<p>格式：<strong>select  函数 / *  from  table_name   条件</strong></p>
+<h4 id="改表"><a href="#改表" class="headerlink" title="改表"></a>改表</h4><p>当我们在使用过程中，发现表字段需要做修改处理，这时候我们就要来修改表。</p>
+<p>不同数据库的修改方法可能有区别，我这里使用的是<strong>MySql数据库</strong></p>
+<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#修改表名字</span></span><br><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> table_name <span class="hljs-keyword">CHANGE</span> var_str <span class="hljs-keyword">name</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">30</span>);</span><br><span class="line"><span class="hljs-comment">#修改表结构</span></span><br><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> table_name <span class="hljs-keyword">MODIFY</span> var_str <span class="hljs-built_in">int</span>(<span class="hljs-number">30</span>);</span><br><span class="line"><span class="hljs-comment">#修改删除表字段</span></span><br><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> table_name <span class="hljs-keyword">DROP</span> var_str;</span><br><span class="line"><span class="hljs-comment">#修改新增表字段</span></span><br><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> table_name <span class="hljs-keyword">ADD</span> newRow <span class="hljs-built_in">varchar</span>(<span class="hljs-number">30</span>) <span class="hljs-literal">NULL</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4><h5 id="一、删除单行数据"><a href="#一、删除单行数据" class="headerlink" title="一、删除单行数据"></a>一、删除单行数据</h5><figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#删除其中一条 varchar值为1的数据</span></span><br><span class="line"><span class="hljs-keyword">delete</span> <span class="hljs-keyword">from</span> table_name <span class="hljs-keyword">where</span> <span class="hljs-keyword">id</span> = <span class="hljs-string">'1'</span>;</span><br><span class="line"><span class="hljs-comment">#删除范围多条数据  删除var_str是6的所有数据</span></span><br><span class="line"><span class="hljs-keyword">delete</span> <span class="hljs-keyword">from</span> table_name <span class="hljs-keyword">where</span> var_str = <span class="hljs-string">'6'</span>;</span><br></pre></td></tr></table></figure>
+
+<h5 id="二、删除table"><a href="#二、删除table" class="headerlink" title="二、删除table"></a>二、删除table</h5><p>​    表删除有三种，下边我们来对比下三种删除的区别</p>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>drop</strong></th>
+<th align="center"><strong>truncate</strong></th>
+<th align="center"><strong>delete</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">删除表结构，删除所有数据</td>
+<td align="center">删除表中所有数据</td>
+<td align="center">删除条件范围的数据</td>
+</tr>
+</tbody></table>
+<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">#三种删除写法</span></span><br><span class="line"><span class="hljs-keyword">truncate</span> <span class="hljs-keyword">table</span> table_name;</span><br><span class="line"><span class="hljs-keyword">drop</span> <span class="hljs-keyword">table</span> table_name;</span><br><span class="line"><span class="hljs-keyword">delete</span> <span class="hljs-keyword">from</span> table_name <span class="hljs-keyword">where</span> <span class="hljs-keyword">id</span> = <span class="hljs-number">1</span>;</span><br></pre></td></tr></table></figure>
 
 
         </div>
@@ -194,7 +236,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Activiti工作流/">Activiti工作流</a>
+                    <a class="has-link-grey -link" href="/tags/数据库/">数据库</a>
                 </div>
             </div>
         </div>
@@ -240,17 +282,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/10/14/Activiti框架——id生成策略/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">Activiti框架——id生成策略</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/10/14/Activiti框架——按角色分配走流程/">
-                <span class="level-item">Activiti框架——按角色分配走流程</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/10/14/Activiti框架——流程撤回/">
+                <span class="level-item">Activiti框架常用-流程节点撤回</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -398,6 +433,49 @@
 </div>
     
         
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                目录
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#SQL的组成类型">
+        <span class="has-mr-6">1</span>
+        <span>SQL的组成类型</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#创建表">
+        <span class="has-mr-6">1.1</span>
+        <span>创建表</span>
+        </a></li><li>
+        <a class="is-flex" href="#增加数据">
+        <span class="has-mr-6">1.2</span>
+        <span>增加数据</span>
+        </a></li><li>
+        <a class="is-flex" href="#查询">
+        <span class="has-mr-6">1.3</span>
+        <span>查询</span>
+        </a></li><li>
+        <a class="is-flex" href="#改表">
+        <span class="has-mr-6">1.4</span>
+        <span>改表</span>
+        </a></li><li>
+        <a class="is-flex" href="#删除">
+        <span class="has-mr-6">1.5</span>
+        <span>删除</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#一、删除单行数据">
+        <span class="has-mr-6">1.5.1</span>
+        <span>一、删除单行数据</span>
+        </a></li><li>
+        <a class="is-flex" href="#二、删除table">
+        <span class="has-mr-6">1.5.2</span>
+        <span>二、删除table</span>
+        </a></li></ul></li></ul></li></ul>
+        </div>
+    </div>
+</div>
+
     
         
 
@@ -953,7 +1031,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="Activiti框架常用-自定义角色方案" height="28">
+                    <img src="/images/logo.svg" alt="sql基础知识" height="28">
                 
                 </a>
                 <p class="is-size-7">
