@@ -7,22 +7,22 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>Docker实战2 —— IDEA插件连接Docker（image） - CRC-BK</title>
+<title>Docker入门2 —— docker基础和简单启动 - CRC-BK</title>
 
 
-    <meta name="description" content="Idea作为大家常用的开发软件，他的强大的插件库让我们的开发变的更加方便，接下来我们就来用docker连接的插件，让我们的docker部署变得更加容易吧。">
+    <meta name="description" content="Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任何流行的 Linux或Windows 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。">
 <meta name="keywords" content="Docker">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Docker实战2 —— IDEA插件连接Docker（image）">
-<meta property="og:url" content="http://yoursite.com/2019/10/13/Docker实战2/index.html">
+<meta property="og:title" content="Docker入门2 —— docker基础和简单启动">
+<meta property="og:url" content="http://yoursite.com/2019/10/13/Docker入门2/index.html">
 <meta property="og:site_name" content="CRC-BK">
-<meta property="og:description" content="Idea作为大家常用的开发软件，他的强大的插件库让我们的开发变的更加方便，接下来我们就来用docker连接的插件，让我们的docker部署变得更加容易吧。">
+<meta property="og:description" content="Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任何流行的 Linux或Windows 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
-<meta property="og:updated_time" content="2019-10-17T09:05:00.897Z">
+<meta property="og:updated_time" content="2019-11-13T03:21:55.703Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Docker实战2 —— IDEA插件连接Docker（image）">
-<meta name="twitter:description" content="Idea作为大家常用的开发软件，他的强大的插件库让我们的开发变的更加方便，接下来我们就来用docker连接的插件，让我们的docker部署变得更加容易吧。">
+<meta name="twitter:title" content="Docker入门2 —— docker基础和简单启动">
+<meta name="twitter:description" content="Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任何流行的 Linux或Windows 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
 
@@ -97,7 +97,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="Docker实战2 —— IDEA插件连接Docker（image）" height="28">
+                <img src="/images/logo.svg" alt="Docker入门2 —— docker基础和简单启动" height="28">
             
             </a>
         </div>
@@ -178,12 +178,60 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Docker实战2 —— IDEA插件连接Docker（image）
+                Docker入门2 —— docker基础和简单启动
             
         </h1>
         <div class="content">
-            <p>Idea作为大家常用的开发软件，他的强大的插件库让我们的开发变的更加方便，接下来我们就来用docker连接的插件，让我们的docker部署变得更加容易吧。</p>
+            <p>Docker 是一个<a href="https://baike.baidu.com/item/开源/246339" target="_blank" rel="noopener">开源</a>的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任何流行的 <a href="https://baike.baidu.com/item/Linux" target="_blank" rel="noopener">Linux</a>或Windows 机器上，也可以实现<a href="https://baike.baidu.com/item/虚拟化/547949" target="_blank" rel="noopener">虚拟化</a>。容器是完全使用<a href="https://baike.baidu.com/item/沙箱/393318" target="_blank" rel="noopener">沙箱</a>机制，相互之间不会有任何接口。</p>
 <a id="more"></a>
+
+<h3 id="Docker简介"><a href="#Docker简介" class="headerlink" title="Docker简介"></a>Docker简介</h3><p>Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中,然后发布到任何流行的<a href="https://baike.baidu.com/item/Linux" target="_blank" rel="noopener">Linux</a>机器上,也可以实现虚拟化,容器是完全使用沙箱机制,相互之间不会有任何接口。</p>
+<p>一个完整的Docker有以下几个部分组成：</p>
+<ol>
+<li>DockerClient客户端</li>
+<li>Docker Daemon守护进程</li>
+<li>Docker Image镜像</li>
+<li>DockerContainer容器 </li>
+</ol>
+<h4 id="1、-镜像"><a href="#1、-镜像" class="headerlink" title="1、 镜像"></a>1、 镜像</h4><p>​     Docker 镜像是一个特殊的文件系统，除了提供容器运行时所需的程序、库、资源、配置等文件外，还包含了一些为运行时准备的一些配置参数（如匿名卷、环境变量、用户等）。镜像不包含任何动态数据，其内容在构建之后也不会被改变。 </p>
+<h5 id="docker镜像启动"><a href="#docker镜像启动" class="headerlink" title="docker镜像启动"></a>docker镜像启动</h5><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#查看镜像</span><br><span class="line">docker images</span><br><span class="line"></span><br><span class="line">#启动镜像</span><br><span class="line">docker run images</span><br><span class="line">docker run imggeId</span><br><span class="line">docker start images</span><br><span class="line">docker start imggeId</span><br><span class="line">#关闭镜像</span><br><span class="line">docker stop images</span><br><span class="line">docker stop imggeId</span><br><span class="line"></span><br><span class="line">#删除镜像</span><br><span class="line">docker rmi -f images</span><br><span class="line">docker rmi -f imggeId</span><br></pre></td></tr></table></figure>
+
+<p>##### </p>
+<h4 id="2、-容器"><a href="#2、-容器" class="headerlink" title="2、 容器"></a>2、 容器</h4><p>​         镜像（<code>Image</code>）和容器（<code>Container</code>）的关系，就像是面向对象程序设计中的 <code>类</code> 和 <code>实例</code> 一样，镜像是静态的定义，容器是镜像运行时的实体。容器可以被创建、启动、停止、删除、暂停等。 </p>
+<p>​         容器的实质是进程，但与直接在宿主执行的进程不同，容器进程运行于属于自己的独立的 <a href="https://en.wikipedia.org/wiki/Linux_namespaces" target="_blank" rel="noopener">命名空间</a>。因此容器可以拥有自己的 <code>root</code> 文件系统、自己的网络配置、自己的进程空间，甚至自己的用户 ID 空间。容器内的进程是运行在一个隔离的环境里，使用起来，就好像是在一个独立于宿主的系统下操作一样。这种特性使得容器封装的应用比直接在宿主运行更加安全。也因为这种隔离的特性，很多人初学 Docker 时常常会混淆容器和虚拟机。 </p>
+<h5 id="docker容器启动"><a href="#docker容器启动" class="headerlink" title="docker容器启动"></a>docker容器启动</h5><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#查看正在运行容器</span><br><span class="line">docker ps </span><br><span class="line">#查看所有容器</span><br><span class="line">docker ps -a</span><br><span class="line"></span><br><span class="line"># 启动容器</span><br><span class="line"># imggeId	 文件id</span><br><span class="line"># imageName	 文件名字</span><br><span class="line">docker start imggeId</span><br><span class="line">docker start imageName</span><br><span class="line"></span><br><span class="line">#停止容器</span><br><span class="line">docker stop imggeId</span><br><span class="line">docker stop imageName</span><br><span class="line"></span><br><span class="line">#删除容器</span><br><span class="line">docker rm imggeId</span><br><span class="line">docker rm imageName</span><br></pre></td></tr></table></figure>
+
+<h5 id="外部容器访问"><a href="#外部容器访问" class="headerlink" title="外部容器访问"></a>外部容器访问</h5><p>容器中可以运行一些网络应用，要让外部也可以访问这些应用，可以通过 <strong>-P</strong>（大写P） 或 <strong>-p</strong>（小写p） 参数来指定端口映射。<br>当使用 -P 标记时，Docker 会随机映射一个 49000~49900 的端口到内部容器开放的网络端口<br>外部访问容器的启动方式</p>
+<p>-p后边可以直接写开方端口    外部访问端口：内部映射端口</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#对外网络开方启动</span><br><span class="line">docker run -d -p 18080:8080 --name docker-test dockerplugindemo:latest</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#随机端口启动</span><br><span class="line">docker run -P dockerplugindemo</span><br><span class="line">#启动之后</span><br><span class="line">docker ps</span><br><span class="line">#就可以看到这个属性，32769就是随机生成的端口，可以通过这个端口去访问</span><br><span class="line">post</span><br><span class="line">0.0.0.0:32769-&gt;8080/tcplinux</span><br></pre></td></tr></table></figure>
+
+<h4 id="3、-仓库"><a href="#3、-仓库" class="headerlink" title="3、 仓库"></a>3、 仓库</h4><p>镜像构建完成后，可以很容易的在当前宿主机上运行，但是，如果需要在其它服务器上使用这个镜像，我们就需要一个集中的存储、分发镜像的服务，<a href="https://yeasy.gitbooks.io/docker_practice/repository/registry.html" target="_blank" rel="noopener">Docker Registry</a> 就是这样的服务。</p>
+<p>一个 <strong>Docker Registry</strong> 中可以包含多个 <strong>仓库</strong>（<code>Repository</code>）；每个仓库可以包含多个 <strong>标签</strong>（<code>Tag</code>）；每个标签对应一个镜像。</p>
+<p>通常，一个仓库会包含同一个软件不同版本的镜像，而标签就常用于对应该软件的各个版本。我们可以通过 <code>&lt;仓库名&gt;:&lt;标签&gt;</code> 的格式来指定具体是这个软件哪个版本的镜像。如果不给出标签，将以 <code>latest</code> 作为默认标签。</p>
+<h3 id="Docker特点"><a href="#Docker特点" class="headerlink" title="Docker特点"></a>Docker特点</h3><p> 由于其基于LXC的轻量级虚拟化的特点，docker相比KVM之类最明显的特点就是启动快，资源占用小。因此对于构建隔离的标准化的运行环境，轻量级的PaaS(如dokku), 构建自动化测试和持续集成环境，以及一切可以横向扩展的应用(尤其是需要快速启停来应对峰谷的web应用)。</p>
+<ol>
+<li>构建标准化的运行环境，现有的方案大多是在一个baseOS上运行一套puppet/chef，或者一个image文件，其缺点是前者需要base OS许多前提条件，后者几乎不可以修改(因为copy on write 的文件格式在运行时rootfs是read only的)。并且后者文件体积大，环境管理和版本控制本身也是一个问题。</li>
+<li>PaaS环境是不言而喻的，其设计之初和dotcloud的案例都是将其作为PaaS产品的环境基础</li>
+<li>因为其标准化构建方法(buildfile)和良好的REST API，自动化测试和持续集成/部署能够很好的集成进来</li>
+<li>因为LXC轻量级的特点，其启动快，而且docker能够只加载每个container变化的部分，这样资源占用小，能够在单机环境下与KVM之类的虚拟化方案相比能够更加快速和占用更少资源</li>
+</ol>
+<h3 id="局限"><a href="#局限" class="headerlink" title="局限"></a>局限</h3><p>​    Docker并不是全能的，设计之初也不是KVM之类虚拟化手段的替代品，简单总结几点：</p>
+<ol>
+<li>Docker是基于Linux 64bit的，无法在32bit的linux/Windows/unix环境下使用</li>
+<li>LXC是基于cgroup等linux kernel功能的，因此container的guest系统只能是linux base的</li>
+<li>隔离性相比KVM之类的虚拟化方案还是有些欠缺，所有container公用一部分的运行库</li>
+<li>网络管理相对简单，主要是基于namespace隔离</li>
+<li>cgroup的cpu和cpuset提供的cpu功能相比KVM的等虚拟化方案相比难以度量(所以dotcloud主要是按内存收费)</li>
+<li>Docker对disk的管理比较有限</li>
+<li>container随着用户进程的停止而销毁，container中的log等用户数据不便收集</li>
+</ol>
+<h3 id="docker导入和导出"><a href="#docker导入和导出" class="headerlink" title="docker导入和导出"></a>docker导入和导出</h3><p>导入</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 导入war包</span><br><span class="line"># ubuntu.tar  包全称</span><br><span class="line"># test/ubuntu:v1.0  导入镜像的名字</span><br><span class="line">cat ubuntu.tar | docker import - test/ubuntu:v1.0</span><br></pre></td></tr></table></figure>
+
+<p>导出</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#导入war包</span><br><span class="line">#镜像ID</span><br><span class="line">#导出文件名</span><br><span class="line">docker export 7691a814370e &gt; ubuntu.tar</span><br></pre></td></tr></table></figure>
 
 
         </div>
@@ -402,7 +450,47 @@
             <h3 class="menu-label">
                 目录
             </h3>
-            
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#Docker简介">
+        <span class="has-mr-6">1</span>
+        <span>Docker简介</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#1、-镜像">
+        <span class="has-mr-6">1.1</span>
+        <span>1、 镜像</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#docker镜像启动">
+        <span class="has-mr-6">1.1.1</span>
+        <span>docker镜像启动</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#2、-容器">
+        <span class="has-mr-6">1.2</span>
+        <span>2、 容器</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#docker容器启动">
+        <span class="has-mr-6">1.2.1</span>
+        <span>docker容器启动</span>
+        </a></li><li>
+        <a class="is-flex" href="#外部容器访问">
+        <span class="has-mr-6">1.2.2</span>
+        <span>外部容器访问</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#3、-仓库">
+        <span class="has-mr-6">1.3</span>
+        <span>3、 仓库</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#Docker特点">
+        <span class="has-mr-6">2</span>
+        <span>Docker特点</span>
+        </a></li><li>
+        <a class="is-flex" href="#局限">
+        <span class="has-mr-6">3</span>
+        <span>局限</span>
+        </a></li><li>
+        <a class="is-flex" href="#docker导入和导出">
+        <span class="has-mr-6">4</span>
+        <span>docker导入和导出</span>
+        </a></li></ul>
         </div>
     </div>
 </div>
@@ -962,7 +1050,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="Docker实战2 —— IDEA插件连接Docker（image）" height="28">
+                    <img src="/images/logo.svg" alt="Docker入门2 —— docker基础和简单启动" height="28">
                 
                 </a>
                 <p class="is-size-7">

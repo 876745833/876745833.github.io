@@ -7,22 +7,19 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>Docker入门2 —— 搭建自己的Dockerfile - CRC-BK</title>
+<title>Docker实战2 ——  IDEA插件连接Docker - CRC-BK</title>
 
 
-    <meta name="description" content="下面我以 koa-demos 项目为例，介绍怎么写 Dockerfile 文件，实现让用户在 Docker 容器里面运行 Koa 框架。">
-<meta name="keywords" content="Docker">
+    <meta name="keywords" content="Docker">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Docker入门2 —— 搭建自己的Dockerfile">
-<meta property="og:url" content="http://yoursite.com/2019/10/11/Docker入门2/index.html">
+<meta property="og:title" content="Docker实战2 ——  IDEA插件连接Docker">
+<meta property="og:url" content="http://yoursite.com/2019/10/11/Docker实战2/index.html">
 <meta property="og:site_name" content="CRC-BK">
-<meta property="og:description" content="下面我以 koa-demos 项目为例，介绍怎么写 Dockerfile 文件，实现让用户在 Docker 容器里面运行 Koa 框架。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
-<meta property="og:updated_time" content="2019-10-17T09:10:35.602Z">
+<meta property="og:updated_time" content="2019-11-13T02:19:07.168Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Docker入门2 —— 搭建自己的Dockerfile">
-<meta name="twitter:description" content="下面我以 koa-demos 项目为例，介绍怎么写 Dockerfile 文件，实现让用户在 Docker 容器里面运行 Koa 框架。">
+<meta name="twitter:title" content="Docker实战2 ——  IDEA插件连接Docker">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
 
@@ -97,7 +94,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="Docker入门2 —— 搭建自己的Dockerfile" height="28">
+                <img src="/images/logo.svg" alt="Docker实战2 ——  IDEA插件连接Docker" height="28">
             
             </a>
         </div>
@@ -174,30 +171,11 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Docker入门2 —— 搭建自己的Dockerfile
+                Docker实战2 ——  IDEA插件连接Docker
             
         </h1>
         <div class="content">
-            <p>下面我以 koa-demos 项目为例，介绍怎么写 Dockerfile 文件，实现让用户在 Docker 容器里面运行 Koa 框架。</p>
-<a id="more"></a>
-
-<h3 id="一、注册docker账号"><a href="#一、注册docker账号" class="headerlink" title="一、注册docker账号"></a>一、注册docker账号</h3><p>进入官网 cloud.docker.com 去注册一个docker账号</p>
-<h3 id="二、构建镜像"><a href="#二、构建镜像" class="headerlink" title="二、构建镜像"></a>二、构建镜像</h3><p>这个额镜像是本地放置缓存的，上传用的</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#默认位置</span><br><span class="line">docker build . </span><br><span class="line">#指定位置 -f指定该文件的位置</span><br><span class="line">docker build -f /user/local/docker/koa-demos .</span><br></pre></td></tr></table></figure>
-
-<p>最后提示，表示构建成功</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#Successfully built aa495654514e   构建成功</span><br></pre></td></tr></table></figure>
-
-<h3 id="三、以NGINX为例，如何构建镜像、启动"><a href="#三、以NGINX为例，如何构建镜像、启动" class="headerlink" title="三、以NGINX为例，如何构建镜像、启动"></a>三、以NGINX为例，如何构建镜像、启动</h3><ul>
-<li>找到一个空白目录，创建一个文本目录  Dockerfile </li>
-</ul>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#执行方法如下</span><br><span class="line">mkdir mynginx</span><br><span class="line">cd mynginx</span><br><span class="line">vi Dockerfile</span><br><span class="line"></span><br><span class="line">#Dockerfile内容 ：</span><br><span class="line">FROM nginx</span><br><span class="line">RUN echo &apos;&lt;h1&gt;Hello, Docker!&lt;/h1&gt;&apos; &gt; /usr/share/nginx/html/index.html</span><br><span class="line">vi Dockerfile</span><br><span class="line"></span><br><span class="line">#保存 退出</span><br></pre></td></tr></table></figure>
-
-<p> 这个 Dockerfile 很简单，一共就两行涉及到了两条指令：FROM 和 RUN，FROM 表示获取指定基础镜像，RUN 执行命令，在执行的过程中重写了 nginx 的默认页面信息，将信息替换为：Hello, Docker!。 </p>
-<ul>
-<li>在 Dockerfile 文件所在目录执行： </li>
-</ul>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t nginx:v1 .</span><br></pre></td></tr></table></figure>
+            <a id="more"></a>
 
 
         </div>
@@ -965,7 +943,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="Docker入门2 —— 搭建自己的Dockerfile" height="28">
+                    <img src="/images/logo.svg" alt="Docker实战2 ——  IDEA插件连接Docker" height="28">
                 
                 </a>
                 <p class="is-size-7">
