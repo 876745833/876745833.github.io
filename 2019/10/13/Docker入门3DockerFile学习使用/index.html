@@ -7,22 +7,22 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>Activiti框架——搭建页面管理war包 - CRC-BK</title>
+<title>Docker入门2 —— docker基础和简单启动 - CRC-BK</title>
 
 
-    <meta name="description" content="在项目中，经常会用到流程的技术，可是自己写又非常麻烦，所以就有Activiti框架，为我们提供了一套比较完善的流程技术，在以后的项目中也会经常用到的。大家一起来学习一下吧 最后官方为我们提供了一个界面化管理的war包，让我们更加方便的使用框架。下面来一起看看怎么使用吧。">
-<meta name="keywords" content="Activiti工作流">
+    <meta name="description" content="如果你想要从一个基础镜像开始建立一个自定义镜像，可以选择一步一步进行构建，也可以选择写一个配置文件，然后一条命令（docker build）完成构建，显然配置文件的方式可以更好地应对需求的变更，这个配置文件就是Dockerfile。">
+<meta name="keywords" content="Docker">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Activiti框架——搭建页面管理war包">
-<meta property="og:url" content="https://876745833.github.io/2019/10/14/Activiti框架——搭建页面管理war包/index.html">
+<meta property="og:title" content="Docker入门2 —— docker基础和简单启动">
+<meta property="og:url" content="https://876745833.github.io/2019/10/13/Docker入门3DockerFile学习使用/index.html">
 <meta property="og:site_name" content="CRC-BK">
-<meta property="og:description" content="在项目中，经常会用到流程的技术，可是自己写又非常麻烦，所以就有Activiti框架，为我们提供了一套比较完善的流程技术，在以后的项目中也会经常用到的。大家一起来学习一下吧 最后官方为我们提供了一个界面化管理的war包，让我们更加方便的使用框架。下面来一起看看怎么使用吧。">
+<meta property="og:description" content="如果你想要从一个基础镜像开始建立一个自定义镜像，可以选择一步一步进行构建，也可以选择写一个配置文件，然后一条命令（docker build）完成构建，显然配置文件的方式可以更好地应对需求的变更，这个配置文件就是Dockerfile。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://876745833.github.io/java-show/images/og_image.png">
-<meta property="og:updated_time" content="2019-11-04T09:01:51.377Z">
+<meta property="og:updated_time" content="2019-11-20T07:10:44.334Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Activiti框架——搭建页面管理war包">
-<meta name="twitter:description" content="在项目中，经常会用到流程的技术，可是自己写又非常麻烦，所以就有Activiti框架，为我们提供了一套比较完善的流程技术，在以后的项目中也会经常用到的。大家一起来学习一下吧 最后官方为我们提供了一个界面化管理的war包，让我们更加方便的使用框架。下面来一起看看怎么使用吧。">
+<meta name="twitter:title" content="Docker入门2 —— docker基础和简单启动">
+<meta name="twitter:description" content="如果你想要从一个基础镜像开始建立一个自定义镜像，可以选择一步一步进行构建，也可以选择写一个配置文件，然后一条命令（docker build）完成构建，显然配置文件的方式可以更好地应对需求的变更，这个配置文件就是Dockerfile。">
 <meta name="twitter:image" content="https://876745833.github.io/java-show/images/og_image.png">
 
 
@@ -97,7 +97,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/java-show/">
             
-                <img src="/java-show/images/logo.svg" alt="Activiti框架——搭建页面管理war包" height="28">
+                <img src="/java-show/images/logo.svg" alt="Docker入门2 —— docker基础和简单启动" height="28">
             
             </a>
         </div>
@@ -137,6 +137,10 @@
                     
                 
                 
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
                 
                 <a class="navbar-item search" title="搜索" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -156,10 +160,10 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time>
+                <time class="level-item has-text-grey" datetime="2019-10-12T16:00:00.000Z">2019-10-13</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/java-show/categories/框架/">框架</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/java-show/categories/框架/Activiti工作流/">Activiti工作流</a>
+                <a class="has-link-grey -link" href="/java-show/categories/Docker/">Docker</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/java-show/categories/Docker/IDEA/">IDEA</a>
                 </div>
                 
                 
@@ -174,28 +178,58 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Activiti框架——搭建页面管理war包
+                Docker入门2 —— docker基础和简单启动
             
         </h1>
         <div class="content">
-            <p>在项目中，经常会用到流程的技术，可是自己写又非常麻烦，所以就有Activiti框架，为我们提供了一套比较完善的流程技术，在以后的项目中也会经常用到的。大家一起来学习一下吧</p>
-<p>最后官方为我们提供了一个界面化管理的war包，让我们更加方便的使用框架。下面来一起看看怎么使用吧。</p>
+            <p>如果你想要从一个基础镜像开始建立一个自定义镜像，可以选择一步一步进行构建，也可以选择写一个配置文件，然后一条命令（<code>docker build</code>）完成构建，显然配置文件的方式可以更好地应对需求的变更，这个配置文件就是Dockerfile。 </p>
 <a id="more"></a>
 
-<h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><p>Activiti框架官方为我们提供了官方管理页面，我们只需要去官网下载，放入tomcat等服务器下运行即可。</p>
-<p>下边是一个5.x版本的activiti，官方好像已经找不到了。大家有需要用可以通过下方链接下载</p>
-<p>链接：<a href="https://pan.baidu.com/s/1TI_Yx2zawFm7udg9WywoAg" target="_blank" rel="noopener">https://pan.baidu.com/s/1TI_Yx2zawFm7udg9WywoAg</a><br>提取码：6pse </p>
-<h4 id="修改文件内的DB地址"><a href="#修改文件内的DB地址" class="headerlink" title="修改文件内的DB地址"></a>修改文件内的DB地址</h4><p>修改war包内  路径： activiti-webapp.war\WEB-INF\classes   的  db.properties 中的数据库地址，改为自己的。</p>
-<h4 id="放入tomcat启动"><a href="#放入tomcat启动" class="headerlink" title="放入tomcat启动"></a>放入tomcat启动</h4><p>把修改好的war包放到，tomcat的webapp路径下。</p>
-<p>接下来进入tomcat的bin目录，win版本的，双击startup.bat ，启动成功，去页面访问即可。</p>
-<p>访问地址：  <a href="http://localhost:8080/activiti-webapp/" target="_blank" rel="noopener">http://localhost:8080/activiti-webapp/</a> </p>
-<p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g8id4rzrhvj31hc0sm0ue.jpg" alt="1572574230404.png"></p>
-<p>看到这个页面后，恭喜启动成功了。</p>
-<p>可以使用系统默认用户访问</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">账号  	密码	    角色</span><br><span class="line">kermit	 kermit	  admin</span><br><span class="line">gonzo	 gonzo	  manager</span><br><span class="line">fozzie	 fozzie	  user</span><br></pre></td></tr></table></figure>
+<p>创建dockerFile同样的，我们以一个案例来操作学习。我们以 debian-jdk8 这个来举例</p>
+<p>首先在自己的指定目录下创建一个文件目录 ~/debian-jdk8 </p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#进入指定目录</span><br><span class="line">cd /user/local</span><br><span class="line">#创建文件夹</span><br><span class="line">mkdir debian-jdk8 </span><br><span class="line">#进入目录</span><br><span class="line">cd debian-jdk8 </span><br><span class="line"></span><br><span class="line">#写dockerfile</span><br><span class="line">vi Dockerfile</span><br></pre></td></tr></table></figure>
 
-<p>登录后看到这个页面，说明成功了</p>
-<p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g8id51mp3lj31hc0smgnp.jpg" alt="1572574481490.png"></p>
+<p>其中dokcerfile内容如下(键盘 i 进入编辑模式，按ESC  +  输入 wq 保存退出)</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">FROM debian:stretch</span><br><span class="line"></span><br><span class="line">ARG DEBIAN_FRONTEND=noninteractive</span><br><span class="line">ARG JAVA_VERSION=8</span><br><span class="line">ARG JAVA_UPDATE=172</span><br><span class="line">ARG JAVA_BUILD=11</span><br><span class="line">ARG JAVA_PACKAGE=jdk</span><br><span class="line">ARG JAVA_HASH=a58eab1ec242421181065cdc37240b08</span><br><span class="line"></span><br><span class="line">ENV LANG C.UTF-8</span><br><span class="line">ENV JAVA_HOME=/opt/jdk</span><br><span class="line">ENV PATH=$&#123;PATH&#125;:$&#123;JAVA_HOME&#125;/bin</span><br><span class="line"></span><br><span class="line">RUN set -ex \</span><br><span class="line"> &amp;&amp; apt-get update \</span><br><span class="line"> &amp;&amp; apt-get -y install ca-certificates wget unzip \</span><br><span class="line"> &amp;&amp; wget -q --header &quot;Cookie: oraclelicense=accept-securebackup-cookie&quot; \</span><br><span class="line">         -O /tmp/java.tar.gz \</span><br><span class="line">         http://download.oracle.com/otn-pub/java/jdk/$&#123;JAVA_VERSION&#125;u$&#123;JAVA_UPDATE&#125;-b$&#123;JAVA_BUILD&#125;/$&#123;JAVA_HASH&#125;/$&#123;JAVA_PACKAGE&#125;-$&#123;JAVA_VERSION&#125;u$&#123;JAVA_UPDATE&#125;-linux-x64.tar.gz \</span><br><span class="line"> &amp;&amp; CHECKSUM=$(wget -q -O - https://www.oracle.com/webfolder/s/digest/$&#123;JAVA_VERSION&#125;u$&#123;JAVA_UPDATE&#125;checksum.html | grep -E &quot;$&#123;JAVA_PACKAGE&#125;-$&#123;JAVA_VERSION&#125;u$&#123;JAVA_UPDATE&#125;-linux-x64\.tar\.gz&quot; | grep -Eo &apos;(sha256: )[^&lt;]+&apos; | cut -d: -f2 | xargs) \</span><br><span class="line"> &amp;&amp; echo &quot;$&#123;CHECKSUM&#125;  /tmp/java.tar.gz&quot; &gt; /tmp/java.tar.gz.sha256 \</span><br><span class="line"> &amp;&amp; sha256sum -c /tmp/java.tar.gz.sha256 \</span><br><span class="line"> &amp;&amp; mkdir $&#123;JAVA_HOME&#125; \</span><br><span class="line"> &amp;&amp; tar -xzf /tmp/java.tar.gz -C $&#123;JAVA_HOME&#125; --strip-components=1 \</span><br><span class="line"> &amp;&amp; wget -q --header &quot;Cookie: oraclelicense=accept-securebackup-cookie;&quot; \</span><br><span class="line">         -O /tmp/jce_policy.zip \</span><br><span class="line">         http://download.oracle.com/otn-pub/java/jce/$&#123;JAVA_VERSION&#125;/jce_policy-$&#123;JAVA_VERSION&#125;.zip \</span><br><span class="line"> &amp;&amp; unzip -jo -d $&#123;JAVA_HOME&#125;/jre/lib/security /tmp/jce_policy.zip \</span><br><span class="line"> &amp;&amp; rm -rf $&#123;JAVA_HOME&#125;/jar/lib/security/README.txt \</span><br><span class="line">       /var/lib/apt/lists/* \</span><br><span class="line">       /tmp/* \</span><br><span class="line">       /root/.wget-hsts</span><br></pre></td></tr></table></figure>
+
+<p>保存之后执行语句</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t debian-jdk8:v1.0 .</span><br></pre></td></tr></table></figure>
+
+<p>其中-t debian-jdk8:v1.0表示打包的镜像名为debian-jdk，tag为v1.0（前面说过，tag是可以任意命名的，不一定要是这种格式），注意命令的最后有一个.，这个表示打包的上下文（其实就是Dockerfile所在目录）是在当前目录，然后目录下的Dockerfile就会被编译执行。</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#执行完之后 查看镜像</span><br><span class="line">docker images</span><br></pre></td></tr></table></figure>
+
+<h4 id="dockerFile写法规则"><a href="#dockerFile写法规则" class="headerlink" title="dockerFile写法规则"></a>dockerFile写法规则</h4><p>参考： <a href="https://www.cnblogs.com/andyfengzp/p/6424150.html" target="_blank" rel="noopener">https://www.cnblogs.com/andyfengzp/p/6424150.html</a> </p>
+<p>参考： <a href="http://www.ityouknow.com/docker/2018/03/15/docker-dockerfile-command-introduction.html" target="_blank" rel="noopener">http://www.ityouknow.com/docker/2018/03/15/docker-dockerfile-command-introduction.html</a> </p>
+<h5 id="1、FROM-指定基础镜像"><a href="#1、FROM-指定基础镜像" class="headerlink" title="1、FROM(指定基础镜像)"></a>1、FROM(指定基础镜像)</h5><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">FROM &lt;image&gt;</span><br><span class="line">FROM &lt;image&gt;:&lt;tag&gt;</span><br><span class="line">FROM &lt;image&gt;:&lt;digest&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="2、MAINTAINER-指定镜像创建者信息"><a href="#2、MAINTAINER-指定镜像创建者信息" class="headerlink" title="2、MAINTAINER(指定镜像创建者信息)"></a>2、MAINTAINER(指定镜像创建者信息)</h5><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MAINTAINER CRC &lt;876745833@qq.com&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="3、RUN（运行命令）"><a href="#3、RUN（运行命令）" class="headerlink" title="3、RUN（运行命令）"></a>3、RUN（运行命令）</h5><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#shell格式</span><br><span class="line">RUN &lt;command&gt;</span><br><span class="line">#exec格式</span><br><span class="line">RUN [&quot;executable&quot;, &quot;param1&quot;, &quot;param2&quot;]</span><br></pre></td></tr></table></figure>
+
+<p>例如： RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ln -sf 是linux命令</span><br><span class="line">ln 它的功能是为某一个文件在另外一个位置建立一个不同的链接</span><br><span class="line">-s = soft		意为软链接</span><br><span class="line">-f = force		表示强制创建（使用前请备份之前存在文件）</span><br></pre></td></tr></table></figure>
+
+<h5 id="4、ENV（设置环境变量）"><a href="#4、ENV（设置环境变量）" class="headerlink" title="4、ENV（设置环境变量）"></a>4、ENV（设置环境变量）</h5><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#例如	不同环境配置的也不同 根据情况来配置使用</span><br><span class="line">ENV LANG en_US.UTF-8</span><br></pre></td></tr></table></figure>
+
+<h5 id="5、WORKDIR（切换目录）"><a href="#5、WORKDIR（切换目录）" class="headerlink" title="5、WORKDIR（切换目录）"></a>5、WORKDIR（切换目录）</h5><p> WORKDIR用于在容器内设置一个工作目录： </p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">WORKDIR /path/to/workdir</span><br></pre></td></tr></table></figure>
+
+<p>通过WORKDIR设置工作目录后，Dockerfile 中其后的命令 RUN、CMD、ENTRYPOINT、ADD、COPY 等命令都会在该目录下执行。 如，使用WORKDIR设置工作目录：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">WORKDIR /a</span><br><span class="line">WORKDIR b</span><br><span class="line">WORKDIR c</span><br><span class="line">RUN pwd</span><br></pre></td></tr></table></figure>
+
+<p> 在以上示例中，pwd 最终将会在 <code>/a/b/c</code> 目录中执行。在使用 docker run 运行容器时，可以通过<code>-w</code>参数覆盖构建时所设置的工作目录。 </p>
+<h5 id="6、CMD（设置容器启动时执行的操作）"><a href="#6、CMD（设置容器启动时执行的操作）" class="headerlink" title="6、CMD（设置容器启动时执行的操作）"></a>6、CMD（设置容器启动时执行的操作）</h5><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CMD [&quot;executable&quot;,&quot;param1&quot;,&quot;param2&quot;]</span><br><span class="line">CMD [&quot;param1&quot;,&quot;param2&quot;]</span><br><span class="line">CMD command param1 param2</span><br></pre></td></tr></table></figure>
+
+<p>例如：CMD $CATALINA_HOME/bin/startup.sh &amp;&amp; tail -F $CATALINA_HOME/logs/catalina.out</p>
+<h5 id="7、EXPOSE（指定容器需要映射到宿主机器的端口）"><a href="#7、EXPOSE（指定容器需要映射到宿主机器的端口）" class="headerlink" title="7、EXPOSE（指定容器需要映射到宿主机器的端口）"></a>7、EXPOSE（指定容器需要映射到宿主机器的端口）</h5><p>例如：EXPOSE 8080 9090</p>
+<h5 id="8、VOLUME（指定挂载点"><a href="#8、VOLUME（指定挂载点" class="headerlink" title="8、VOLUME（指定挂载点)"></a>8、VOLUME（指定挂载点)</h5><p>例如：VOLUME $CATALINA_HOME/webapps $CATALINA_HOME/logs $CATALINA_HOME/conf</p>
+<h5 id="9、USER-指定当前用户"><a href="#9、USER-指定当前用户" class="headerlink" title="9、USER 指定当前用户"></a>9、USER 指定当前用户</h5><p> USER 用于指定运行镜像所使用的用户： </p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">USER daemon</span><br></pre></td></tr></table></figure>
+
+<p>使用USER指定用户时，可以使用用户名、UID 或 GID，或是两者的组合。以下都是合法的指定试：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">USER user</span><br><span class="line">USER user:group</span><br><span class="line">USER uid</span><br><span class="line">USER uid:gid</span><br><span class="line">USER user:gid</span><br><span class="line">USER uid:group</span><br></pre></td></tr></table></figure>
+
+<p> 使用USER指定用户后，Dockerfile 中其后的命令 RUN、CMD、ENTRYPOINT 都将使用该用户。镜像构建完成后，通过 docker run 运行容器时，可以通过 <code>-u</code> 参数来覆盖所指定的用户。 </p>
 
         </div>
         
@@ -203,7 +237,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/java-show/tags/Activiti工作流/">Activiti工作流</a>
+                    <a class="has-link-grey -link" href="/java-show/tags/Docker/">Docker</a>
                 </div>
             </div>
         </div>
@@ -250,16 +284,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/java-show/2019/10/14/Activiti框架——流程撤回/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/java-show/2019/10/13/Docker入门2/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">Activiti框架常用-流程节点撤回</span>
+                <span class="level-item">Docker入门2 —— docker基础和简单启动</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/java-show/2019/10/14/Activiti框架——查询历史任务/">
-                <span class="level-item">Activiti框架——查询历史任务</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/java-show/2019/10/12/Docker实战1IDEA插件连接Docker部署/">
+                <span class="level-item">Docker实战1 —— IDEA插件连接Docker部署</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -407,6 +441,57 @@
 </div>
     
         
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                目录
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#dockerFile写法规则">
+        <span class="has-mr-6">1</span>
+        <span>dockerFile写法规则</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#1、FROM-指定基础镜像">
+        <span class="has-mr-6">1.1</span>
+        <span>1、FROM(指定基础镜像)</span>
+        </a></li><li>
+        <a class="is-flex" href="#2、MAINTAINER-指定镜像创建者信息">
+        <span class="has-mr-6">1.2</span>
+        <span>2、MAINTAINER(指定镜像创建者信息)</span>
+        </a></li><li>
+        <a class="is-flex" href="#3、RUN（运行命令）">
+        <span class="has-mr-6">1.3</span>
+        <span>3、RUN（运行命令）</span>
+        </a></li><li>
+        <a class="is-flex" href="#4、ENV（设置环境变量）">
+        <span class="has-mr-6">1.4</span>
+        <span>4、ENV（设置环境变量）</span>
+        </a></li><li>
+        <a class="is-flex" href="#5、WORKDIR（切换目录）">
+        <span class="has-mr-6">1.5</span>
+        <span>5、WORKDIR（切换目录）</span>
+        </a></li><li>
+        <a class="is-flex" href="#6、CMD（设置容器启动时执行的操作）">
+        <span class="has-mr-6">1.6</span>
+        <span>6、CMD（设置容器启动时执行的操作）</span>
+        </a></li><li>
+        <a class="is-flex" href="#7、EXPOSE（指定容器需要映射到宿主机器的端口）">
+        <span class="has-mr-6">1.7</span>
+        <span>7、EXPOSE（指定容器需要映射到宿主机器的端口）</span>
+        </a></li><li>
+        <a class="is-flex" href="#8、VOLUME（指定挂载点">
+        <span class="has-mr-6">1.8</span>
+        <span>8、VOLUME（指定挂载点)</span>
+        </a></li><li>
+        <a class="is-flex" href="#9、USER-指定当前用户">
+        <span class="has-mr-6">1.9</span>
+        <span>9、USER 指定当前用户</span>
+        </a></li></ul></li></ul>
+        </div>
+    </div>
+</div>
+
     
         
 
@@ -984,7 +1069,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/java-show/">
                 
-                    <img src="/java-show/images/logo.svg" alt="Activiti框架——搭建页面管理war包" height="28">
+                    <img src="/java-show/images/logo.svg" alt="Docker入门2 —— docker基础和简单启动" height="28">
                 
                 </a>
                 <p class="is-size-7">

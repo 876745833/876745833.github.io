@@ -7,23 +7,23 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>Docker实战1 —— IDEA插件连接Docker部署（Dockerfile） - CRC-BK</title>
+<title>SpringBoot入门01——创建springboot项目 - CRC-BK</title>
 
 
-    <meta name="description" content="Idea作为大家常用的开发软件，他的强大的插件库让我们的开发变的更加方便，接下来我们就来用docker连接的插件，让我们的docker部署变得更加容易吧。">
-<meta name="keywords" content="Docker">
+    <meta name="description" content="SpringBoot是由Pivotal团队在2013年开始研发、2014年4月发布第一个版本的全新开源的轻量级框架。它基于Spring4.0设计，不仅继承了Spring框架原有的优秀特性，而且还通过简化配置来进一步简化了Spring应用的整个搭建和开发过程。另外SpringBoot通过集成大量的框架使得依赖包的版本冲突，以及引用的不稳定性等问题得到了很好的解决。">
+<meta name="keywords" content="SpringBoot">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Docker实战1 —— IDEA插件连接Docker部署（Dockerfile）">
-<meta property="og:url" content="http://yoursite.com/2019/10/12/Docker实战1/index.html">
+<meta property="og:title" content="SpringBoot入门01——创建springboot项目">
+<meta property="og:url" content="https://876745833.github.io/2019/09/15/SpringBoot入门01——创建springboot项目 - 副本/index.html">
 <meta property="og:site_name" content="CRC-BK">
-<meta property="og:description" content="Idea作为大家常用的开发软件，他的强大的插件库让我们的开发变的更加方便，接下来我们就来用docker连接的插件，让我们的docker部署变得更加容易吧。">
+<meta property="og:description" content="SpringBoot是由Pivotal团队在2013年开始研发、2014年4月发布第一个版本的全新开源的轻量级框架。它基于Spring4.0设计，不仅继承了Spring框架原有的优秀特性，而且还通过简化配置来进一步简化了Spring应用的整个搭建和开发过程。另外SpringBoot通过集成大量的框架使得依赖包的版本冲突，以及引用的不稳定性等问题得到了很好的解决。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/images/og_image.png">
-<meta property="og:updated_time" content="2019-10-17T09:30:00.801Z">
+<meta property="og:image" content="http://img5.imgtn.bdimg.com/it/u=2927103475,842869804&fm=11&gp=0.jpg">
+<meta property="og:updated_time" content="2019-11-20T07:42:15.378Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Docker实战1 —— IDEA插件连接Docker部署（Dockerfile）">
-<meta name="twitter:description" content="Idea作为大家常用的开发软件，他的强大的插件库让我们的开发变的更加方便，接下来我们就来用docker连接的插件，让我们的docker部署变得更加容易吧。">
-<meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
+<meta name="twitter:title" content="SpringBoot入门01——创建springboot项目">
+<meta name="twitter:description" content="SpringBoot是由Pivotal团队在2013年开始研发、2014年4月发布第一个版本的全新开源的轻量级框架。它基于Spring4.0设计，不仅继承了Spring框架原有的优秀特性，而且还通过简化配置来进一步简化了Spring应用的整个搭建和开发过程。另外SpringBoot通过集成大量的框架使得依赖包的版本冲突，以及引用的不稳定性等问题得到了很好的解决。">
+<meta name="twitter:image" content="http://img5.imgtn.bdimg.com/it/u=2927103475,842869804&fm=11&gp=0.jpg">
 
 
 
@@ -31,7 +31,7 @@
 
 
 
-<link rel="icon" href="/images/favicon.svg">
+<link rel="icon" href="/java-show/images/favicon.svg">
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
@@ -64,7 +64,7 @@
     
     
 
-<link rel="stylesheet" href="/css/back-to-top.css">
+<link rel="stylesheet" href="/java-show/css/back-to-top.css">
 
 
     
@@ -77,7 +77,7 @@
 
     
     
-<link rel="stylesheet" href="/css/progressbar.css">
+<link rel="stylesheet" href="/java-show/css/progressbar.css">
 <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
 
     
@@ -89,15 +89,15 @@
     
 
 
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/java-show/css/style.css">
 </head>
 <body class="is-3-column">
     <nav class="navbar navbar-main">
     <div class="container">
         <div class="navbar-brand is-flex-center">
-            <a class="navbar-item navbar-logo" href="/">
+            <a class="navbar-item navbar-logo" href="/java-show/">
             
-                <img src="/images/logo.svg" alt="Docker实战1 —— IDEA插件连接Docker部署（Dockerfile）" height="28">
+                <img src="/java-show/images/logo.svg" alt="SpringBoot入门01——创建springboot项目" height="28">
             
             </a>
         </div>
@@ -106,22 +106,22 @@
             <div class="navbar-start">
                 
                 <a class="navbar-item"
-                href="/">主页</a>
+                href="/java-show/">主页</a>
                 
                 <a class="navbar-item"
-                href="/archives">归档</a>
+                href="/java-show/archives">归档</a>
                 
                 <a class="navbar-item"
-                href="/categories">分类</a>
+                href="/java-show/categories">分类</a>
                 
                 <a class="navbar-item"
-                href="/tags">标签</a>
+                href="/java-show/tags">标签</a>
                 
                 <a class="navbar-item"
-                href="/about">关于</a>
+                href="/java-show/about">关于</a>
                 
                 <a class="navbar-item"
-                href="/photo">相册</a>
+                href="/java-show/photo">相册</a>
                 
             </div>
             
@@ -152,14 +152,20 @@
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
     
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="http://img5.imgtn.bdimg.com/it/u=2927103475,842869804&amp;fm=11&amp;gp=0.jpg" alt="SpringBoot入门01——创建springboot项目">
+        </span>
+    </div>
+    
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-10-11T16:00:00.000Z">2019-10-12</time>
+                <time class="level-item has-text-grey" datetime="2019-09-14T16:00:00.000Z">2019-09-15</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Docker/">Docker</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Docker/IDEA/">IDEA</a>
+                <a class="has-link-grey -link" href="/java-show/categories/SpringBoot/">SpringBoot</a>
                 </div>
                 
                 
@@ -174,68 +180,35 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Docker实战1 —— IDEA插件连接Docker部署（Dockerfile）
+                SpringBoot入门01——创建springboot项目
             
         </h1>
         <div class="content">
-            <p>Idea作为大家常用的开发软件，他的强大的插件库让我们的开发变的更加方便，接下来我们就来用docker连接的插件，让我们的docker部署变得更加容易吧。</p>
+            <p>SpringBoot是由Pivotal团队在2013年开始研发、2014年4月发布第一个版本的全新开源的轻量级框架。它基于Spring4.0设计，不仅继承了Spring框架原有的优秀特性，而且还通过简化配置来进一步简化了Spring应用的整个搭建和开发过程。另外SpringBoot通过集成大量的框架使得依赖包的版本冲突，以及引用的不稳定性等问题得到了很好的解决。</p>
 <a id="more"></a>
 
-<h3 id="一、开放docker和防火墙的端口"><a href="#一、开放docker和防火墙的端口" class="headerlink" title="一、开放docker和防火墙的端口"></a>一、开放docker和防火墙的端口</h3><p>参考： <a href="https://www.cnblogs.com/hsz-csy/p/9488469.html" target="_blank" rel="noopener">https://www.cnblogs.com/hsz-csy/p/9488469.html</a> </p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /usr/lib/systemd/system/docker.service</span><br></pre></td></tr></table></figure>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><p>SpringBoot所具备的特征有：</p>
+<p>（1）可以创建独立的<a href="https://baike.baidu.com/item/Spring/85061" target="_blank" rel="noopener">Spring</a>应用程序，并且基于其Maven或Gradle插件，可以创建可执行的JARs和WARs；</p>
+<p>（2）内嵌Tomcat或Jetty等Servlet容器；</p>
+<p>（3）提供自动配置的“starter”项目对象模型（POMS）以简化<a href="https://baike.baidu.com/item/Maven/6094909" target="_blank" rel="noopener">Maven</a>配置；</p>
+<p>（4）尽可能自动配置Spring容器；</p>
+<p>（5）提供准备好的特性，如指标、健康检查和外部化配置；</p>
+<p>（6）绝对没有代码生成，不需要XML配置。 </p>
+<h3 id="搭建SpringBoot-使用IDEA工具"><a href="#搭建SpringBoot-使用IDEA工具" class="headerlink" title="搭建SpringBoot(使用IDEA工具)"></a>搭建SpringBoot(使用IDEA工具)</h3><h5 id="1、新建项目"><a href="#1、新建项目" class="headerlink" title="1、新建项目"></a>1、新建项目</h5><p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g94jpe01ztj30ik09v0te.jpg" alt="image-20191120152328460.png"></p>
+<h5 id="2、选择spring-initializer-这个需要联网使用"><a href="#2、选择spring-initializer-这个需要联网使用" class="headerlink" title="2、选择spring initializer(这个需要联网使用)"></a>2、选择spring initializer(这个需要联网使用)</h5><p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g94jpvs198j30tp0khwft.jpg" alt="image-20191120152423816.png"></p>
+<h5 id="3、写入自己的项目名"><a href="#3、写入自己的项目名" class="headerlink" title="3、写入自己的项目名"></a>3、写入自己的项目名</h5><p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g94jqewl19j30tp0khq3q.jpg" alt="image-20191120152530012.png"></p>
+<h5 id="4、选择使用技术-这里可以不做选择，手动加入"><a href="#4、选择使用技术-这里可以不做选择，手动加入" class="headerlink" title="4、选择使用技术(这里可以不做选择，手动加入)"></a>4、选择使用技术(这里可以不做选择，手动加入)</h5><p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g94jqomzqlj30tp0khjsg.jpg" alt="image-20191120152614970.png"></p>
+<h5 id="5、创建完成"><a href="#5、创建完成" class="headerlink" title="5、创建完成"></a>5、创建完成</h5><p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g94jqyg8xoj30tp0khgm7.jpg" alt="image-20191120152638326.png"></p>
+<h5 id="6、写一个controller，进行访问"><a href="#6、写一个controller，进行访问" class="headerlink" title="6、写一个controller，进行访问"></a>6、写一个controller，进行访问</h5><p>这里我们使用了注解</p>
+<p>@RestController    的意义就相当于        @Controller +  @ResponseBody</p>
+<p>@RequestMapping    访问地址</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@RestController</span></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ControllerTest</span> </span>&#123;</span><br><span class="line">    <span class="hljs-meta">@RequestMapping</span>(<span class="hljs-string">"/hello"</span>)</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">index</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> <span class="hljs-string">"Hello World"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>在ExecStart=/usr/bin/dockerd-current 后面加上   (效果如图)</p>
-<p>-H tcp://0.0.0.0:2375 -H unix://var/run/docker.sock</p>
-<p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g81boea1taj30ng0l8q49.jpg" alt="1571293045626.png"></p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#修改防火墙开方端口：</span><br><span class="line">vi /etc/sysconfig/iptables</span><br></pre></td></tr></table></figure>
-
-<p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g81bov1ht7j30mp0arq3o.jpg" alt="1571293160316.png"></p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#之后重启防火墙即可</span><br><span class="line">service iptables restart</span><br></pre></td></tr></table></figure>
-
-<h3 id="二、下载插件"><a href="#二、下载插件" class="headerlink" title="二、下载插件"></a>二、下载插件</h3><p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g81bp8mwr7j30cf0kl3zc.jpg" alt="1571292677688.png"></p>
-<p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g81bpnsz3hj30z70oi418.jpg" alt="1571292699750.png"></p>
-<p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g81br5kl5kj30r00krgo3.jpg" alt="1571292823549.png"></p>
-<p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g81brerxmbj30r00kr0v7.jpg" alt="1571292846593.png"></p>
-<p>像这样，安装后重启软件</p>
-<p>重启之后 同样进入设置中，选择Docker配置  如图：</p>
-<p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g81brmjs18j30z70oiwfq.jpg" alt="1571293332527.png"></p>
-<h3 id="三、IDEA的Docker插件实战"><a href="#三、IDEA的Docker插件实战" class="headerlink" title="三、IDEA的Docker插件实战"></a>三、IDEA的Docker插件实战</h3><p>参考： <a href="https://xinchen.blog.csdn.net/article/details/100051325#commentsedit" target="_blank" rel="noopener">https://xinchen.blog.csdn.net/article/details/100051325#commentsedit</a> </p>
-<ul>
-<li>创建一个SpringBoot项目     pom.xml 的内容为：</li>
-</ul>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;</span><br><span class="line">    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line">    &lt;parent&gt;</span><br><span class="line">        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;</span><br><span class="line">        &lt;version&gt;2.1.7.RELEASE&lt;/version&gt;</span><br><span class="line">        &lt;relativePath/&gt; &lt;!-- lookup parent from repository --&gt;</span><br><span class="line">    &lt;/parent&gt;</span><br><span class="line">    &lt;groupId&gt;com.bolingcavalry&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;dockerplugindemo&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;</span><br><span class="line">    &lt;name&gt;dockerplugindemo&lt;/name&gt;</span><br><span class="line">    &lt;description&gt;Demo project for Spring Boot&lt;/description&gt;</span><br><span class="line"></span><br><span class="line">    &lt;properties&gt;</span><br><span class="line">        &lt;java.version&gt;1.8&lt;/java.version&gt;</span><br><span class="line">    &lt;/properties&gt;</span><br><span class="line"></span><br><span class="line">    &lt;dependencies&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;</span><br><span class="line">            &lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">    &lt;/dependencies&gt;</span><br><span class="line"></span><br><span class="line">    &lt;build&gt;</span><br><span class="line">        &lt;plugins&gt;</span><br><span class="line">            &lt;plugin&gt;</span><br><span class="line">                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">                &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">            &lt;/plugin&gt;</span><br><span class="line">        &lt;/plugins&gt;</span><br><span class="line">    &lt;/build&gt;</span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>把启动类 同时设置为Controller使用</li>
-</ul>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 用启动类同时作为Controller，增加一个web响应接口：</span><br><span class="line"> */</span><br><span class="line">@SpringBootApplication</span><br><span class="line">@RestController</span><br><span class="line">public class DockerApplication &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        SpringApplication.run(DockerApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    @RequestMapping(&quot;/test&quot;)</span><br><span class="line">    public String test()&#123;</span><br><span class="line">        return &quot;1. Hello world ! &quot; + new SimpleDateFormat(&quot; [yyyy-mm-dd  HH:mm:ss]&quot;).format(new Date());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>在项目的根目录中(pom.xml文件所在目录下)，创建名字为  *<em>Dockerfile *</em> 的文件，内容如下</li>
-</ul>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"># Docker image for springboot application</span><br><span class="line"># VERSION 0.0.1</span><br><span class="line"># Author: bolingcavalry</span><br><span class="line"></span><br><span class="line">### 基础镜像，使用alpine操作系统，openjkd使用8u201</span><br><span class="line">FROM openjdk:8u201-jdk-alpine3.9</span><br><span class="line"></span><br><span class="line">#作者</span><br><span class="line">MAINTAINER BolingCavalry &lt;zq2599@gmail.com&gt;</span><br><span class="line"></span><br><span class="line">#系统编码</span><br><span class="line">ENV LANG=C.UTF-8 LC_ALL=C.UTF-8</span><br><span class="line"></span><br><span class="line">#声明一个挂载点，容器内此路径会对应宿主机的某个文件夹</span><br><span class="line">VOLUME /tmp</span><br><span class="line"></span><br><span class="line">#应用构建成功后的jar文件被复制到镜像内，名字也改成了app.jar</span><br><span class="line">ADD target/dockerplugindemo-0.0.1-SNAPSHOT.jar app.jar</span><br><span class="line"></span><br><span class="line">#启动容器时的进程</span><br><span class="line">ENTRYPOINT [&quot;java&quot;,&quot;-jar&quot;,&quot;/app.jar&quot;]</span><br><span class="line"></span><br><span class="line">#暴露8080端口</span><br><span class="line">EXPOSE 8080</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>创建Dockerfile配置</li>
-</ul>
-<p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g81bryb8dbj30h906wjre.jpg" alt="1571296886820.png"></p>
-<p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g81bs6bkp4j30g206p0t0.jpg" alt="1571296935335.png"></p>
-<p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g81bsgsgrvj311f0rutak.jpg" alt="1571297078044.png"></p>
-<p>最后在下边选择maven</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clean package -U -DskipTests</span><br></pre></td></tr></table></figure>
-
-<p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g81bsq1sxwj30px06e3ym.jpg" alt="1571297134997.png"></p>
-<p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g81bsxd9wgj308m0apt92.jpg" alt="1571300586836.png"></p>
-<p>在这件Command line 输入</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#表示每次在构建镜像之前，都会将当前工程清理掉并且重新编译构建：</span><br><span class="line">clean package -U -DskipTests</span><br></pre></td></tr></table></figure>
-
-<p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g81bt5m7iij30pr05imx8.jpg" alt="1571300611089.png"></p>
-<p>完成后就可以启动了</p>
-<p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g81btepi4ej30a8045jr8.jpg" alt="1571300717750.png"></p>
-<p>点击绿色三角，启动项目</p>
-<p>没有报错，可以直接访问地址  （ <a href="http://192.168.19.128:18080/test" target="_blank" rel="noopener">http://192.168.19.128:18080/test</a> ）换成自己的ip地址</p>
-<p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g81btoahasj31hc095q3a.jpg" alt="1571300957042.png"></p>
-<p>访问到说明成功了，如果有修改再去运行就好了</p>
+<p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g94jrhzhlyj311o0jkdic.jpg" alt="image-20191120153309738.png"></p>
+<h5 id="7、启动项目"><a href="#7、启动项目" class="headerlink" title="7、启动项目"></a>7、启动项目</h5><p>进入Application项目中，运行这个main方法</p>
+<p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g94jrrk6dvj311z0erwfw.jpg" alt="image-20191120153642020.png"></p>
+<h5 id="8、访问启动的项目"><a href="#8、访问启动的项目" class="headerlink" title="8、访问启动的项目"></a>8、访问启动的项目</h5><p>访问路径    localhost:8080/hello     显示结果如下 说明启动成功</p>
+<p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g94jrzumzpj30lw0aodg4.jpg" alt="image-20191120153727181.png"></p>
 
         </div>
         
@@ -243,7 +216,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Docker/">Docker</a>
+                    <a class="has-link-grey -link" href="/java-show/tags/SpringBoot/">SpringBoot</a>
                 </div>
             </div>
         </div>
@@ -290,16 +263,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/10/13/Docker入门2/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/java-show/2019/09/15/搭建自己的博客/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">Docker入门2 —— docker基础和简单启动</span>
+                <span class="level-item">搭建一个自己的博客</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/10/11/Docker实战2/">
-                <span class="level-item">Docker实战2 ——  IDEA插件连接Docker</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/java-show/2019/09/15/SpringBoot入门01——创建springboot项目/">
+                <span class="level-item">SpringBoot入门01——创建springboot项目</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -345,7 +318,7 @@
                 <div>
                     
                     <figure class="image is-128x128 has-mb-6">
-                        <img class="" src="/images/avatar.png" alt="常若川">
+                        <img class="" src="/java-show/images/avatar.png" alt="常若川">
                     </figure>
                     
                     <p class="is-size-4 is-block">
@@ -373,7 +346,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        15
+                        18
                     </p>
                 </div>
             </div>
@@ -383,7 +356,7 @@
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        9
+                        10
                     </p>
                 </div>
             </div>
@@ -393,7 +366,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        5
+                        6
                     </p>
                 </div>
             </div>
@@ -435,7 +408,7 @@
             </a>
             
             <a class="level-item button is-white is-marginless" target="_blank"
-                title="RSS" href="/">
+                title="RSS" href="/java-show/">
                 
                 <i class="fas fa-rss"></i>
                 
@@ -496,23 +469,23 @@
             </h3>
             <ul class="menu-list">
             <li>
-        <a class="level is-marginless" href="/categories/Docker/">
+        <a class="level is-marginless" href="/java-show/categories/Docker/">
             <span class="level-start">
                 <span class="level-item">Docker</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">5</span>
+                <span class="level-item tag">6</span>
             </span>
         </a><ul><li>
-        <a class="level is-marginless" href="/categories/Docker/IDEA/">
+        <a class="level is-marginless" href="/java-show/categories/Docker/IDEA/">
             <span class="level-start">
                 <span class="level-item">IDEA</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">3</span>
+                <span class="level-item tag">4</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/Docker/Linux/">
+        <a class="level is-marginless" href="/java-show/categories/Docker/Linux/">
             <span class="level-start">
                 <span class="level-item">Linux</span>
             </span>
@@ -520,7 +493,15 @@
                 <span class="level-item tag">2</span>
             </span>
         </a></li></ul></li><li>
-        <a class="level is-marginless" href="/categories/博客系列/">
+        <a class="level is-marginless" href="/java-show/categories/SpringBoot/">
+            <span class="level-start">
+                <span class="level-item">SpringBoot</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/java-show/categories/博客系列/">
             <span class="level-start">
                 <span class="level-item">博客系列</span>
             </span>
@@ -528,7 +509,7 @@
                 <span class="level-item tag">1</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/数据库/">
+        <a class="level is-marginless" href="/java-show/categories/数据库/">
             <span class="level-start">
                 <span class="level-item">数据库</span>
             </span>
@@ -536,7 +517,7 @@
                 <span class="level-item tag">1</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/框架/">
+        <a class="level is-marginless" href="/java-show/categories/框架/">
             <span class="level-start">
                 <span class="level-item">框架</span>
             </span>
@@ -544,7 +525,7 @@
                 <span class="level-item tag">8</span>
             </span>
         </a><ul><li>
-        <a class="level is-marginless" href="/categories/框架/Activiti工作流/">
+        <a class="level is-marginless" href="/java-show/categories/框架/Activiti工作流/">
             <span class="level-start">
                 <span class="level-item">Activiti工作流</span>
             </span>
@@ -552,7 +533,7 @@
                 <span class="level-item tag">7</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/框架/SrpingCloud/">
+        <a class="level is-marginless" href="/java-show/categories/框架/SrpingCloud/">
             <span class="level-start">
                 <span class="level-item">SrpingCloud</span>
             </span>
@@ -571,7 +552,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/Activiti工作流/" style="font-size: 20px;">Activiti工作流</a> <a href="/tags/Docker/" style="font-size: 15px;">Docker</a> <a href="/tags/SpringCloud/" style="font-size: 10px;">SpringCloud</a> <a href="/tags/分享/" style="font-size: 10px;">分享</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a>
+        <a href="/java-show/tags/Activiti工作流/" style="font-size: 20px;">Activiti工作流</a> <a href="/java-show/tags/Docker/" style="font-size: 16.67px;">Docker</a> <a href="/java-show/tags/SpringBoot/" style="font-size: 13.33px;">SpringBoot</a> <a href="/java-show/tags/SpringCloud/" style="font-size: 10px;">SpringCloud</a> <a href="/java-show/tags/分享/" style="font-size: 10px;">分享</a> <a href="/java-show/tags/数据库/" style="font-size: 10px;">数据库</a>
     </div>
 </div>
 
@@ -588,18 +569,18 @@
         
         <article class="media">
             
-            <a href="/2019/11/12/sql学习入门/" class="media-left">
+            <a href="/java-show/2019/11/12/sql学习入门/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="sql基础知识">
+                    <img class="thumbnail" src="/java-show/images/thumbnail.svg" alt="sql基础知识">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-11T16:00:00.000Z">2019-11-12</time></div>
-                    <a href="/2019/11/12/sql学习入门/" class="title has-link-black-ter is-size-6 has-text-weight-normal">sql基础知识</a>
+                    <a href="/java-show/2019/11/12/sql学习入门/" class="title has-link-black-ter is-size-6 has-text-weight-normal">sql基础知识</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/数据库/">数据库</a>
+                        <a class="has-link-grey -link" href="/java-show/categories/数据库/">数据库</a>
                     </p>
                 </div>
             </div>
@@ -607,18 +588,18 @@
         
         <article class="media">
             
-            <a href="/2019/10/14/Activiti框架——流程撤回/" class="media-left">
+            <a href="/java-show/2019/10/14/Activiti框架——id生成策略/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Activiti框架常用-流程节点撤回">
+                    <img class="thumbnail" src="/java-show/images/thumbnail.svg" alt="Activiti框架——id生成策略">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
-                    <a href="/2019/10/14/Activiti框架——流程撤回/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架常用-流程节点撤回</a>
+                    <a href="/java-show/2019/10/14/Activiti框架——id生成策略/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架——id生成策略</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
+                        <a class="has-link-grey -link" href="/java-show/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/java-show/categories/框架/Activiti工作流/">Activiti工作流</a>
                     </p>
                 </div>
             </div>
@@ -626,18 +607,18 @@
         
         <article class="media">
             
-            <a href="/2019/10/14/Activiti框架——搭建页面管理war包/" class="media-left">
+            <a href="/java-show/2019/10/14/Docker实战3安装mysql/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Activiti框架——搭建页面管理war包">
+                    <img class="thumbnail" src="/java-show/images/thumbnail.svg" alt="Docker实战3 —— 安装Mysql">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
-                    <a href="/2019/10/14/Activiti框架——搭建页面管理war包/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架——搭建页面管理war包</a>
+                    <a href="/java-show/2019/10/14/Docker实战3安装mysql/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Docker实战3 —— 安装Mysql</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
+                        <a class="has-link-grey -link" href="/java-show/categories/Docker/">Docker</a> / <a class="has-link-grey -link" href="/java-show/categories/Docker/IDEA/">IDEA</a>
                     </p>
                 </div>
             </div>
@@ -645,18 +626,18 @@
         
         <article class="media">
             
-            <a href="/2019/10/14/Activiti框架——id生成策略/" class="media-left">
+            <a href="/java-show/2019/10/14/Activiti框架——流程撤回/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Activiti框架——id生成策略">
+                    <img class="thumbnail" src="/java-show/images/thumbnail.svg" alt="Activiti框架常用-流程节点撤回">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
-                    <a href="/2019/10/14/Activiti框架——id生成策略/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架——id生成策略</a>
+                    <a href="/java-show/2019/10/14/Activiti框架——流程撤回/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架常用-流程节点撤回</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
+                        <a class="has-link-grey -link" href="/java-show/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/java-show/categories/框架/Activiti工作流/">Activiti工作流</a>
                     </p>
                 </div>
             </div>
@@ -664,18 +645,18 @@
         
         <article class="media">
             
-            <a href="/2019/10/14/Activiti框架——自定义角色配置/" class="media-left">
+            <a href="/java-show/2019/10/14/Activiti框架——搭建页面管理war包/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Activiti框架常用-自定义角色方案">
+                    <img class="thumbnail" src="/java-show/images/thumbnail.svg" alt="Activiti框架——搭建页面管理war包">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
-                    <a href="/2019/10/14/Activiti框架——自定义角色配置/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架常用-自定义角色方案</a>
+                    <a href="/java-show/2019/10/14/Activiti框架——搭建页面管理war包/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架——搭建页面管理war包</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
+                        <a class="has-link-grey -link" href="/java-show/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/java-show/categories/框架/Activiti工作流/">Activiti工作流</a>
                     </p>
                 </div>
             </div>
@@ -694,7 +675,7 @@
         <ul class="menu-list">
         
         <li>
-            <a class="level is-marginless" href="/archives/2019/11/">
+            <a class="level is-marginless" href="/java-show/archives/2019/11/">
                 <span class="level-start">
                     <span class="level-item">十一月 2019</span>
                 </span>
@@ -705,23 +686,23 @@
         </li>
         
         <li>
-            <a class="level is-marginless" href="/archives/2019/10/">
+            <a class="level is-marginless" href="/java-show/archives/2019/10/">
                 <span class="level-start">
                     <span class="level-item">十月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">12</span>
+                    <span class="level-item tag">13</span>
                 </span>
             </a>
         </li>
         
         <li>
-            <a class="level is-marginless" href="/archives/2019/09/">
+            <a class="level is-marginless" href="/java-show/archives/2019/09/">
                 <span class="level-start">
                     <span class="level-item">九月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -740,35 +721,42 @@
             <div class="field is-grouped is-grouped-multiline">
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/Activiti工作流/">
+                    <a class="tags has-addons" href="/java-show/tags/Activiti工作流/">
                         <span class="tag">Activiti工作流</span>
                         <span class="tag is-grey">7</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/Docker/">
+                    <a class="tags has-addons" href="/java-show/tags/Docker/">
                         <span class="tag">Docker</span>
-                        <span class="tag is-grey">5</span>
+                        <span class="tag is-grey">6</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/SpringCloud/">
+                    <a class="tags has-addons" href="/java-show/tags/SpringBoot/">
+                        <span class="tag">SpringBoot</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/java-show/tags/SpringCloud/">
                         <span class="tag">SpringCloud</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/分享/">
+                    <a class="tags has-addons" href="/java-show/tags/分享/">
                         <span class="tag">分享</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/数据库/">
+                    <a class="tags has-addons" href="/java-show/tags/数据库/">
                         <span class="tag">数据库</span>
                         <span class="tag is-grey">1</span>
                     </a>
@@ -799,18 +787,18 @@
         
         <article class="media">
             
-            <a href="/2019/11/12/sql学习入门/" class="media-left">
+            <a href="/java-show/2019/11/12/sql学习入门/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="sql基础知识">
+                    <img class="thumbnail" src="/java-show/images/thumbnail.svg" alt="sql基础知识">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-11T16:00:00.000Z">2019-11-12</time></div>
-                    <a href="/2019/11/12/sql学习入门/" class="title has-link-black-ter is-size-6 has-text-weight-normal">sql基础知识</a>
+                    <a href="/java-show/2019/11/12/sql学习入门/" class="title has-link-black-ter is-size-6 has-text-weight-normal">sql基础知识</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/数据库/">数据库</a>
+                        <a class="has-link-grey -link" href="/java-show/categories/数据库/">数据库</a>
                     </p>
                 </div>
             </div>
@@ -818,18 +806,18 @@
         
         <article class="media">
             
-            <a href="/2019/10/14/Activiti框架——流程撤回/" class="media-left">
+            <a href="/java-show/2019/10/14/Activiti框架——id生成策略/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Activiti框架常用-流程节点撤回">
+                    <img class="thumbnail" src="/java-show/images/thumbnail.svg" alt="Activiti框架——id生成策略">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
-                    <a href="/2019/10/14/Activiti框架——流程撤回/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架常用-流程节点撤回</a>
+                    <a href="/java-show/2019/10/14/Activiti框架——id生成策略/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架——id生成策略</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
+                        <a class="has-link-grey -link" href="/java-show/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/java-show/categories/框架/Activiti工作流/">Activiti工作流</a>
                     </p>
                 </div>
             </div>
@@ -837,18 +825,18 @@
         
         <article class="media">
             
-            <a href="/2019/10/14/Activiti框架——搭建页面管理war包/" class="media-left">
+            <a href="/java-show/2019/10/14/Docker实战3安装mysql/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Activiti框架——搭建页面管理war包">
+                    <img class="thumbnail" src="/java-show/images/thumbnail.svg" alt="Docker实战3 —— 安装Mysql">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
-                    <a href="/2019/10/14/Activiti框架——搭建页面管理war包/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架——搭建页面管理war包</a>
+                    <a href="/java-show/2019/10/14/Docker实战3安装mysql/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Docker实战3 —— 安装Mysql</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
+                        <a class="has-link-grey -link" href="/java-show/categories/Docker/">Docker</a> / <a class="has-link-grey -link" href="/java-show/categories/Docker/IDEA/">IDEA</a>
                     </p>
                 </div>
             </div>
@@ -856,18 +844,18 @@
         
         <article class="media">
             
-            <a href="/2019/10/14/Activiti框架——id生成策略/" class="media-left">
+            <a href="/java-show/2019/10/14/Activiti框架——流程撤回/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Activiti框架——id生成策略">
+                    <img class="thumbnail" src="/java-show/images/thumbnail.svg" alt="Activiti框架常用-流程节点撤回">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
-                    <a href="/2019/10/14/Activiti框架——id生成策略/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架——id生成策略</a>
+                    <a href="/java-show/2019/10/14/Activiti框架——流程撤回/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架常用-流程节点撤回</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
+                        <a class="has-link-grey -link" href="/java-show/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/java-show/categories/框架/Activiti工作流/">Activiti工作流</a>
                     </p>
                 </div>
             </div>
@@ -875,18 +863,18 @@
         
         <article class="media">
             
-            <a href="/2019/10/14/Activiti框架——自定义角色配置/" class="media-left">
+            <a href="/java-show/2019/10/14/Activiti框架——搭建页面管理war包/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Activiti框架常用-自定义角色方案">
+                    <img class="thumbnail" src="/java-show/images/thumbnail.svg" alt="Activiti框架——搭建页面管理war包">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
-                    <a href="/2019/10/14/Activiti框架——自定义角色配置/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架常用-自定义角色方案</a>
+                    <a href="/java-show/2019/10/14/Activiti框架——搭建页面管理war包/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架——搭建页面管理war包</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
+                        <a class="has-link-grey -link" href="/java-show/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/java-show/categories/框架/Activiti工作流/">Activiti工作流</a>
                     </p>
                 </div>
             </div>
@@ -905,7 +893,7 @@
         <ul class="menu-list">
         
         <li>
-            <a class="level is-marginless" href="/archives/2019/11/">
+            <a class="level is-marginless" href="/java-show/archives/2019/11/">
                 <span class="level-start">
                     <span class="level-item">十一月 2019</span>
                 </span>
@@ -916,23 +904,23 @@
         </li>
         
         <li>
-            <a class="level is-marginless" href="/archives/2019/10/">
+            <a class="level is-marginless" href="/java-show/archives/2019/10/">
                 <span class="level-start">
                     <span class="level-item">十月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">12</span>
+                    <span class="level-item tag">13</span>
                 </span>
             </a>
         </li>
         
         <li>
-            <a class="level is-marginless" href="/archives/2019/09/">
+            <a class="level is-marginless" href="/java-show/archives/2019/09/">
                 <span class="level-start">
                     <span class="level-item">九月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -951,35 +939,42 @@
             <div class="field is-grouped is-grouped-multiline">
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/Activiti工作流/">
+                    <a class="tags has-addons" href="/java-show/tags/Activiti工作流/">
                         <span class="tag">Activiti工作流</span>
                         <span class="tag is-grey">7</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/Docker/">
+                    <a class="tags has-addons" href="/java-show/tags/Docker/">
                         <span class="tag">Docker</span>
-                        <span class="tag is-grey">5</span>
+                        <span class="tag is-grey">6</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/SpringCloud/">
+                    <a class="tags has-addons" href="/java-show/tags/SpringBoot/">
+                        <span class="tag">SpringBoot</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/java-show/tags/SpringCloud/">
                         <span class="tag">SpringCloud</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/分享/">
+                    <a class="tags has-addons" href="/java-show/tags/分享/">
                         <span class="tag">分享</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/数据库/">
+                    <a class="tags has-addons" href="/java-show/tags/数据库/">
                         <span class="tag">数据库</span>
                         <span class="tag is-grey">1</span>
                     </a>
@@ -1000,9 +995,9 @@
     <div class="container">
         <div class="level">
             <div class="level-start has-text-centered-mobile">
-                <a class="footer-logo is-block has-mb-6" href="/">
+                <a class="footer-logo is-block has-mb-6" href="/java-show/">
                 
-                    <img src="/images/logo.svg" alt="Docker实战1 —— IDEA插件连接Docker部署（Dockerfile）" height="28">
+                    <img src="/java-show/images/logo.svg" alt="SpringBoot入门01——创建springboot项目" height="28">
                 
                 </a>
                 <p class="is-size-7">
@@ -1078,7 +1073,7 @@ var IcarusThemeSettings = {
     
     
     
-    <script src="/js/animation.js"></script>
+    <script src="/java-show/js/animation.js"></script>
     
 
     
@@ -1086,7 +1081,7 @@ var IcarusThemeSettings = {
     
     <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
-    <script src="/js/gallery.js" defer></script>
+    <script src="/java-show/js/gallery.js" defer></script>
     
 
     
@@ -1141,7 +1136,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <a id="back-to-top" title="回到顶端" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
-<script src="/js/back-to-top.js" defer></script>
+<script src="/java-show/js/back-to-top.js" defer></script>
 
 
     
@@ -1161,7 +1156,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
 
 
-<script src="/js/main.js" defer></script>
+<script src="/java-show/js/main.js" defer></script>
 
     
     <div class="searchbox ins-search">
@@ -1185,14 +1180,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 TAGS: '标签',
                 UNTITLED: '(无标题)',
             },
-            CONTENT_URL: '/content.json',
+            CONTENT_URL: '/java-show/content.json',
         };
         window.INSIGHT_CONFIG = INSIGHT_CONFIG;
     })(window);
 </script>
-<script src="/js/insight.js" defer></script>
-<link rel="stylesheet" href="/css/search.css">
-<link rel="stylesheet" href="/css/insight.css">
+<script src="/java-show/js/insight.js" defer></script>
+<link rel="stylesheet" href="/java-show/css/search.css">
+<link rel="stylesheet" href="/java-show/css/insight.css">
     
 </body>
 </html>

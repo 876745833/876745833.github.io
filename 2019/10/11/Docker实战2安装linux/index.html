@@ -7,22 +7,22 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>Activiti框架——搭建页面管理war包 - CRC-BK</title>
+<title>Docker实战2 ——  安装Nginx - CRC-BK</title>
 
 
-    <meta name="description" content="在项目中，经常会用到流程的技术，可是自己写又非常麻烦，所以就有Activiti框架，为我们提供了一套比较完善的流程技术，在以后的项目中也会经常用到的。大家一起来学习一下吧 最后官方为我们提供了一个界面化管理的war包，让我们更加方便的使用框架。下面来一起看看怎么使用吧。">
-<meta name="keywords" content="Activiti工作流">
+    <meta name="description" content="从仓库获取Nginx12#获取docker pull nginx  运行容器12#对外开放80端口，对内开放80端口docker run -p 80:80 --name nginx -d nginx  复制配置文件到宿主机12345#查看nginx的配置文件目录docker exec nginx ls /etc/nginx#复制docker cp -a nginx:/etc/nginx/ /s">
+<meta name="keywords" content="Docker">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Activiti框架——搭建页面管理war包">
-<meta property="og:url" content="https://876745833.github.io/2019/10/14/Activiti框架——搭建页面管理war包/index.html">
+<meta property="og:title" content="Docker实战2 ——  安装Nginx">
+<meta property="og:url" content="https://876745833.github.io/2019/10/11/Docker实战2安装linux/index.html">
 <meta property="og:site_name" content="CRC-BK">
-<meta property="og:description" content="在项目中，经常会用到流程的技术，可是自己写又非常麻烦，所以就有Activiti框架，为我们提供了一套比较完善的流程技术，在以后的项目中也会经常用到的。大家一起来学习一下吧 最后官方为我们提供了一个界面化管理的war包，让我们更加方便的使用框架。下面来一起看看怎么使用吧。">
+<meta property="og:description" content="从仓库获取Nginx12#获取docker pull nginx  运行容器12#对外开放80端口，对内开放80端口docker run -p 80:80 --name nginx -d nginx  复制配置文件到宿主机12345#查看nginx的配置文件目录docker exec nginx ls /etc/nginx#复制docker cp -a nginx:/etc/nginx/ /s">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://876745833.github.io/java-show/images/og_image.png">
-<meta property="og:updated_time" content="2019-11-04T09:01:51.377Z">
+<meta property="og:updated_time" content="2019-11-14T02:15:46.077Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Activiti框架——搭建页面管理war包">
-<meta name="twitter:description" content="在项目中，经常会用到流程的技术，可是自己写又非常麻烦，所以就有Activiti框架，为我们提供了一套比较完善的流程技术，在以后的项目中也会经常用到的。大家一起来学习一下吧 最后官方为我们提供了一个界面化管理的war包，让我们更加方便的使用框架。下面来一起看看怎么使用吧。">
+<meta name="twitter:title" content="Docker实战2 ——  安装Nginx">
+<meta name="twitter:description" content="从仓库获取Nginx12#获取docker pull nginx  运行容器12#对外开放80端口，对内开放80端口docker run -p 80:80 --name nginx -d nginx  复制配置文件到宿主机12345#查看nginx的配置文件目录docker exec nginx ls /etc/nginx#复制docker cp -a nginx:/etc/nginx/ /s">
 <meta name="twitter:image" content="https://876745833.github.io/java-show/images/og_image.png">
 
 
@@ -97,7 +97,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/java-show/">
             
-                <img src="/java-show/images/logo.svg" alt="Activiti框架——搭建页面管理war包" height="28">
+                <img src="/java-show/images/logo.svg" alt="Docker实战2 ——  安装Nginx" height="28">
             
             </a>
         </div>
@@ -156,10 +156,10 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time>
+                <time class="level-item has-text-grey" datetime="2019-10-10T16:00:00.000Z">2019-10-11</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/java-show/categories/框架/">框架</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/java-show/categories/框架/Activiti工作流/">Activiti工作流</a>
+                <a class="has-link-grey -link" href="/java-show/categories/Docker/">Docker</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/java-show/categories/Docker/Linux/">Linux</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/java-show/categories/Docker/Linux/Centos7/">Centos7</a>
                 </div>
                 
                 
@@ -174,28 +174,25 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Activiti框架——搭建页面管理war包
+                Docker实战2 ——  安装Nginx
             
         </h1>
         <div class="content">
-            <p>在项目中，经常会用到流程的技术，可是自己写又非常麻烦，所以就有Activiti框架，为我们提供了一套比较完善的流程技术，在以后的项目中也会经常用到的。大家一起来学习一下吧</p>
-<p>最后官方为我们提供了一个界面化管理的war包，让我们更加方便的使用框架。下面来一起看看怎么使用吧。</p>
-<a id="more"></a>
+            <a id="more"></a>
 
-<h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><p>Activiti框架官方为我们提供了官方管理页面，我们只需要去官网下载，放入tomcat等服务器下运行即可。</p>
-<p>下边是一个5.x版本的activiti，官方好像已经找不到了。大家有需要用可以通过下方链接下载</p>
-<p>链接：<a href="https://pan.baidu.com/s/1TI_Yx2zawFm7udg9WywoAg" target="_blank" rel="noopener">https://pan.baidu.com/s/1TI_Yx2zawFm7udg9WywoAg</a><br>提取码：6pse </p>
-<h4 id="修改文件内的DB地址"><a href="#修改文件内的DB地址" class="headerlink" title="修改文件内的DB地址"></a>修改文件内的DB地址</h4><p>修改war包内  路径： activiti-webapp.war\WEB-INF\classes   的  db.properties 中的数据库地址，改为自己的。</p>
-<h4 id="放入tomcat启动"><a href="#放入tomcat启动" class="headerlink" title="放入tomcat启动"></a>放入tomcat启动</h4><p>把修改好的war包放到，tomcat的webapp路径下。</p>
-<p>接下来进入tomcat的bin目录，win版本的，双击startup.bat ，启动成功，去页面访问即可。</p>
-<p>访问地址：  <a href="http://localhost:8080/activiti-webapp/" target="_blank" rel="noopener">http://localhost:8080/activiti-webapp/</a> </p>
-<p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g8id4rzrhvj31hc0sm0ue.jpg" alt="1572574230404.png"></p>
-<p>看到这个页面后，恭喜启动成功了。</p>
-<p>可以使用系统默认用户访问</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">账号  	密码	    角色</span><br><span class="line">kermit	 kermit	  admin</span><br><span class="line">gonzo	 gonzo	  manager</span><br><span class="line">fozzie	 fozzie	  user</span><br></pre></td></tr></table></figure>
+<h4 id="从仓库获取Nginx"><a href="#从仓库获取Nginx" class="headerlink" title="从仓库获取Nginx"></a>从仓库获取Nginx</h4><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#获取</span><br><span class="line">docker pull nginx</span><br></pre></td></tr></table></figure>
 
-<p>登录后看到这个页面，说明成功了</p>
-<p><img src="http://ww1.sinaimg.cn/large/007cMR7dly1g8id51mp3lj31hc0smgnp.jpg" alt="1572574481490.png"></p>
+<h4 id="运行容器"><a href="#运行容器" class="headerlink" title="运行容器"></a>运行容器</h4><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#对外开放80端口，对内开放80端口</span><br><span class="line">docker run -p 80:80 --name nginx -d nginx</span><br></pre></td></tr></table></figure>
+
+<h4 id="复制配置文件到宿主机"><a href="#复制配置文件到宿主机" class="headerlink" title="复制配置文件到宿主机"></a>复制配置文件到宿主机</h4><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#查看nginx的配置文件目录</span><br><span class="line">docker exec nginx ls /etc/nginx</span><br><span class="line"></span><br><span class="line">#复制</span><br><span class="line">docker cp -a nginx:/etc/nginx/ /srv/nginx/conf</span><br></pre></td></tr></table></figure>
+
+<h4 id="停止并删除"><a href="#停止并删除" class="headerlink" title="停止并删除"></a>停止并删除</h4><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#停止</span><br><span class="line">docker stop nginx</span><br><span class="line">#删除</span><br><span class="line">docker rm nginx</span><br></pre></td></tr></table></figure>
+
+<h4 id="重新运行容器"><a href="#重新运行容器" class="headerlink" title="重新运行容器"></a>重新运行容器</h4><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 80:80 --restart always --name nginx -v /srv/nginx/www:/www -v /srv/nginx/conf/:/etc/nginx/ -v /srv/nginx/logs:/var/log/nginx -v /srv/nginx/wwwlogs:/wwwlogs -d nginx</span><br></pre></td></tr></table></figure>
+
+<h4 id="已安装完成，启动Nginx"><a href="#已安装完成，启动Nginx" class="headerlink" title="已安装完成，启动Nginx"></a>已安装完成，启动Nginx</h4><p>如有需要就直接修改/srv/nginx/conf/conf.d目录下的配置文件，然后重启Nginx容器即可生效 </p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker restart nginx</span><br></pre></td></tr></table></figure>
+
 
         </div>
         
@@ -203,7 +200,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/java-show/tags/Activiti工作流/">Activiti工作流</a>
+                    <a class="has-link-grey -link" href="/java-show/tags/Docker/">Docker</a>
                 </div>
             </div>
         </div>
@@ -250,16 +247,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/java-show/2019/10/14/Activiti框架——流程撤回/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/java-show/2019/10/12/Docker实战1IDEA插件连接Docker部署/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">Activiti框架常用-流程节点撤回</span>
+                <span class="level-item">Docker实战1 —— IDEA插件连接Docker部署</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/java-show/2019/10/14/Activiti框架——查询历史任务/">
-                <span class="level-item">Activiti框架——查询历史任务</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/java-show/2019/10/10/Docker入门1--搭建Docker/">
+                <span class="level-item">Docker入门1 —— 搭建Docker</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -984,7 +981,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/java-show/">
                 
-                    <img src="/java-show/images/logo.svg" alt="Activiti框架——搭建页面管理war包" height="28">
+                    <img src="/java-show/images/logo.svg" alt="Docker实战2 ——  安装Nginx" height="28">
                 
                 </a>
                 <p class="is-size-7">

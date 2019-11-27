@@ -14,16 +14,16 @@
 <meta name="keywords" content="Docker">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker入门2 —— docker基础和简单启动">
-<meta property="og:url" content="http://yoursite.com/2019/10/13/Docker入门2/index.html">
+<meta property="og:url" content="https://876745833.github.io/2019/10/13/Docker入门2/index.html">
 <meta property="og:site_name" content="CRC-BK">
 <meta property="og:description" content="Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任何流行的 Linux或Windows 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/images/og_image.png">
-<meta property="og:updated_time" content="2019-11-13T03:21:55.703Z">
+<meta property="og:image" content="https://876745833.github.io/java-show/images/og_image.png">
+<meta property="og:updated_time" content="2019-11-19T09:30:29.368Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker入门2 —— docker基础和简单启动">
 <meta name="twitter:description" content="Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任何流行的 Linux或Windows 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口。">
-<meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
+<meta name="twitter:image" content="https://876745833.github.io/java-show/images/og_image.png">
 
 
 
@@ -31,7 +31,7 @@
 
 
 
-<link rel="icon" href="/images/favicon.svg">
+<link rel="icon" href="/java-show/images/favicon.svg">
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
@@ -64,7 +64,7 @@
     
     
 
-<link rel="stylesheet" href="/css/back-to-top.css">
+<link rel="stylesheet" href="/java-show/css/back-to-top.css">
 
 
     
@@ -77,7 +77,7 @@
 
     
     
-<link rel="stylesheet" href="/css/progressbar.css">
+<link rel="stylesheet" href="/java-show/css/progressbar.css">
 <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
 
     
@@ -89,15 +89,15 @@
     
 
 
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/java-show/css/style.css">
 </head>
 <body class="is-3-column">
     <nav class="navbar navbar-main">
     <div class="container">
         <div class="navbar-brand is-flex-center">
-            <a class="navbar-item navbar-logo" href="/">
+            <a class="navbar-item navbar-logo" href="/java-show/">
             
-                <img src="/images/logo.svg" alt="Docker入门2 —— docker基础和简单启动" height="28">
+                <img src="/java-show/images/logo.svg" alt="Docker入门2 —— docker基础和简单启动" height="28">
             
             </a>
         </div>
@@ -106,22 +106,22 @@
             <div class="navbar-start">
                 
                 <a class="navbar-item"
-                href="/">主页</a>
+                href="/java-show/">主页</a>
                 
                 <a class="navbar-item"
-                href="/archives">归档</a>
+                href="/java-show/archives">归档</a>
                 
                 <a class="navbar-item"
-                href="/categories">分类</a>
+                href="/java-show/categories">分类</a>
                 
                 <a class="navbar-item"
-                href="/tags">标签</a>
+                href="/java-show/tags">标签</a>
                 
                 <a class="navbar-item"
-                href="/about">关于</a>
+                href="/java-show/about">关于</a>
                 
                 <a class="navbar-item"
-                href="/photo">相册</a>
+                href="/java-show/photo">相册</a>
                 
             </div>
             
@@ -163,7 +163,7 @@
                 <time class="level-item has-text-grey" datetime="2019-10-12T16:00:00.000Z">2019-10-13</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Docker/">Docker</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Docker/IDEA/">IDEA</a>
+                <a class="has-link-grey -link" href="/java-show/categories/Docker/">Docker</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/java-show/categories/Docker/IDEA/">IDEA</a>
                 </div>
                 
                 
@@ -185,18 +185,21 @@
             <p>Docker 是一个<a href="https://baike.baidu.com/item/开源/246339" target="_blank" rel="noopener">开源</a>的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的镜像中，然后发布到任何流行的 <a href="https://baike.baidu.com/item/Linux" target="_blank" rel="noopener">Linux</a>或Windows 机器上，也可以实现<a href="https://baike.baidu.com/item/虚拟化/547949" target="_blank" rel="noopener">虚拟化</a>。容器是完全使用<a href="https://baike.baidu.com/item/沙箱/393318" target="_blank" rel="noopener">沙箱</a>机制，相互之间不会有任何接口。</p>
 <a id="more"></a>
 
+<p>参考文档</p>
+<p>官方文档：<a href="https://docs.docker.com/engine/reference/commandline" target="_blank" rel="noopener">https://docs.docker.com/engine/reference/commandline</a></p>
+<p>私人文档笔记： <a href="https://yeasy.gitbooks.io/docker_practice/" target="_blank" rel="noopener">https://yeasy.gitbooks.io/docker_practice/</a> </p>
+<p>百度百科： <a href="https://baike.baidu.com/item/Docker/13344470?fr=aladdin" target="_blank" rel="noopener">https://baike.baidu.com/item/Docker/13344470?fr=aladdin</a> </p>
+<p>csdn博客： <a href="https://blog.csdn.net/qq_33256688/article/details/80319673#commentBox" target="_blank" rel="noopener">https://blog.csdn.net/qq_33256688/article/details/80319673#commentBox</a> </p>
 <h3 id="Docker简介"><a href="#Docker简介" class="headerlink" title="Docker简介"></a>Docker简介</h3><p>Docker 是一个开源的应用容器引擎，让开发者可以打包他们的应用以及依赖包到一个可移植的容器中,然后发布到任何流行的<a href="https://baike.baidu.com/item/Linux" target="_blank" rel="noopener">Linux</a>机器上,也可以实现虚拟化,容器是完全使用沙箱机制,相互之间不会有任何接口。</p>
 <p>一个完整的Docker有以下几个部分组成：</p>
-<ol>
-<li>DockerClient客户端</li>
-<li>Docker Daemon守护进程</li>
+<ol start="3">
 <li>Docker Image镜像</li>
 <li>DockerContainer容器 </li>
+<li>DockerRegistry仓库</li>
 </ol>
 <h4 id="1、-镜像"><a href="#1、-镜像" class="headerlink" title="1、 镜像"></a>1、 镜像</h4><p>​     Docker 镜像是一个特殊的文件系统，除了提供容器运行时所需的程序、库、资源、配置等文件外，还包含了一些为运行时准备的一些配置参数（如匿名卷、环境变量、用户等）。镜像不包含任何动态数据，其内容在构建之后也不会被改变。 </p>
 <h5 id="docker镜像启动"><a href="#docker镜像启动" class="headerlink" title="docker镜像启动"></a>docker镜像启动</h5><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#查看镜像</span><br><span class="line">docker images</span><br><span class="line"></span><br><span class="line">#启动镜像</span><br><span class="line">docker run images</span><br><span class="line">docker run imggeId</span><br><span class="line">docker start images</span><br><span class="line">docker start imggeId</span><br><span class="line">#关闭镜像</span><br><span class="line">docker stop images</span><br><span class="line">docker stop imggeId</span><br><span class="line"></span><br><span class="line">#删除镜像</span><br><span class="line">docker rmi -f images</span><br><span class="line">docker rmi -f imggeId</span><br></pre></td></tr></table></figure>
 
-<p>##### </p>
 <h4 id="2、-容器"><a href="#2、-容器" class="headerlink" title="2、 容器"></a>2、 容器</h4><p>​         镜像（<code>Image</code>）和容器（<code>Container</code>）的关系，就像是面向对象程序设计中的 <code>类</code> 和 <code>实例</code> 一样，镜像是静态的定义，容器是镜像运行时的实体。容器可以被创建、启动、停止、删除、暂停等。 </p>
 <p>​         容器的实质是进程，但与直接在宿主执行的进程不同，容器进程运行于属于自己的独立的 <a href="https://en.wikipedia.org/wiki/Linux_namespaces" target="_blank" rel="noopener">命名空间</a>。因此容器可以拥有自己的 <code>root</code> 文件系统、自己的网络配置、自己的进程空间，甚至自己的用户 ID 空间。容器内的进程是运行在一个隔离的环境里，使用起来，就好像是在一个独立于宿主的系统下操作一样。这种特性使得容器封装的应用比直接在宿主运行更加安全。也因为这种隔离的特性，很多人初学 Docker 时常常会混淆容器和虚拟机。 </p>
 <h5 id="docker容器启动"><a href="#docker容器启动" class="headerlink" title="docker容器启动"></a>docker容器启动</h5><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#查看正在运行容器</span><br><span class="line">docker ps </span><br><span class="line">#查看所有容器</span><br><span class="line">docker ps -a</span><br><span class="line"></span><br><span class="line"># 启动容器</span><br><span class="line"># imggeId	 文件id</span><br><span class="line"># imageName	 文件名字</span><br><span class="line">docker start imggeId</span><br><span class="line">docker start imageName</span><br><span class="line"></span><br><span class="line">#停止容器</span><br><span class="line">docker stop imggeId</span><br><span class="line">docker stop imageName</span><br><span class="line"></span><br><span class="line">#删除容器</span><br><span class="line">docker rm imggeId</span><br><span class="line">docker rm imageName</span><br></pre></td></tr></table></figure>
@@ -210,23 +213,57 @@
 <h4 id="3、-仓库"><a href="#3、-仓库" class="headerlink" title="3、 仓库"></a>3、 仓库</h4><p>镜像构建完成后，可以很容易的在当前宿主机上运行，但是，如果需要在其它服务器上使用这个镜像，我们就需要一个集中的存储、分发镜像的服务，<a href="https://yeasy.gitbooks.io/docker_practice/repository/registry.html" target="_blank" rel="noopener">Docker Registry</a> 就是这样的服务。</p>
 <p>一个 <strong>Docker Registry</strong> 中可以包含多个 <strong>仓库</strong>（<code>Repository</code>）；每个仓库可以包含多个 <strong>标签</strong>（<code>Tag</code>）；每个标签对应一个镜像。</p>
 <p>通常，一个仓库会包含同一个软件不同版本的镜像，而标签就常用于对应该软件的各个版本。我们可以通过 <code>&lt;仓库名&gt;:&lt;标签&gt;</code> 的格式来指定具体是这个软件哪个版本的镜像。如果不给出标签，将以 <code>latest</code> 作为默认标签。</p>
-<h3 id="Docker特点"><a href="#Docker特点" class="headerlink" title="Docker特点"></a>Docker特点</h3><p> 由于其基于LXC的轻量级虚拟化的特点，docker相比KVM之类最明显的特点就是启动快，资源占用小。因此对于构建隔离的标准化的运行环境，轻量级的PaaS(如dokku), 构建自动化测试和持续集成环境，以及一切可以横向扩展的应用(尤其是需要快速启停来应对峰谷的web应用)。</p>
+<h5 id="Docker特点"><a href="#Docker特点" class="headerlink" title="Docker特点"></a>Docker特点</h5><p> 由于其基于LXC的轻量级虚拟化的特点，docker相比KVM之类最明显的特点就是启动快，资源占用小。因此对于构建隔离的标准化的运行环境，轻量级的PaaS(如dokku), 构建自动化测试和持续集成环境，以及一切可以横向扩展的应用(尤其是需要快速启停来应对峰谷的web应用)。</p>
 <ol>
 <li>构建标准化的运行环境，现有的方案大多是在一个baseOS上运行一套puppet/chef，或者一个image文件，其缺点是前者需要base OS许多前提条件，后者几乎不可以修改(因为copy on write 的文件格式在运行时rootfs是read only的)。并且后者文件体积大，环境管理和版本控制本身也是一个问题。</li>
 <li>PaaS环境是不言而喻的，其设计之初和dotcloud的案例都是将其作为PaaS产品的环境基础</li>
 <li>因为其标准化构建方法(buildfile)和良好的REST API，自动化测试和持续集成/部署能够很好的集成进来</li>
 <li>因为LXC轻量级的特点，其启动快，而且docker能够只加载每个container变化的部分，这样资源占用小，能够在单机环境下与KVM之类的虚拟化方案相比能够更加快速和占用更少资源</li>
 </ol>
-<h3 id="局限"><a href="#局限" class="headerlink" title="局限"></a>局限</h3><p>​    Docker并不是全能的，设计之初也不是KVM之类虚拟化手段的替代品，简单总结几点：</p>
+<h5 id="局限"><a href="#局限" class="headerlink" title="局限"></a>局限</h5><p>​    Docker并不是全能的，设计之初也不是KVM之类虚拟化手段的替代品，简单总结几点：</p>
 <ol>
-<li>Docker是基于Linux 64bit的，无法在32bit的linux/Windows/unix环境下使用</li>
-<li>LXC是基于cgroup等linux kernel功能的，因此container的guest系统只能是linux base的</li>
-<li>隔离性相比KVM之类的虚拟化方案还是有些欠缺，所有container公用一部分的运行库</li>
-<li>网络管理相对简单，主要是基于namespace隔离</li>
-<li>cgroup的cpu和cpuset提供的cpu功能相比KVM的等虚拟化方案相比难以度量(所以dotcloud主要是按内存收费)</li>
-<li>Docker对disk的管理比较有限</li>
-<li>container随着用户进程的停止而销毁，container中的log等用户数据不便收集</li>
+<li><p>Docker是基于Linux 64bit的，无法在32bit的linux/Windows/unix环境下使用</p>
+</li>
+<li><p>LXC是基于cgroup等linux kernel功能的，因此container的guest系统只能是linux base的</p>
+</li>
+<li><p>隔离性相比KVM之类的虚拟化方案还是有些欠缺，所有container公用一部分的运行库</p>
+</li>
+<li><p>网络管理相对简单，主要是基于namespace隔离</p>
+</li>
+<li><p>cgroup的cpu和cpuset提供的cpu功能相比KVM的等虚拟化方案相比难以度量(所以dotcloud主要是按内存收费)</p>
+</li>
+<li><p>Docker对disk的管理比较有限</p>
+</li>
+<li><p>container随着用户进程的停止而销毁，container中的log等用户数据不便收集</p>
+</li>
 </ol>
+<h5 id="docker仓库使用"><a href="#docker仓库使用" class="headerlink" title="docker仓库使用"></a>docker仓库使用</h5><p>所谓仓库，其实是个镜像仓库，里面有很多别人已经打包好的镜像，可以直接使用<code>docker pull</code>命令将仓库中的镜像拉到本地，默认的仓库Docker的官方仓库<a href="https://hub.docker.com/" target="_blank" rel="noopener">Docker Hub Registry</a>。 </p>
+<p>以 tutorial 为例子来实战一下吧</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#获取镜像文件</span><br><span class="line">docker pull ddfddf/tutorial</span><br><span class="line">#下载完成之后 查看下载的镜像文件</span><br><span class="line">docker images</span><br><span class="line"></span><br><span class="line">#run命令来让镜像文件启动到容器中	</span><br><span class="line">#apt-get install -y ping 命令是安装一个ping命令</span><br><span class="line">docker run ddfddf/tutorial apt-get install -y ping</span><br><span class="line"></span><br><span class="line">#查询所有容器</span><br><span class="line">docker ps -a</span><br><span class="line">#查询正在运行的容器</span><br><span class="line">docker ps </span><br><span class="line"></span><br><span class="line">#启动</span><br><span class="line">docker run ddfddf/tutorial ping www.baidu.com</span><br></pre></td></tr></table></figure>
+
+<p>如果报错 执行下列命令（异常信息）</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker: Error response from daemon: OCI runtime create failed: container_linux.go:348: starting container process caused &quot;exec: \&quot;ping\&quot;: executable file not found in $PATH&quot;: unknown.</span><br></pre></td></tr></table></figure>
+
+<p>从”ping”: executable file not found in $PATH这句话中可以看出是因为ping命令没有装导致的，刚刚明明装过ping命令了，为什么没有呢？这是因为在容器中的修改并不会影响镜像，通过docker commit命令可以将这个容器提交成一个新的镜像。命令如下：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker commit 0299878039f0 ddfddf/ping</span><br></pre></td></tr></table></figure>
+
+<p>清空所有镜像代码</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm $(docker ps -a -q)</span><br></pre></td></tr></table></figure>
+
+<p>这里的删除，只是把容器中的删除了，镜像文件还在的。</p>
+<h5 id="上传镜像到仓库中去"><a href="#上传镜像到仓库中去" class="headerlink" title="上传镜像到仓库中去"></a>上传镜像到仓库中去</h5><p>首先到 <a href="https://hub.docker.com/" target="_blank" rel="noopener">https://hub.docker.com/</a> 中去注册一个docker账户</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#登录账号</span><br><span class="line">docker login -u 用户名 -p 密码</span><br></pre></td></tr></table></figure>
+
+<p>docker tag 重新命名一下， 不然会push认证不通过，代码如下： </p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker tag ddfddf/tutorial 你的用户名/tutorial</span><br></pre></td></tr></table></figure>
+
+<p>然后上传即可</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker push 你的用户名/tutorial</span><br></pre></td></tr></table></figure>
+
+<p>搞定之后就可以使用以下命令登出了：</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker logout</span><br></pre></td></tr></table></figure>
+
+<p>接下来去官网中就可以到自己的仓库中，查看上传的镜像文件了</p>
 <h3 id="docker导入和导出"><a href="#docker导入和导出" class="headerlink" title="docker导入和导出"></a>docker导入和导出</h3><p>导入</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 导入war包</span><br><span class="line"># ubuntu.tar  包全称</span><br><span class="line"># test/ubuntu:v1.0  导入镜像的名字</span><br><span class="line">cat ubuntu.tar | docker import - test/ubuntu:v1.0</span><br></pre></td></tr></table></figure>
 
@@ -240,7 +277,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Docker/">Docker</a>
+                    <a class="has-link-grey -link" href="/java-show/tags/Docker/">Docker</a>
                 </div>
             </div>
         </div>
@@ -287,7 +324,7 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/10/13/Activiti框架——搭建/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/java-show/2019/10/13/Activiti框架——搭建/">
                 <i class="level-item fas fa-chevron-left"></i>
                 <span class="level-item">Activiti————框架搭建</span>
             </a>
@@ -295,8 +332,8 @@
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/10/12/Docker实战1/">
-                <span class="level-item">Docker实战1 —— IDEA插件连接Docker部署（Dockerfile）</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/java-show/2019/10/13/Docker入门3DockerFile学习使用/">
+                <span class="level-item">Docker入门2 —— docker基础和简单启动</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -342,7 +379,7 @@
                 <div>
                     
                     <figure class="image is-128x128 has-mb-6">
-                        <img class="" src="/images/avatar.png" alt="常若川">
+                        <img class="" src="/java-show/images/avatar.png" alt="常若川">
                     </figure>
                     
                     <p class="is-size-4 is-block">
@@ -370,7 +407,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        15
+                        18
                     </p>
                 </div>
             </div>
@@ -380,7 +417,7 @@
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        9
+                        10
                     </p>
                 </div>
             </div>
@@ -390,7 +427,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        5
+                        6
                     </p>
                 </div>
             </div>
@@ -432,7 +469,7 @@
             </a>
             
             <a class="level-item button is-white is-marginless" target="_blank"
-                title="RSS" href="/">
+                title="RSS" href="/java-show/">
                 
                 <i class="fas fa-rss"></i>
                 
@@ -478,17 +515,25 @@
         <a class="is-flex" href="#3、-仓库">
         <span class="has-mr-6">1.3</span>
         <span>3、 仓库</span>
-        </a></li></ul></li><li>
+        </a><ul class="menu-list"><li>
         <a class="is-flex" href="#Docker特点">
-        <span class="has-mr-6">2</span>
+        <span class="has-mr-6">1.3.1</span>
         <span>Docker特点</span>
         </a></li><li>
         <a class="is-flex" href="#局限">
-        <span class="has-mr-6">3</span>
+        <span class="has-mr-6">1.3.2</span>
         <span>局限</span>
         </a></li><li>
+        <a class="is-flex" href="#docker仓库使用">
+        <span class="has-mr-6">1.3.3</span>
+        <span>docker仓库使用</span>
+        </a></li><li>
+        <a class="is-flex" href="#上传镜像到仓库中去">
+        <span class="has-mr-6">1.3.4</span>
+        <span>上传镜像到仓库中去</span>
+        </a></li></ul></li></ul></li><li>
         <a class="is-flex" href="#docker导入和导出">
-        <span class="has-mr-6">4</span>
+        <span class="has-mr-6">2</span>
         <span>docker导入和导出</span>
         </a></li></ul>
         </div>
@@ -544,23 +589,23 @@
             </h3>
             <ul class="menu-list">
             <li>
-        <a class="level is-marginless" href="/categories/Docker/">
+        <a class="level is-marginless" href="/java-show/categories/Docker/">
             <span class="level-start">
                 <span class="level-item">Docker</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">5</span>
+                <span class="level-item tag">6</span>
             </span>
         </a><ul><li>
-        <a class="level is-marginless" href="/categories/Docker/IDEA/">
+        <a class="level is-marginless" href="/java-show/categories/Docker/IDEA/">
             <span class="level-start">
                 <span class="level-item">IDEA</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">3</span>
+                <span class="level-item tag">4</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/Docker/Linux/">
+        <a class="level is-marginless" href="/java-show/categories/Docker/Linux/">
             <span class="level-start">
                 <span class="level-item">Linux</span>
             </span>
@@ -568,7 +613,15 @@
                 <span class="level-item tag">2</span>
             </span>
         </a></li></ul></li><li>
-        <a class="level is-marginless" href="/categories/博客系列/">
+        <a class="level is-marginless" href="/java-show/categories/SpringBoot/">
+            <span class="level-start">
+                <span class="level-item">SpringBoot</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/java-show/categories/博客系列/">
             <span class="level-start">
                 <span class="level-item">博客系列</span>
             </span>
@@ -576,7 +629,7 @@
                 <span class="level-item tag">1</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/数据库/">
+        <a class="level is-marginless" href="/java-show/categories/数据库/">
             <span class="level-start">
                 <span class="level-item">数据库</span>
             </span>
@@ -584,7 +637,7 @@
                 <span class="level-item tag">1</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/框架/">
+        <a class="level is-marginless" href="/java-show/categories/框架/">
             <span class="level-start">
                 <span class="level-item">框架</span>
             </span>
@@ -592,7 +645,7 @@
                 <span class="level-item tag">8</span>
             </span>
         </a><ul><li>
-        <a class="level is-marginless" href="/categories/框架/Activiti工作流/">
+        <a class="level is-marginless" href="/java-show/categories/框架/Activiti工作流/">
             <span class="level-start">
                 <span class="level-item">Activiti工作流</span>
             </span>
@@ -600,7 +653,7 @@
                 <span class="level-item tag">7</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/框架/SrpingCloud/">
+        <a class="level is-marginless" href="/java-show/categories/框架/SrpingCloud/">
             <span class="level-start">
                 <span class="level-item">SrpingCloud</span>
             </span>
@@ -619,7 +672,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/Activiti工作流/" style="font-size: 20px;">Activiti工作流</a> <a href="/tags/Docker/" style="font-size: 15px;">Docker</a> <a href="/tags/SpringCloud/" style="font-size: 10px;">SpringCloud</a> <a href="/tags/分享/" style="font-size: 10px;">分享</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a>
+        <a href="/java-show/tags/Activiti工作流/" style="font-size: 20px;">Activiti工作流</a> <a href="/java-show/tags/Docker/" style="font-size: 16.67px;">Docker</a> <a href="/java-show/tags/SpringBoot/" style="font-size: 13.33px;">SpringBoot</a> <a href="/java-show/tags/SpringCloud/" style="font-size: 10px;">SpringCloud</a> <a href="/java-show/tags/分享/" style="font-size: 10px;">分享</a> <a href="/java-show/tags/数据库/" style="font-size: 10px;">数据库</a>
     </div>
 </div>
 
@@ -636,18 +689,18 @@
         
         <article class="media">
             
-            <a href="/2019/11/12/sql学习入门/" class="media-left">
+            <a href="/java-show/2019/11/12/sql学习入门/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="sql基础知识">
+                    <img class="thumbnail" src="/java-show/images/thumbnail.svg" alt="sql基础知识">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-11T16:00:00.000Z">2019-11-12</time></div>
-                    <a href="/2019/11/12/sql学习入门/" class="title has-link-black-ter is-size-6 has-text-weight-normal">sql基础知识</a>
+                    <a href="/java-show/2019/11/12/sql学习入门/" class="title has-link-black-ter is-size-6 has-text-weight-normal">sql基础知识</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/数据库/">数据库</a>
+                        <a class="has-link-grey -link" href="/java-show/categories/数据库/">数据库</a>
                     </p>
                 </div>
             </div>
@@ -655,18 +708,18 @@
         
         <article class="media">
             
-            <a href="/2019/10/14/Activiti框架——流程撤回/" class="media-left">
+            <a href="/java-show/2019/10/14/Activiti框架——id生成策略/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Activiti框架常用-流程节点撤回">
+                    <img class="thumbnail" src="/java-show/images/thumbnail.svg" alt="Activiti框架——id生成策略">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
-                    <a href="/2019/10/14/Activiti框架——流程撤回/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架常用-流程节点撤回</a>
+                    <a href="/java-show/2019/10/14/Activiti框架——id生成策略/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架——id生成策略</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
+                        <a class="has-link-grey -link" href="/java-show/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/java-show/categories/框架/Activiti工作流/">Activiti工作流</a>
                     </p>
                 </div>
             </div>
@@ -674,18 +727,18 @@
         
         <article class="media">
             
-            <a href="/2019/10/14/Activiti框架——搭建页面管理war包/" class="media-left">
+            <a href="/java-show/2019/10/14/Docker实战3安装mysql/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Activiti框架——搭建页面管理war包">
+                    <img class="thumbnail" src="/java-show/images/thumbnail.svg" alt="Docker实战3 —— 安装Mysql">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
-                    <a href="/2019/10/14/Activiti框架——搭建页面管理war包/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架——搭建页面管理war包</a>
+                    <a href="/java-show/2019/10/14/Docker实战3安装mysql/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Docker实战3 —— 安装Mysql</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
+                        <a class="has-link-grey -link" href="/java-show/categories/Docker/">Docker</a> / <a class="has-link-grey -link" href="/java-show/categories/Docker/IDEA/">IDEA</a>
                     </p>
                 </div>
             </div>
@@ -693,18 +746,18 @@
         
         <article class="media">
             
-            <a href="/2019/10/14/Activiti框架——id生成策略/" class="media-left">
+            <a href="/java-show/2019/10/14/Activiti框架——流程撤回/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Activiti框架——id生成策略">
+                    <img class="thumbnail" src="/java-show/images/thumbnail.svg" alt="Activiti框架常用-流程节点撤回">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
-                    <a href="/2019/10/14/Activiti框架——id生成策略/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架——id生成策略</a>
+                    <a href="/java-show/2019/10/14/Activiti框架——流程撤回/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架常用-流程节点撤回</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
+                        <a class="has-link-grey -link" href="/java-show/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/java-show/categories/框架/Activiti工作流/">Activiti工作流</a>
                     </p>
                 </div>
             </div>
@@ -712,18 +765,18 @@
         
         <article class="media">
             
-            <a href="/2019/10/14/Activiti框架——自定义角色配置/" class="media-left">
+            <a href="/java-show/2019/10/14/Activiti框架——搭建页面管理war包/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Activiti框架常用-自定义角色方案">
+                    <img class="thumbnail" src="/java-show/images/thumbnail.svg" alt="Activiti框架——搭建页面管理war包">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
-                    <a href="/2019/10/14/Activiti框架——自定义角色配置/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架常用-自定义角色方案</a>
+                    <a href="/java-show/2019/10/14/Activiti框架——搭建页面管理war包/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架——搭建页面管理war包</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
+                        <a class="has-link-grey -link" href="/java-show/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/java-show/categories/框架/Activiti工作流/">Activiti工作流</a>
                     </p>
                 </div>
             </div>
@@ -742,7 +795,7 @@
         <ul class="menu-list">
         
         <li>
-            <a class="level is-marginless" href="/archives/2019/11/">
+            <a class="level is-marginless" href="/java-show/archives/2019/11/">
                 <span class="level-start">
                     <span class="level-item">十一月 2019</span>
                 </span>
@@ -753,23 +806,23 @@
         </li>
         
         <li>
-            <a class="level is-marginless" href="/archives/2019/10/">
+            <a class="level is-marginless" href="/java-show/archives/2019/10/">
                 <span class="level-start">
                     <span class="level-item">十月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">12</span>
+                    <span class="level-item tag">13</span>
                 </span>
             </a>
         </li>
         
         <li>
-            <a class="level is-marginless" href="/archives/2019/09/">
+            <a class="level is-marginless" href="/java-show/archives/2019/09/">
                 <span class="level-start">
                     <span class="level-item">九月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -788,35 +841,42 @@
             <div class="field is-grouped is-grouped-multiline">
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/Activiti工作流/">
+                    <a class="tags has-addons" href="/java-show/tags/Activiti工作流/">
                         <span class="tag">Activiti工作流</span>
                         <span class="tag is-grey">7</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/Docker/">
+                    <a class="tags has-addons" href="/java-show/tags/Docker/">
                         <span class="tag">Docker</span>
-                        <span class="tag is-grey">5</span>
+                        <span class="tag is-grey">6</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/SpringCloud/">
+                    <a class="tags has-addons" href="/java-show/tags/SpringBoot/">
+                        <span class="tag">SpringBoot</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/java-show/tags/SpringCloud/">
                         <span class="tag">SpringCloud</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/分享/">
+                    <a class="tags has-addons" href="/java-show/tags/分享/">
                         <span class="tag">分享</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/数据库/">
+                    <a class="tags has-addons" href="/java-show/tags/数据库/">
                         <span class="tag">数据库</span>
                         <span class="tag is-grey">1</span>
                     </a>
@@ -847,18 +907,18 @@
         
         <article class="media">
             
-            <a href="/2019/11/12/sql学习入门/" class="media-left">
+            <a href="/java-show/2019/11/12/sql学习入门/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="sql基础知识">
+                    <img class="thumbnail" src="/java-show/images/thumbnail.svg" alt="sql基础知识">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-11T16:00:00.000Z">2019-11-12</time></div>
-                    <a href="/2019/11/12/sql学习入门/" class="title has-link-black-ter is-size-6 has-text-weight-normal">sql基础知识</a>
+                    <a href="/java-show/2019/11/12/sql学习入门/" class="title has-link-black-ter is-size-6 has-text-weight-normal">sql基础知识</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/数据库/">数据库</a>
+                        <a class="has-link-grey -link" href="/java-show/categories/数据库/">数据库</a>
                     </p>
                 </div>
             </div>
@@ -866,18 +926,18 @@
         
         <article class="media">
             
-            <a href="/2019/10/14/Activiti框架——流程撤回/" class="media-left">
+            <a href="/java-show/2019/10/14/Activiti框架——id生成策略/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Activiti框架常用-流程节点撤回">
+                    <img class="thumbnail" src="/java-show/images/thumbnail.svg" alt="Activiti框架——id生成策略">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
-                    <a href="/2019/10/14/Activiti框架——流程撤回/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架常用-流程节点撤回</a>
+                    <a href="/java-show/2019/10/14/Activiti框架——id生成策略/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架——id生成策略</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
+                        <a class="has-link-grey -link" href="/java-show/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/java-show/categories/框架/Activiti工作流/">Activiti工作流</a>
                     </p>
                 </div>
             </div>
@@ -885,18 +945,18 @@
         
         <article class="media">
             
-            <a href="/2019/10/14/Activiti框架——搭建页面管理war包/" class="media-left">
+            <a href="/java-show/2019/10/14/Docker实战3安装mysql/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Activiti框架——搭建页面管理war包">
+                    <img class="thumbnail" src="/java-show/images/thumbnail.svg" alt="Docker实战3 —— 安装Mysql">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
-                    <a href="/2019/10/14/Activiti框架——搭建页面管理war包/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架——搭建页面管理war包</a>
+                    <a href="/java-show/2019/10/14/Docker实战3安装mysql/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Docker实战3 —— 安装Mysql</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
+                        <a class="has-link-grey -link" href="/java-show/categories/Docker/">Docker</a> / <a class="has-link-grey -link" href="/java-show/categories/Docker/IDEA/">IDEA</a>
                     </p>
                 </div>
             </div>
@@ -904,18 +964,18 @@
         
         <article class="media">
             
-            <a href="/2019/10/14/Activiti框架——id生成策略/" class="media-left">
+            <a href="/java-show/2019/10/14/Activiti框架——流程撤回/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Activiti框架——id生成策略">
+                    <img class="thumbnail" src="/java-show/images/thumbnail.svg" alt="Activiti框架常用-流程节点撤回">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
-                    <a href="/2019/10/14/Activiti框架——id生成策略/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架——id生成策略</a>
+                    <a href="/java-show/2019/10/14/Activiti框架——流程撤回/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架常用-流程节点撤回</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
+                        <a class="has-link-grey -link" href="/java-show/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/java-show/categories/框架/Activiti工作流/">Activiti工作流</a>
                     </p>
                 </div>
             </div>
@@ -923,18 +983,18 @@
         
         <article class="media">
             
-            <a href="/2019/10/14/Activiti框架——自定义角色配置/" class="media-left">
+            <a href="/java-show/2019/10/14/Activiti框架——搭建页面管理war包/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Activiti框架常用-自定义角色方案">
+                    <img class="thumbnail" src="/java-show/images/thumbnail.svg" alt="Activiti框架——搭建页面管理war包">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-13T16:00:00.000Z">2019-10-14</time></div>
-                    <a href="/2019/10/14/Activiti框架——自定义角色配置/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架常用-自定义角色方案</a>
+                    <a href="/java-show/2019/10/14/Activiti框架——搭建页面管理war包/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Activiti框架——搭建页面管理war包</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/categories/框架/Activiti工作流/">Activiti工作流</a>
+                        <a class="has-link-grey -link" href="/java-show/categories/框架/">框架</a> / <a class="has-link-grey -link" href="/java-show/categories/框架/Activiti工作流/">Activiti工作流</a>
                     </p>
                 </div>
             </div>
@@ -953,7 +1013,7 @@
         <ul class="menu-list">
         
         <li>
-            <a class="level is-marginless" href="/archives/2019/11/">
+            <a class="level is-marginless" href="/java-show/archives/2019/11/">
                 <span class="level-start">
                     <span class="level-item">十一月 2019</span>
                 </span>
@@ -964,23 +1024,23 @@
         </li>
         
         <li>
-            <a class="level is-marginless" href="/archives/2019/10/">
+            <a class="level is-marginless" href="/java-show/archives/2019/10/">
                 <span class="level-start">
                     <span class="level-item">十月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">12</span>
+                    <span class="level-item tag">13</span>
                 </span>
             </a>
         </li>
         
         <li>
-            <a class="level is-marginless" href="/archives/2019/09/">
+            <a class="level is-marginless" href="/java-show/archives/2019/09/">
                 <span class="level-start">
                     <span class="level-item">九月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>
@@ -999,35 +1059,42 @@
             <div class="field is-grouped is-grouped-multiline">
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/Activiti工作流/">
+                    <a class="tags has-addons" href="/java-show/tags/Activiti工作流/">
                         <span class="tag">Activiti工作流</span>
                         <span class="tag is-grey">7</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/Docker/">
+                    <a class="tags has-addons" href="/java-show/tags/Docker/">
                         <span class="tag">Docker</span>
-                        <span class="tag is-grey">5</span>
+                        <span class="tag is-grey">6</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/SpringCloud/">
+                    <a class="tags has-addons" href="/java-show/tags/SpringBoot/">
+                        <span class="tag">SpringBoot</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/java-show/tags/SpringCloud/">
                         <span class="tag">SpringCloud</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/分享/">
+                    <a class="tags has-addons" href="/java-show/tags/分享/">
                         <span class="tag">分享</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/数据库/">
+                    <a class="tags has-addons" href="/java-show/tags/数据库/">
                         <span class="tag">数据库</span>
                         <span class="tag is-grey">1</span>
                     </a>
@@ -1048,9 +1115,9 @@
     <div class="container">
         <div class="level">
             <div class="level-start has-text-centered-mobile">
-                <a class="footer-logo is-block has-mb-6" href="/">
+                <a class="footer-logo is-block has-mb-6" href="/java-show/">
                 
-                    <img src="/images/logo.svg" alt="Docker入门2 —— docker基础和简单启动" height="28">
+                    <img src="/java-show/images/logo.svg" alt="Docker入门2 —— docker基础和简单启动" height="28">
                 
                 </a>
                 <p class="is-size-7">
@@ -1126,7 +1193,7 @@ var IcarusThemeSettings = {
     
     
     
-    <script src="/js/animation.js"></script>
+    <script src="/java-show/js/animation.js"></script>
     
 
     
@@ -1134,7 +1201,7 @@ var IcarusThemeSettings = {
     
     <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
-    <script src="/js/gallery.js" defer></script>
+    <script src="/java-show/js/gallery.js" defer></script>
     
 
     
@@ -1189,7 +1256,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <a id="back-to-top" title="回到顶端" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
-<script src="/js/back-to-top.js" defer></script>
+<script src="/java-show/js/back-to-top.js" defer></script>
 
 
     
@@ -1209,7 +1276,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
 
 
-<script src="/js/main.js" defer></script>
+<script src="/java-show/js/main.js" defer></script>
 
     
     <div class="searchbox ins-search">
@@ -1233,14 +1300,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 TAGS: '标签',
                 UNTITLED: '(无标题)',
             },
-            CONTENT_URL: '/content.json',
+            CONTENT_URL: '/java-show/content.json',
         };
         window.INSIGHT_CONFIG = INSIGHT_CONFIG;
     })(window);
 </script>
-<script src="/js/insight.js" defer></script>
-<link rel="stylesheet" href="/css/search.css">
-<link rel="stylesheet" href="/css/insight.css">
+<script src="/java-show/js/insight.js" defer></script>
+<link rel="stylesheet" href="/java-show/css/search.css">
+<link rel="stylesheet" href="/java-show/css/insight.css">
     
 </body>
 </html>
